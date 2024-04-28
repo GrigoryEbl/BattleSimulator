@@ -1,45 +1,37 @@
 ﻿using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ClickHandler : MonoBehaviour
 {
-    [SerializeField] private Soldier _unitPrefab;
+    [SerializeField] private Spawner _spawner;
 
     private Camera _camera;
-    private RaycastHit _raycastHit;
-
-    public Unit Unit { get; private set; }
 
     private void Awake()
     {
-        _camera = GetComponent<Camera>();
+        _camera = Camera.main;
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (GetInfoGround() == true)
-                CreateUnit(_raycastHit);
+            SpawnUnit();
         }
     }
 
-    private bool GetInfoGround()
+    private void SpawnUnit()
     {
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
-            _raycastHit = hitInfo;
-
             if (hitInfo.collider.TryGetComponent(out Ground ground))
-                return true;
+                _spawner.Spawn(hitInfo.point);
+            else if (hitInfo.collider.TryGetComponent(out Unit unit))
+                _spawner.RemoveOneUnit(unit);
         }
 
-        return false;
-    }
-
-    private void CreateUnit(RaycastHit hitInfo)
-    {
-        Unit = Instantiate(_unitPrefab, hitInfo.point, Quaternion.identity);
+        print("None unit");
     }
 }
