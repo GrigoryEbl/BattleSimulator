@@ -2,10 +2,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(BotInput))]
+[RequireComponent(typeof(SearcherTarget))]
 public class BotMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
+    private SearcherTarget _searcherTarget;
     private Transform _transform;
     private Rigidbody _rigidbody;
     private BotInput _botInput;
@@ -15,6 +17,9 @@ public class BotMover : MonoBehaviour
         _transform = transform;
         _rigidbody = GetComponent<Rigidbody>();
         _botInput = GetComponent<BotInput>();
+        _searcherTarget = GetComponent<SearcherTarget>();
+
+        _searcherTarget.GetTarget();
     }
 
     private void Update()

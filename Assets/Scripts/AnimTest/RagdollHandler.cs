@@ -9,7 +9,6 @@ public class RagdollHandler : MonoBehaviour
     
     private void Awake()
     {
-
         _rigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>()); 
         Disable();
     }

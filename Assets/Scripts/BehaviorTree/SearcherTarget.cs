@@ -24,7 +24,7 @@ public class SearcherTarget : MonoBehaviour
         }
 
         enemiesPositions = SortDistance(enemiesPositions);
-
+        print(enemiesPositions[0].gameObject.name);
         return enemiesPositions[0];
     }
 
