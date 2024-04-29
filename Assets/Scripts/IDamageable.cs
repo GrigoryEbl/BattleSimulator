@@ -6,5 +6,7 @@ using System.Threading.Tasks;
 
 internal interface IDamageable
 {
+    bool IsEnemy { get; }
+
     void TakeDamage(int damage);
 }

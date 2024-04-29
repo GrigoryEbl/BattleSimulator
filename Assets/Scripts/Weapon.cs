@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Unit unit))
-            unit.TakeDamage(_damage);
+        if (other.TryGetComponent(out IDamageable damageable) && damageable.IsEnemy)
+            damageable.TakeDamage(_damage);
     }
 }

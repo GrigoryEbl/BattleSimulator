@@ -8,6 +8,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int _health;
     [SerializeField] private int _damage;
     [SerializeField] private float _attackDistance;
+    [SerializeField] private bool _isEnemy;
 
     [SerializeField] private Unit _target; //temporary
     
@@ -17,6 +18,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     private float _delay = 1;
 
     public int Price => _price;
+    public bool IsEnemy => _isEnemy;
 
     private void Awake()
     {
@@ -26,7 +28,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if(Vector3.Distance(transform.position, _target.transform.position) < _attackDistance)
+        if (Vector3.Distance(transform.position, _target.transform.position) < _attackDistance)
         {
             if (_lastAttackTime <= 0)
             {
@@ -34,6 +36,8 @@ public abstract class Unit : MonoBehaviour, IDamageable
                 _lastAttackTime = _delay;
             }
         }
+        else
+            _animControlTest.SetIdle();
         
         _lastAttackTime -= Time.deltaTime;
     }
@@ -64,6 +68,5 @@ public abstract class Unit : MonoBehaviour, IDamageable
     public void Attack(Unit target)
     {
         _animControlTest.SetAttack();
-        target.TakeDamage(_damage);
     }
 }
