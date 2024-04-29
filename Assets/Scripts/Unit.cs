@@ -8,7 +8,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
-
+    
     public int Price => _price;
 
     private void Awake()
