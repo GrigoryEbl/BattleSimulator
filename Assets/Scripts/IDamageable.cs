@@ -6,5 +6,7 @@ using System.Threading.Tasks;
 
 internal interface IDamageable
 {
-    void TakeDamage(Vector3 force, Vector3 hitpoint);
+    bool IsEnemy { get; }
+
+    void TakeDamage(int damage);
 }

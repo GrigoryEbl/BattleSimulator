@@ -28,7 +28,7 @@ public class Stricker : MonoBehaviour
                     Vector3 forceDirection = (hit.point - _camera.transform.position).normalized; 
                     forceDirection.y = 0;
 
-                    damageable.TakeDamage(forceDirection *_force, hit.point);
+                   // damageable.TakeDamage(forceDirection *_force, hit.point);
 
                 }
             }
