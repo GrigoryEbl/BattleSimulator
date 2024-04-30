@@ -7,15 +7,15 @@ public abstract class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int _price;
     [SerializeField] private int _health;
     [SerializeField] private int _damage;
-    [SerializeField] private float _attackDistance;
+    //[SerializeField] private float _attackDistance;
     [SerializeField] private bool _isEnemy;
 
-    [SerializeField] private Unit _target; //temporary
-    
+    //[SerializeField] private Unit _target; //temporary
+
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
-    private float _lastAttackTime = 1;
-    private float _delay = 1;
+    //private float _lastAttackTime = 1;
+    //private float _delay = 1;
 
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
@@ -28,18 +28,18 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, _target.transform.position) < _attackDistance)
-        {
-            if (_lastAttackTime <= 0)
-            {
-                Attack(_target);
-                _lastAttackTime = _delay;
-            }
-        }
-        else
-            _animControlTest.SetIdle();
+        //if (Vector3.Distance(transform.position, _target.transform.position) < _attackDistance)
+        //{
+        //    if (_lastAttackTime <= 0)
+        //    {
+        //        Attack(_target);
+        //        _lastAttackTime = _delay;
+        //    }
+        //}
+        //else
+        //    _animControlTest.SetIdle();
         
-        _lastAttackTime -= Time.deltaTime;
+        //_lastAttackTime -= Time.deltaTime;
     }
 
     public void Die()
@@ -68,5 +68,15 @@ public abstract class Unit : MonoBehaviour, IDamageable
     public void Attack(Unit target)
     {
         _animControlTest.SetAttack();
+    }
+
+    public void SetIdle()
+    {
+        _animControlTest.SetIdle();
+    }
+
+    public void SetRun()
+    {
+        _animControlTest.SetRun();
     }
 }
