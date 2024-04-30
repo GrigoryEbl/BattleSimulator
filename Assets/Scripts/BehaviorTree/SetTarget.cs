@@ -9,9 +9,25 @@ public class SetTarget : Action
 
     public override TaskStatus OnUpdate()
     {
-        if (_unitsParent.childCount > 0)
-            _target.Value = _unitsParent.GetChild(0);
+        FindTarget();
 
         return _target.Value == null ? TaskStatus.Failure : TaskStatus.Success;
+    }
+
+    private void FindTarget()
+    {
+        float distance;
+        float minDistance = float.MaxValue;
+
+        for (int i = 0; i < _unitsParent.childCount; i++)
+        {
+            distance = Vector3.Distance(_unitsParent.GetChild(i).position, transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                _target.Value = _unitsParent.GetChild(i);
+            }
+        }
     }
 }
