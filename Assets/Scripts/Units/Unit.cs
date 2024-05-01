@@ -6,14 +6,11 @@ public abstract class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
-    [SerializeField] private int _damage;
-    [SerializeField] private bool _isEnemy;
 
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
 
     public int Price => _price;
-    public bool IsEnemy => _isEnemy;
 
     private void Awake()
     {
@@ -31,6 +28,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     {
         _animControlTest.EnabledAnimator();
         _ragdollHandler.Disable();
+        _animControlTest.SetUp();
     }
 
     public void TakeDamage(int damage)
