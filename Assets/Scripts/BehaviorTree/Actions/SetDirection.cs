@@ -12,8 +12,7 @@ public class SetDirection : Action
         if (_target.Value == null)
             return TaskStatus.Failure;
 
-        transform.LookAt(_target.Value);
-        _direction.Value = Vector3.forward;
+        _direction.Value = (_target.Value.position - transform.position).normalized;
 
         return TaskStatus.Success;
     }
