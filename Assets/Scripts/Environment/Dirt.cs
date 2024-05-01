@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class Dirt : MonoBehaviour
 {
-    [SerializeField] private float _factor = 2f;
+    [SerializeField] private float _decelerationFactor = 2f;
 
-    public float Factor => _factor;
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out BotInput botInput))
+            botInput.DivideSpeed(_decelerationFactor);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out BotInput botInput))
+            botInput.ResetSpeed();
+    }
 }
