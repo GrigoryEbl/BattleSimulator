@@ -6,7 +6,6 @@ public abstract class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
-    [SerializeField] private int _damage;
     [SerializeField] private bool _isEnemy;
 
     private RagdollHandler _ragdollHandler;
