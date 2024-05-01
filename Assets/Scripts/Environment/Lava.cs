@@ -2,22 +2,27 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    [SerializeField] private float _delay = 0.3f;
+    [SerializeField] private int _damage = 3;
+    [SerializeField] private float _delay = 0.5f;
 
-    private float _elapsedTime;
+    private float _delayCounter;
 
     private void Update()
     {
-        if (_elapsedTime > 0)
-            _elapsedTime -= Time.deltaTime;
+        if (_delayCounter > 0)        
+            _delayCounter -= Time.deltaTime;        
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (_elapsedTime <= 0 && other.TryGetComponent(out Unit unit))
+        if (_delayCounter > 0)
+            return;
+
+        if (other.TryGetComponent(out IDamageable unit))
         {
-            _elapsedTime = _delay;
-            Debug.Log("”рон от лавы!");
+            _delayCounter = _delay;
+            unit.TakeDamage(_damage);
         }
     }
 }
