@@ -1,5 +1,5 @@
+using BehaviorDesigner.Runtime;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour, IDamageable
@@ -9,21 +9,27 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
-
+    private BehaviorTree _behaviorTree;
+    private BotInput _botInput;
+    
     public int Price => _price;
 
     private void Awake()
     {
         _animControlTest = GetComponent<AnimControlTest>();
-        _ragdollHandler = GetComponent<RagdollHandler>(); 
+        _ragdollHandler = GetComponent<RagdollHandler>();
+        _behaviorTree = GetComponent<BehaviorTree>();
+        _botInput = GetComponent<BotInput>();
     }
 
     public void Die()
     {
+        _behaviorTree.enabled = false;
+        _botInput.MovementInput = Vector3.zero;
         _animControlTest.DisabledAnimator();
         _ragdollHandler.Enable();
     }
-    
+
     public void StandUp()
     {
         _animControlTest.EnabledAnimator();
