@@ -9,7 +9,7 @@ public class Archer : Unit
 
     public void Shoot()
     {
-        _bow.Shoot();
+        _bow.Shoot(_target);
     }
 
     public void SetDirectionArrow()
