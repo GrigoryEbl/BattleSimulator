@@ -4,8 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(BotInput))]
 public class BotMover : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-
     private Transform _transform;
     private Rigidbody _rigidbody;
     private BotInput _botInput;
@@ -26,7 +24,7 @@ public class BotMover : MonoBehaviour
     private void Move()
     {
         var horizontalVelocity = _rigidbody.velocity.y * Vector3.up;
-        _rigidbody.velocity = _botInput.MovementInput * _speed + horizontalVelocity;
+        _rigidbody.velocity = _botInput.MovementInput * _botInput.Speed + horizontalVelocity;
     }
 
     private void Rotate()
