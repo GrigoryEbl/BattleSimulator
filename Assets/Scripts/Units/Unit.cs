@@ -6,13 +6,11 @@ public abstract class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
-    [SerializeField] private bool _isEnemy;
 
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
 
     public int Price => _price;
-    public bool IsEnemy => _isEnemy;
 
     private void Awake()
     {
