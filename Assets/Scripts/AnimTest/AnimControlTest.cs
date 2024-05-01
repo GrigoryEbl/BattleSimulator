@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class AnimControlTest : MonoBehaviour
 {
-    [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private Transform _parent;
-    [SerializeField] private Transform _hipsBone;
+    //[SerializeField] private LayerMask _layerMask;
+   // [SerializeField] private Transform _parent;
+    //[SerializeField] private Transform _hipsBone;
 
     private Animator _animator;
 
@@ -22,19 +22,19 @@ public class AnimControlTest : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    public void AdjustParentPositionToHipsBone()
-    {
-        Vector3 initHipsPosition = _hipsBone.position;
-        _parent.position = initHipsPosition;
-        AdjustParentPositionRevativeGround();
-        _hipsBone.position = initHipsPosition;
-    }
+    //public void AdjustParentPositionToHipsBone()
+    //{
+    //    Vector3 initHipsPosition = _hipsBone.position;
+    //    _parent.position = initHipsPosition;
+    //    AdjustParentPositionRevativeGround();
+    //    _hipsBone.position = initHipsPosition;
+    //}
 
-    public void AdjustParentPositionRevativeGround()
-    {
-        if (Physics.Raycast(_parent.position, Vector3.down, out RaycastHit hit, 5, _layerMask)) //магическое число
-            _parent.position = new Vector3(_parent.position.x, hit.point.y, _parent.position.z);
-    }
+    //public void AdjustParentPositionRevativeGround()
+    //{
+    //    if (Physics.Raycast(_parent.position, Vector3.down, out RaycastHit hit, 5, _layerMask)) //магическое число
+    //        _parent.position = new Vector3(_parent.position.x, hit.point.y, _parent.position.z);
+    //}
 
     public void SetAttack()
     {
@@ -51,8 +51,8 @@ public class AnimControlTest : MonoBehaviour
 
     public void SetUp()
     {
-        AdjustParentPositionToHipsBone();
         State = States.gettingUp;
+        transform.rotation = Quaternion.identity;
     }
 
     public void EnabledAnimator()

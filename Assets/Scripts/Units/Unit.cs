@@ -30,6 +30,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     {
         _animControlTest.EnabledAnimator();
         _ragdollHandler.Disable();
+        _animControlTest.SetUp();
     }
 
     public void TakeDamage(int damage)
