@@ -11,7 +11,7 @@ public class Attack : Action
     {
         if (_target.Value.TryGetComponent(out Unit unit))
         {
-            _unit.Value.Attack(unit);
+            _unit.Value.Attack();
             return TaskStatus.Success;
         }
 

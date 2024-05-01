@@ -44,7 +44,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
         }
     }
 
-    public void Attack(Unit target)
+    public void Attack()
     {
         _animControlTest.SetAttack();
     }
