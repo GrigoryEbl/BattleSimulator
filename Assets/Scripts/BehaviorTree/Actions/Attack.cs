@@ -9,8 +9,13 @@ public class Attack : Action
 
     public override TaskStatus OnUpdate()
     {
+        if (_target.Value == null)
+            return TaskStatus.Failure;
+
+
         if (_target.Value.TryGetComponent(out Unit unit))
         {
+            transform.LookAt(unit.transform);
             _unit.Value.Attack();
             return TaskStatus.Success;
         }
