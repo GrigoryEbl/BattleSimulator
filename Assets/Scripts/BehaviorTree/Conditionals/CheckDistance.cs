@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CheckDistance : Conditional
 {
-    [SerializeField] private float _distance;
+    [SerializeField] private float _minDistance;
+    [SerializeField] private float _maxDistance;
     [SerializeField] private SharedTransform _target;
 
     public override TaskStatus OnUpdate()
@@ -12,6 +13,8 @@ public class CheckDistance : Conditional
         if (_target.Value == null)
             return TaskStatus.Failure;
 
-        return Vector3.Distance(_target.Value.position, transform.position) <= _distance ? TaskStatus.Success : TaskStatus.Failure;
+        float distance = Vector3.Distance(_target.Value.position, transform.position);
+
+        return distance <= Random.Range(_minDistance, _maxDistance) ? TaskStatus.Success : TaskStatus.Failure;
     }
 }

@@ -2,7 +2,6 @@ using BehaviorDesigner.Runtime;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(BehaviorTree))]
 [RequireComponent(typeof(Unit))]
 public class FellHandler : MonoBehaviour
 {
@@ -10,13 +9,11 @@ public class FellHandler : MonoBehaviour
     private readonly WaitForSeconds _standUpTime = new WaitForSeconds(2.7f);
     private readonly float _delay = 6f;
 
-    private BehaviorTree _behaviorTree;
     private float _delayCounter;
     private Unit _unit;
 
     private void Awake()
     {
-        _behaviorTree = GetComponent<BehaviorTree>();
         _unit = GetComponent<Unit>();
     }
 
@@ -31,18 +28,16 @@ public class FellHandler : MonoBehaviour
         if (_delayCounter > 0)
             return;
 
-        Debug.Log("Вызов!");
-
         StartCoroutine(Fell());
     }
 
     private IEnumerator Fell()
     {
         _delayCounter = _delay;
-        _unit.Die(); // Пока методы одинаковые
+        _unit.Fell();
         yield return _fellingTime;
         _unit.StandUp();
         yield return _standUpTime;
-        _behaviorTree.enabled = true;
+        _unit.TurnOnMove(true);
     }
 }

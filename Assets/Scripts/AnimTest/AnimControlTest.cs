@@ -52,7 +52,7 @@ public class AnimControlTest : MonoBehaviour
     public void SetUp()
     {
         State = States.gettingUp;
-        transform.rotation = Quaternion.identity;
+        //transform.rotation = Quaternion.identity;
     }
 
     public void EnabledAnimator()
