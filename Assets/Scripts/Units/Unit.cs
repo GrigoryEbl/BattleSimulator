@@ -6,28 +6,37 @@ public abstract class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
+    [SerializeField] private bool _isEnemy;
+    [SerializeField] private Collider _hitBox;
 
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
     private BehaviorTree _behaviorTree;
-    private BotInput _botInput;
-    
+    private Rigidbody _rigidbody;
+    private BotMover _botMover;
+
     public int Price => _price;
+    public bool IsEnemy => _isEnemy;
 
     private void Awake()
     {
         _animControlTest = GetComponent<AnimControlTest>();
         _ragdollHandler = GetComponent<RagdollHandler>();
         _behaviorTree = GetComponent<BehaviorTree>();
-        _botInput = GetComponent<BotInput>();
+        _rigidbody = GetComponent<Rigidbody>();
+        _botMover = GetComponent<BotMover>();
+    }
+
+    public void Fell()
+    {
+        TurnOnMove(false);
+        _animControlTest.DisabledAnimator();
+        _ragdollHandler.Enable();
     }
 
     public void Die()
     {
-        _behaviorTree.enabled = false;
-        _botInput.MovementInput = Vector3.zero;
-        _animControlTest.DisabledAnimator();
-        _ragdollHandler.Enable();
+        Fell();
     }
 
     public void StandUp()
@@ -37,8 +46,19 @@ public abstract class Unit : MonoBehaviour, IDamageable
         _animControlTest.SetUp();
     }
 
+    public void TurnOnMove(bool value)
+    {
+        _behaviorTree.enabled = value;
+        _rigidbody.isKinematic = !value;
+        _botMover.enabled = value;
+        _hitBox.enabled = value;
+    }
+
     public void TakeDamage(int damage)
     {
+        if (_health <= 0)
+            return;
+
         _health -= damage;
 
         if( _health <= 0 )
