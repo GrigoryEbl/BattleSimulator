@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ParabolaController))]
-public class Arrow : MonoBehaviour
+public class Arrow : Projectile
 {
     private ParabolaController _parabolaController;
     private Weapon _weapon;
@@ -22,7 +22,7 @@ public class Arrow : MonoBehaviour
         _parabolaController = GetComponent<ParabolaController>();
     }
 
-    public void Init(Transform parabola)
+    public override void Init(Transform parabola)
     {
         _parabolaController.ParabolaRoot = parabola.gameObject;
     }
