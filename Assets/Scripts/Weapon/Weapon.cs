@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -8,6 +9,8 @@ public class Weapon : MonoBehaviour
     
     private Unit _parent;
     private bool _isEnemy;
+
+    public event Action Hit;
 
     private void Awake()
     {
@@ -21,7 +24,10 @@ public class Weapon : MonoBehaviour
             return;
         
         if (other.TryGetComponent(out IDamageable damageable) && damageable.IsEnemy != _isEnemy)
+        {
             damageable.TakeDamage(_damage);
+            Hit?.Invoke();
+        }
 
         if(other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter)
         {

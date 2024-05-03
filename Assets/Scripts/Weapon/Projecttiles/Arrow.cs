@@ -4,14 +4,32 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     private ParabolaController _parabolaController;
+    private Weapon _weapon;
+
+    private void OnEnable()
+    {
+        _weapon.Hit += Disable;
+    }
+
+    private void OnDisable()
+    {
+        _weapon.Hit -= Disable;
+    }
 
     private void Awake()
     {
+        _weapon = GetComponent<Weapon>();
         _parabolaController = GetComponent<ParabolaController>();
     }
 
     public void Init(Transform parabola)
     {
         _parabolaController.ParabolaRoot = parabola.gameObject;
+    }
+
+    private void Disable()
+    {
+        _weapon.enabled = false;
+        _parabolaController.enabled = false;
     }
 }
