@@ -14,6 +14,6 @@ public class AttackCaller : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyUp(KeyCode.F))
-            _archer.Attack();
+            _archer.Shoot();
     }
 }
