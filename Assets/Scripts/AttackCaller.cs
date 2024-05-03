@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AttackCaller : MonoBehaviour
 {
-    private Archer _archer;
+    private Ñrossbowman _crossbowman;
 
     private void Awake()
     {
-        _archer = GetComponent<Archer>();
+        _crossbowman = GetComponent<Ñrossbowman>();
     }
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.F))
-            _archer.Attack();
+        if (Input.GetKeyUp(KeyCode.F))
+            _crossbowman.Attack();
     }
 }
