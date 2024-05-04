@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private bool _isScatter;
     [SerializeField] private float _force;
-    
+
     private Unit _parent;
     private bool _isEnemy;
 
@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
             Hit?.Invoke();
         }
 
-        if(other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter)
+        if(other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter && damageable.IsEnemy != _isEnemy)
         {
             Vector3 forceDirection = transform.forward;
             ragdollHandler.Hit(forceDirection * _force, transform.position);
