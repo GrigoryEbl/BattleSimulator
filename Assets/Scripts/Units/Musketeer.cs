@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Musketeer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Musket _musket;
+    [SerializeField] private Transform _startPoint;
+    [SerializeField] private Transform _target;
 
-    // Update is called once per frame
-    void Update()
+   public void Shoot()
     {
-        
+        _musket.RaycastShoot(_startPoint.position, _target.position);
     }
 }
