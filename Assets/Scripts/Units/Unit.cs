@@ -7,13 +7,11 @@ public abstract class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int _price;
     [SerializeField] private int _health;
     [SerializeField] private bool _isEnemy;
-    [SerializeField] private Collider _hitBox;
 
     private RagdollHandler _ragdollHandler;
     private AnimControlTest _animControlTest;
     private BehaviorTree _behaviorTree;
-    private Rigidbody _rigidbody;
-    private BotMover _botMover;
+    private float _startYposition;
 
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
@@ -23,35 +21,29 @@ public abstract class Unit : MonoBehaviour, IDamageable
         _animControlTest = GetComponent<AnimControlTest>();
         _ragdollHandler = GetComponent<RagdollHandler>();
         _behaviorTree = GetComponent<BehaviorTree>();
-        _rigidbody = GetComponent<Rigidbody>();
-        _botMover = GetComponent<BotMover>();
+        _startYposition = transform.position.y;
     }
 
     public void Fell()
-    {
-        TurnOnMove(false);
+    {        
+        _ragdollHandler.TurnOn(true);
         _animControlTest.DisabledAnimator();
-        _ragdollHandler.Enable();
     }
 
     public void Die()
     {
         Fell();
+        _behaviorTree.enabled = false;
     }
 
     public void StandUp()
     {
+        _ragdollHandler.TurnOn(false);
+        transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up);
+        transform.position = new Vector3(transform.position.x, _startYposition, transform.position.z);
+        _ragdollHandler.TurnOnMainRigidbody(false);
         _animControlTest.EnabledAnimator();
-        _ragdollHandler.Disable();
         _animControlTest.SetUp();
-    }
-
-    public void TurnOnMove(bool value)
-    {
-        _behaviorTree.enabled = value;
-        _rigidbody.isKinematic = !value;
-        _botMover.enabled = value;
-        _hitBox.enabled = value;
     }
 
     public void TakeDamage(int damage)
