@@ -7,8 +7,8 @@ public class Musketeer : Unit
     [SerializeField] private Musket _musket;
     [SerializeField] private Transform _target;
 
-   public void Shoot()
+    public void Shoot()
     {
-        _musket.RaycastShoot( _target.position);
+        _musket.RaycastShoot(_target);
     }
 }
