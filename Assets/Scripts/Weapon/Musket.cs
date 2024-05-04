@@ -8,12 +8,12 @@ public class Musket : MonoBehaviour
     [SerializeField] private float _maxDistance;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _radius = 0.01f;
+    [SerializeField] private Transform _startPoint;
 
-    public void RaycastShoot(Vector3 startPoint, Vector3 direction)
+    public void RaycastShoot( Vector3 direction)
     {
-        if (Physics.SphereCast(startPoint, _radius, direction, out RaycastHit hitInfo, _maxDistance, _layerMask, QueryTriggerInteraction.Ignore))
+        if (Physics.SphereCast(_startPoint.position, _radius, direction, out RaycastHit hitInfo, _maxDistance, _layerMask, QueryTriggerInteraction.Ignore))
         {
-
             var health = hitInfo.collider.GetComponent<IDamageable>();
 
             if (health != null)
