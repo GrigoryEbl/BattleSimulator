@@ -15,6 +15,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     private Rigidbody _rigidbody;
     private BotMover _botMover;
 
+    public int Health => _health;
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
 
