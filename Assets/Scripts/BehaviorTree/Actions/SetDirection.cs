@@ -12,7 +12,7 @@ public class SetDirection : Action
         if (_target.Value == null)
             return TaskStatus.Failure;
 
-        _direction.Value = (_target.Value.position - transform.position).normalized;
+        _direction.Value = Vector3.ProjectOnPlane((_target.Value.position - transform.position), Vector3.up).normalized;
 
         return TaskStatus.Success;
     }
