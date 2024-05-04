@@ -4,7 +4,7 @@ public class StonesMound : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent(out FellHandler unit))
-            unit.StartFell();
+        if (other.TryGetComponent(out MoundHandler unit))
+            unit.Fell();
     }
 }
