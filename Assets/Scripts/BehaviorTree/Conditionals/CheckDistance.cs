@@ -8,6 +8,13 @@ public class CheckDistance : Conditional
     [SerializeField] private float _maxDistance;
     [SerializeField] private SharedTransform _target;
 
+    private float _range;
+
+    public override void OnAwake()
+    {
+        _range = Random.Range(_minDistance, _maxDistance);
+    }
+
     public override TaskStatus OnUpdate()
     {
         if (_target.Value == null)
@@ -15,6 +22,6 @@ public class CheckDistance : Conditional
 
         float distance = Vector3.Distance(_target.Value.position, transform.position);
 
-        return distance <= Random.Range(_minDistance, _maxDistance) ? TaskStatus.Success : TaskStatus.Failure;
+        return distance <= _range ? TaskStatus.Success : TaskStatus.Failure;
     }
 }
