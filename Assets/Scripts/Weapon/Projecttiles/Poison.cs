@@ -1,25 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Stone : Projectile
+public class Poison : Projectile
 {
+    [SerializeField] private PoisonField _poisonFieldPrefab;
+
     private ParabolaController _parabolaController;
     private Rigidbody _rigidbody;
-    private Weapon _weapon;
     private SphereCollider _sphereCollider;
-
-    private void OnEnable()
-    {
-        _weapon.Hit += Disable;
-    }
-
-    private void OnDisable()
-    {
-        _weapon.Hit -= Disable;
-    }
 
     private void Awake()
     {
-        _weapon = GetComponent<Weapon>();
         _rigidbody = GetComponent<Rigidbody>();
         _parabolaController = GetComponent<ParabolaController>();
         _sphereCollider = GetComponent<SphereCollider>();
@@ -32,12 +25,17 @@ public class Stone : Projectile
         _parabolaController.ParabolaRoot = parabola.gameObject;
     }
 
-    private void Disable()
+    private void OnTriggerEnter(Collider other)
     {
-        _weapon.enabled = false;
+        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Unit unit))
+            Ñrash();
+    }
+
+    private void Ñrash()
+    {
         _rigidbody.isKinematic = false;
         _parabolaController.enabled = false;
         _sphereCollider.isTrigger = false;
+        Instantiate(_poisonFieldPrefab);
     }
-
 }
