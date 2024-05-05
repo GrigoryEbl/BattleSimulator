@@ -3492,6 +3492,7 @@ GameObject:
   - component: {fileID: 9120917506940030041}
   - component: {fileID: 3626616108158446310}
   - component: {fileID: 7036260917419107823}
+  - component: {fileID: 8008961809565975998}
   m_Layer: 0
   m_Name: ThrowerPoison
   m_TagString: Untagged
@@ -3566,7 +3567,6 @@ MonoBehaviour:
   _price: 30
   _health: 20
   _isEnemy: 0
-  _hitBox: {fileID: 9120917506940030041}
   _throwHand: {fileID: 1527386225745774855}
   _target: {fileID: 0}
   _parabolaRootPrefab: {fileID: 1044811897448319311}
@@ -3603,7 +3603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9aa2eed042356346b5b5aa9f887d52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hips: {fileID: 6462256835560972442}
+  _mainBone: {fileID: 2110981175939039448}
+  _mainRigidbody: {fileID: 8008961809565975998}
+  _hitBox: {fileID: 9120917506940030041}
+  _animControlTest: {fileID: 7556050120032730242}
 --- !u!65 &7036260917419107823
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3625,6 +3628,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21, y: 0.07, z: 0.4}
   m_Center: {x: 0, y: -0.04, z: 0}
+--- !u!54 &8008961809565975998
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9022427719609262340}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &9062273859016392699
 GameObject:
   m_ObjectHideFlags: 0

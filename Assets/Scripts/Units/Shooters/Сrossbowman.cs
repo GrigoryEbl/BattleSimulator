@@ -17,7 +17,7 @@ public class Сrossbowman : Unit
 
     public void Shoot()
     {
-        _crossbow.Shoot(SetDirection(_target));
+        _crossbow.Shoot(SetDirection(_target), _transform);
     }
 
     private void Update()

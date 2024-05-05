@@ -15,7 +15,7 @@ public class Archer : Unit
 
     public void Shoot()
     {
-        _bow.Shoot(SetDirection(_target));
+        _bow.Shoot(SetDirection(_target), _transform);
     }
 
     private void Update()

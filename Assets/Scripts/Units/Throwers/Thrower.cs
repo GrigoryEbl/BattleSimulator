@@ -15,7 +15,7 @@ public class Thrower : Unit
 
     public void Throw()
     {
-        _throwHand.Shoot(SetDirection(_target));
+        _throwHand.Shoot(SetDirection(_target), _transform);
     }
 
     private void Update()

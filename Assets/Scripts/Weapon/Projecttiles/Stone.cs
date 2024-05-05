@@ -27,7 +27,7 @@ public class Stone : Projectile
         _rigidbody.isKinematic = true;
     }
 
-    public override void Init(Transform parabola)
+    public override void Init(Transform parabola, Transform parent)
     {
         _parabolaController.ParabolaRoot = parabola.gameObject;
     }
