@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Grenade : Projectile
 {
+    [SerializeField] private int _damage;
     [SerializeField] private float _radius;
     [SerializeField] private float _delay;
     [SerializeField] private float _force;
@@ -38,6 +39,7 @@ public class Grenade : Projectile
             if (nearbyObject.TryGetComponent(out Rigidbody rigidbody) && nearbyObject.TryGetComponent(out Unit unit))
             {
                 unit.Fell();
+                unit.TakeDamage(_damage);
                 rigidbody.AddExplosionForce(_force, transform.position, _radius);
             }
         }
