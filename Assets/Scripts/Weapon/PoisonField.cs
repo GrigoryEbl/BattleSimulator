@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Timer))]
@@ -22,8 +19,9 @@ public class PoisonField : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Unit unit))// && unit.TryGetComponent(out PoisonEffect poisonEffect) == false)
+        if (other.TryGetComponent(out Unit unit) && unit.TryGetComponent(out PoisonEffect poisonEffect) == false)
         {
+            print("Add poison");
             unit.gameObject.AddComponent<PoisonEffect>();
         }
     }

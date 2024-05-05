@@ -11,17 +11,17 @@ public class PoisonEffect : MonoBehaviour
     private void Awake()
     {
         _unit = GetComponent<Unit>();
-        print(_unit.name + "Is poison");
+        _delay = _startDelay;
+        print(_unit.name + " Is poison");
     }
 
     private void Update()
     {
-        _delay = _startDelay;
         _delay -= Time.deltaTime;
         _lifeTime -= Time.deltaTime;
 
         if(_lifeTime <= 0)
-            this.enabled = false;
+            enabled = false;
 
         if(_delay <= 0)
         {

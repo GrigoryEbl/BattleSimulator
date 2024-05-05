@@ -10,6 +10,8 @@ public class Poison : Projectile
     private ParabolaController _parabolaController;
     private Rigidbody _rigidbody;
     private SphereCollider _sphereCollider;
+    private Transform _parent;
+    private bool _isHit;
 
     private void Awake()
     {
@@ -18,24 +20,41 @@ public class Poison : Projectile
         _sphereCollider = GetComponent<SphereCollider>();
 
         _rigidbody.isKinematic = true;
+        _isHit = false;
     }
 
-    public override void Init(Transform parabola)
+    public override void Init(Transform parabola, Transform parent)
     {
         _parabolaController.ParabolaRoot = parabola.gameObject;
+        _parent = parent;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Ground ground) || other.TryGetComponent(out Unit unit))
-            Ñrash();
+        if (other.transform == _parent)
+            return;
+
+        if (_isHit)
+            return;
+
+        if (other.TryGetComponent(out Unit unit) || other.TryGetComponent(out Ground ground))
+        {
+            _isHit = true;
+            Ñrash(other.ClosestPoint(transform.position));
+        }
     }
 
-    private void Ñrash()
+    private void Ñrash(Vector3 spawnPosition)
     {
-        _rigidbody.isKinematic = false;
+        Instantiate(_poisonFieldPrefab, spawnPosition, Quaternion.identity);
+        Disable();
+    }
+
+    private void Disable()
+    {
         _parabolaController.enabled = false;
         _sphereCollider.isTrigger = false;
-        Instantiate(_poisonFieldPrefab);
+        _rigidbody.isKinematic = false;
+        enabled = false;
     }
 }

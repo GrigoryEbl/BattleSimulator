@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Thrower : Unit
+public class ThrowerGrenade : Unit
 {
     [SerializeField] private ThrowHand _throwHand;
     [SerializeField] private Transform _target;

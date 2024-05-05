@@ -5,5 +5,5 @@ using UnityEngine;
 [RequireComponent(typeof(ParabolaController))]
 public abstract class Projectile : MonoBehaviour
 {
-    public abstract void Init(Transform path);
+    public abstract void Init(Transform path, Transform parent);
 }

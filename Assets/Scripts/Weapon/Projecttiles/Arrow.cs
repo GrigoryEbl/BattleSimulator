@@ -22,7 +22,7 @@ public class Arrow : Projectile
         _parabolaController = GetComponent<ParabolaController>();
     }
 
-    public override void Init(Transform parabola)
+    public override void Init(Transform parabola, Transform parent)
     {
         _parabolaController.ParabolaRoot = parabola.gameObject;
     }
