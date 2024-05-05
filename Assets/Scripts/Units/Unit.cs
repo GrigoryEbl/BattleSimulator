@@ -13,6 +13,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     private BehaviorTree _behaviorTree;
     private float _startYposition;
 
+    public int Health => _health;
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
 

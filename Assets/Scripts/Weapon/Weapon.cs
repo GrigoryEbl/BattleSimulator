@@ -22,11 +22,12 @@ public class Weapon : MonoBehaviour
     {
         if (_parent != null && other.transform == _parent)
             return;
-        
+
         if (other.TryGetComponent(out IDamageable damageable) && damageable.IsEnemy != _isEnemy)
         {
             damageable.TakeDamage(_damage);
             Hit?.Invoke();
+            print("Hit " + other.name + "Health:" + damageable.Health);
         }
 
         if(other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter && damageable.IsEnemy != _isEnemy)
