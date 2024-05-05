@@ -30,11 +30,10 @@ public class Weapon : MonoBehaviour
             print("Hit " + other.name + "Health:" + damageable.Health);
         }
 
-        if (other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter)
+        if (other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter && damageable.IsEnemy != _isEnemy)
         {
             Vector3 forceDirection = transform.forward;
             ragdollHandler.Hit(forceDirection * _force, transform.position);
         }
-
     }
 }
