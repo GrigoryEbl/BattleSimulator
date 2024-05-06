@@ -2,7 +2,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class CheckDistance : Conditional
+public class DistanceChecker : Conditional
 {
     [SerializeField] private float _minDistance;
     [SerializeField] private float _maxDistance;

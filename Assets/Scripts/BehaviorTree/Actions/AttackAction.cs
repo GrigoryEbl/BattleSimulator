@@ -2,9 +2,9 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class Attack : Action
+public class AttackAction : Action
 {
-    [SerializeField] private SharedUnit _unit;
+    [SerializeField] private SharedAnimatorController _animatorController;
     [SerializeField] private SharedTransform _target;
 
     public override TaskStatus OnUpdate()
@@ -16,7 +16,7 @@ public class Attack : Action
         if (_target.Value.TryGetComponent(out Unit unit))
         {
             transform.LookAt(unit.transform);
-            _unit.Value.Attack();
+            _animatorController.Value.Attack();
             return TaskStatus.Success;
         }
 

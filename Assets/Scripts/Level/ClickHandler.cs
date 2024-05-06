@@ -14,10 +14,8 @@ public class ClickHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpawnUnit();
-        }
+        if (Input.GetMouseButtonDown(0))        
+            SpawnUnit();        
     }
 
     private void SpawnUnit()
@@ -31,7 +29,5 @@ public class ClickHandler : MonoBehaviour
             else if (hitInfo.collider.TryGetComponent(out Unit unit))
                 _spawner.RemoveOneUnit(unit);
         }
-
-        print("None unit");
     }
 }

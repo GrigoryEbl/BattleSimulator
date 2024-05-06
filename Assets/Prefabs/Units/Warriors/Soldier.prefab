@@ -1863,6 +1863,7 @@ GameObject:
   - component: {fileID: 4669469289951746755}
   - component: {fileID: 5159830244669343373}
   - component: {fileID: 8195788168435492732}
+  - component: {fileID: 4798818072629151923}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -1936,6 +1937,8 @@ MonoBehaviour:
   _price: 10
   _health: 10
   _isEnemy: 1
+  _targetParent: {fileID: 0}
+  _startButton: {fileID: 0}
 --- !u!65 &8107863818594755640
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1969,7 +1972,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9aa2eed042356346b5b5aa9f887d52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hips: {fileID: 7983592814718304210}
+  _mainBone: {fileID: 0}
+  _mainRigidbody: {fileID: 0}
+  _hitBox: {fileID: 0}
 --- !u!54 &5159830244669343373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2018,6 +2023,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21, y: 0.07, z: 0.4}
   m_Center: {x: 0, y: -0.04, z: 0}
+--- !u!114 &4798818072629151923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087714542739182026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c5dffb33467c04d83758fa1d2e5c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5349995623146744873
 GameObject:
   m_ObjectHideFlags: 0

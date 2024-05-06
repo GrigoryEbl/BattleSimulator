@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BotInput : MonoBehaviour, IMovementSource
+public class BotMovementSource : MonoBehaviour, IMovementSource
 {
     [SerializeField] private float _speed = 3f;
 

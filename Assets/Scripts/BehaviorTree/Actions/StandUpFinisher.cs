@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class StandUpFinisher : Action
 {
-    [SerializeField] private SharedRagdollHandler _ragdollHandler;
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private Collider _hitBox;
 
     public override TaskStatus OnUpdate()
     {
-        _ragdollHandler.Value.TurnOnMainRigidbody(true);
+        _rigidbody.isKinematic = false;
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
+        _hitBox.enabled = true;
 
         return TaskStatus.Success;
     }

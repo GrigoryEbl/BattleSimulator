@@ -1,11 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Wallet _wallet;
+    private readonly Quaternion _unitAngle = Quaternion.Euler(0, 90, 0);
 
-    private int _maxSpawnCount = 10;
+    [SerializeField] private Wallet _wallet;
+    [SerializeField] private int _maxSpawnCount = 10;
+    [SerializeField] private Transform _targetParent;
+    [SerializeField] private Button _startButton;
+
     private Unit _unitPrefab;
     private Transform _transform;
 
@@ -24,25 +29,27 @@ public class Spawner : MonoBehaviour
             return;
 
         if (_transform.childCount < _maxSpawnCount && _unitPrefab.Price <= _wallet.Money)
-        {
-            Instantiate(_unitPrefab, position, Quaternion.identity, _transform);
-            UnitsCountChanged?.Invoke(_transform.childCount);
-            _wallet.RemoveMoney(_unitPrefab.Price);
-        }
+            SpawnUnit(position);
+    }
+
+    private void SpawnUnit(Vector3 position)
+    {
+        var unit = Instantiate(_unitPrefab, position, _unitAngle, _transform);
+        unit.Init(false, _targetParent, _startButton);
+
+        UnitsCountChanged?.Invoke(_transform.childCount);
+        _wallet.RemoveMoney(_unitPrefab.Price);
     }
 
     public void SelectUnit(Unit unit)
     {
         _unitPrefab = unit;
-        print("Unit selected");
     }
 
     public void Clean()
     {
-        for (int i = 0; i < _transform.childCount; i++)
-        {
-            RemoveOneUnit(_transform.GetChild(i).GetComponent<Unit>());
-        }
+        for (int i = 0; i < _transform.childCount; i++)        
+            RemoveOneUnit(_transform.GetChild(i).GetComponent<Unit>());        
 
         UnitsCountChanged?.Invoke(0);
     }
