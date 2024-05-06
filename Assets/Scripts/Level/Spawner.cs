@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
+    private readonly Quaternion _unitAngle = Quaternion.Euler(0, 90, 0);
+
     [SerializeField] private Wallet _wallet;
     [SerializeField] private int _maxSpawnCount = 10;
     [SerializeField] private Transform _targetParent;
@@ -26,13 +28,13 @@ public class Spawner : MonoBehaviour
         if (_unitPrefab == null)
             return;
 
-        if (_transform.childCount < _maxSpawnCount && _unitPrefab.Price <= _wallet.Money)        
-            SpawnUnit(position);        
+        if (_transform.childCount < _maxSpawnCount && _unitPrefab.Price <= _wallet.Money)
+            SpawnUnit(position);
     }
 
     private void SpawnUnit(Vector3 position)
     {
-        var unit = Instantiate(_unitPrefab, position, Quaternion.identity, _transform);
+        var unit = Instantiate(_unitPrefab, position, _unitAngle, _transform);
         unit.Init(false, _targetParent, _startButton);
 
         UnitsCountChanged?.Invoke(_transform.childCount);
