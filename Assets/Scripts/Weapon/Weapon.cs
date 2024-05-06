@@ -6,15 +6,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private bool _isScatter;
     [SerializeField] private float _force;
+    [SerializeField] private Unit _parent;
 
-    private Unit _parent;
     private bool _isEnemy;
 
     public event Action Hit;
 
-    private void Awake()
+    private void Start()
     {
-        _parent = GetComponentInParent<Unit>();
         _isEnemy = _parent.IsEnemy;
     }
 
