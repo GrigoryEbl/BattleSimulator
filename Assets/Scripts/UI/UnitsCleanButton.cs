@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class CleanerField : MonoBehaviour
+public class UnitsCleanButton : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;
 
