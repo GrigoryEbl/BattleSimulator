@@ -2,7 +2,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class SetDirection : Action
+public class DirectionSetter : Action
 {
     [SerializeField] private SharedTransform _target;
     [SerializeField] private SharedVector3 _direction;

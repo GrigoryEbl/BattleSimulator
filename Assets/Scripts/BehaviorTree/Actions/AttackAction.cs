@@ -2,7 +2,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class Attack : Action
+public class AttackAction : Action
 {
     [SerializeField] private SharedUnit _unit;
     [SerializeField] private SharedTransform _target;

@@ -2,7 +2,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class SetTarget : Action
+public class TargetSetter : Action
 {
     [SerializeField] private Transform _unitsParent;
     [SerializeField] private SharedTransform _target;

@@ -2,9 +2,9 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class SetMovementInput : Action
+public class MovementSourceSetter : Action
 {
-    [SerializeField] private SharedBotInput _selfBotInput;
+    [SerializeField] private SharedMovementSource _selfBotInput;
     [SerializeField] private SharedVector3 _direction;
     [SerializeField] private SharedUnit _unit;
 
