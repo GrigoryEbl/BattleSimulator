@@ -20,6 +20,10 @@ public class RagdollHandler : MonoBehaviour
     {
         _animatorController = GetComponent<AnimatorController>();
         _rigidbodies = new List<Rigidbody>(_mainBone.GetComponentsInChildren<Rigidbody>());
+    }
+
+    private void Start()
+    {
         TurnOn(false);
     }
 

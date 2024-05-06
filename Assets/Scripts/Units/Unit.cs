@@ -1,28 +1,42 @@
 using BehaviorDesigner.Runtime;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
+
+    [Header("Temporary")]
     [SerializeField] private bool _isEnemy;
+    [SerializeField] private Transform _targetParent;
+    [SerializeField] private Button _startButton;
 
     private RagdollHandler _ragdollHandler;
     private BehaviorTree _behaviorTree;
-    private float _startYposition;
+    private float _startYPosition;
 
     public int Health => _health;
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
+    public Transform TargetParent => _targetParent;
 
     private void Awake()
     {
         _ragdollHandler = GetComponent<RagdollHandler>();
         _behaviorTree = GetComponent<BehaviorTree>();
-        _startYposition = transform.position.y;
+        _startYPosition = transform.position.y;
     }
 
+    public void Init(bool isEnemy, Transform targetParent, Button startButton)
+    {
+        _isEnemy = isEnemy;
+        _targetParent = targetParent;
+        _startButton = startButton;
+        _startButton.onClick.AddListener(StartBattle);
+    }
+    
     [ContextMenu("Fell")]
     public void Fell()
     {        
@@ -33,12 +47,13 @@ public abstract class Unit : MonoBehaviour, IDamageable
     {
         Fell();
         _behaviorTree.enabled = false;
+        _startButton.onClick.RemoveListener(StartBattle);
     }
 
     public void ResetCurrentPosition()
     {
         transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up);
-        transform.position = new Vector3(transform.position.x, _startYposition, transform.position.z);
+        transform.position = new Vector3(transform.position.x, _startYPosition, transform.position.z);
     }
 
     public void TakeDamage(int damage)
@@ -53,5 +68,10 @@ public abstract class Unit : MonoBehaviour, IDamageable
             _health = 0;
             Die();
         }
+    }
+
+    private void StartBattle()
+    {
+        _behaviorTree.enabled = true;
     }
 }

@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class TargetSetter : Action
 {
-    [SerializeField] private Transform _unitsParent;
+    [SerializeField] private SharedUnit _unit;
     [SerializeField] private SharedTransform _target;
+
+    private Transform _targetParent;
+
+    public override void OnAwake()
+    {
+        _targetParent = _unit.Value.TargetParent;
+    }
 
     public override TaskStatus OnUpdate()
     {
@@ -19,14 +26,14 @@ public class TargetSetter : Action
         float distance;
         float minDistance = float.MaxValue;
 
-        for (int i = 0; i < _unitsParent.childCount; i++)
+        for (int i = 0; i < _targetParent.childCount; i++)
         {
-            distance = Vector3.Distance(_unitsParent.GetChild(i).position, transform.position);
+            distance = Vector3.Distance(_targetParent.GetChild(i).position, transform.position);
 
             if (distance < minDistance)
             {
                 minDistance = distance;
-                _target.Value = _unitsParent.GetChild(i);
+                _target.Value = _targetParent.GetChild(i);
             }
         }
     }
