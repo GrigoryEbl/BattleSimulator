@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AttackCaller : MonoBehaviour
 {
-    private Musketeer _musketeer;
+    private AnimControlTest _animator;
 
     private void Awake()
     {
-        _musketeer = GetComponent<Musketeer>();
+        _animator = GetComponent<AnimControlTest>();
     }
 
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.F))
-            _musketeer.Attack();
+            _animator.SetAttack();
     }
 }

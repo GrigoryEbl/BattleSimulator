@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class MovementSourceSetter : Action
 {
-    [SerializeField] private SharedMovementSource _selfBotInput;
+    [SerializeField] private SharedMovementSource _movementSource;
     [SerializeField] private SharedVector3 _direction;
-    [SerializeField] private SharedUnit _unit;
 
     public override TaskStatus OnUpdate()
     {
-        _selfBotInput.Value.MovementInput = _direction.Value;
-
-        if (_selfBotInput.Value.MovementInput == Vector3.zero)
-            _unit.Value.SetIdle();
-        else
-            _unit.Value.SetRun();
+        _movementSource.Value.MovementInput = _direction.Value;
 
         return TaskStatus.Success;
     }

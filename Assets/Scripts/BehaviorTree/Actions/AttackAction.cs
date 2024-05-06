@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackAction : Action
 {
-    [SerializeField] private SharedUnit _unit;
+    [SerializeField] private SharedAnimatorController _animatorController;
     [SerializeField] private SharedTransform _target;
 
     public override TaskStatus OnUpdate()
@@ -16,7 +16,7 @@ public class AttackAction : Action
         if (_target.Value.TryGetComponent(out Unit unit))
         {
             transform.LookAt(unit.transform);
-            _unit.Value.Attack();
+            _animatorController.Value.Attack();
             return TaskStatus.Success;
         }
 
