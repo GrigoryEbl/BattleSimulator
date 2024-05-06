@@ -15,6 +15,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
 
     private RagdollHandler _ragdollHandler;
     private BehaviorTree _behaviorTree;
+    private Transform _transform;
     private float _startYPosition;
 
     public int Health => _health;
@@ -26,7 +27,8 @@ public abstract class Unit : MonoBehaviour, IDamageable
     {
         _ragdollHandler = GetComponent<RagdollHandler>();
         _behaviorTree = GetComponent<BehaviorTree>();
-        _startYPosition = transform.position.y;
+        _transform = transform;
+        _startYPosition = _transform.position.y;
     }
 
     public void Init(bool isEnemy, Transform targetParent, Button startButton)
@@ -46,14 +48,15 @@ public abstract class Unit : MonoBehaviour, IDamageable
     public void Die()
     {
         Fell();
+        _transform.parent = null;
         _behaviorTree.enabled = false;
         _startButton.onClick.RemoveListener(StartBattle);
     }
 
     public void ResetCurrentPosition()
     {
-        transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), Vector3.up);
-        transform.position = new Vector3(transform.position.x, _startYPosition, transform.position.z);
+        _transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(_transform.forward, Vector3.up), Vector3.up);
+        _transform.position = new Vector3(_transform.position.x, _startYPosition, _transform.position.z);
     }
 
     public void TakeDamage(int damage)
