@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform _targetParent;
     [SerializeField] private Button _startButton;
 
-    [Header("Config")]
-    [SerializeField] private Unit _unitPrefab;
-    [SerializeField] private List<Vector3> _positions;
+    private IReadOnlyList<UnitConfig> _unitsConfig;
     private Transform _transform;
 
     private void Awake()
@@ -20,17 +17,20 @@ public class EnemySpawner : MonoBehaviour
         _transform = transform;
     }
 
-    private void Start()
+    public void Initialize(IReadOnlyList<UnitConfig> unitsConfig)
     {
-        Spawn();
+        _unitsConfig = unitsConfig;
     }
 
-    private void Spawn()
+    public void Spawn()
     {
-        foreach (var position in _positions)
+        foreach (var unitConfig in _unitsConfig)
         {
-            var unit = Instantiate(_unitPrefab, position, _unitAngle, _transform);
-            unit.Init(true, _targetParent, _startButton);
+            foreach (var position in unitConfig.Positions)
+            {
+                var unit = Instantiate(unitConfig.UnitPrefab, position, _unitAngle, _transform);
+                unit.Init(true, _targetParent, _startButton);
+            }
         }
     }
 }

@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    [SerializeField] private int _money = 1000;
-
+    private int _money;
     public event Action<int> MoneyChanged;
 
     public int Money => _money;
+
+    public void Initialize(int money)
+    {
+        _money = money;
+    }
 
     public void AddMoney(int value)
     {
