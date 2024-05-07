@@ -2,25 +2,30 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Spawner : MonoBehaviour
+public class PlayerSpawner : MonoBehaviour
 {
     private readonly Quaternion _unitAngle = Quaternion.Euler(0, 90, 0);
 
     [SerializeField] private Wallet _wallet;
-    [SerializeField] private int _maxSpawnCount = 10;
-    [SerializeField] private Transform _targetParent;
     [SerializeField] private Button _startButton;
+    [SerializeField] private Transform _targetParent;
 
     private Unit _unitPrefab;
     private Transform _transform;
+    private int _maxSpawnUnitCount;
 
     public event Action<int> UnitsCountChanged;
 
-    public int MaxSpawnCount => _maxSpawnCount;
+    public int MaxSpawnCount => _maxSpawnUnitCount;
 
     private void Awake()
     {
         _transform = transform;
+    }
+
+    public void Initialize(int maxSpawnUnitCount)
+    {
+        _maxSpawnUnitCount = maxSpawnUnitCount;   
     }
 
     public void Spawn(Vector3 position)
@@ -28,7 +33,7 @@ public class Spawner : MonoBehaviour
         if (_unitPrefab == null)
             return;
 
-        if (_transform.childCount < _maxSpawnCount && _unitPrefab.Price <= _wallet.Money)
+        if (_transform.childCount < _maxSpawnUnitCount && _unitPrefab.Price <= _wallet.Money)
             SpawnUnit(position);
     }
 
