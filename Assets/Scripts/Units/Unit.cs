@@ -1,5 +1,4 @@
 using BehaviorDesigner.Runtime;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,15 +7,13 @@ public abstract class Unit : MonoBehaviour, IDamageable
     [SerializeField] private int _price;
     [SerializeField] private int _health;
 
-    [Header("Temporary")]
-    [SerializeField] private bool _isEnemy;
-    [SerializeField] private Transform _targetParent;
-    [SerializeField] private Button _startButton;
-
     private RagdollHandler _ragdollHandler;
     private BehaviorTree _behaviorTree;
+    private Transform _targetParent;
     private Transform _transform;
+    private Button _startButton;
     private float _startYPosition;
+    private bool _isEnemy;
 
     public int Health => _health;
     public int Price => _price;

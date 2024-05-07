@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
         {
             damageable.TakeDamage(_damage);
             Hit?.Invoke();
-            print("Hit " + other.name + "Health:" + damageable.Health);
+            //print("Hit " + other.name + "Health:" + damageable.Health);
         }
 
         if(other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter && damageable.IsEnemy != _isEnemy)
