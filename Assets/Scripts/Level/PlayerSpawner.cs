@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class PlayerSpawner : MonoBehaviour
     private Unit _unitPrefab;
     private Transform _transform;
     private int _maxSpawnUnitCount;
+    private List<Unit> _units = new List<Unit>();
 
     public event Action<int> UnitsCountChanged;
 
@@ -25,7 +27,8 @@ public class PlayerSpawner : MonoBehaviour
 
     public void Initialize(int maxSpawnUnitCount)
     {
-        _maxSpawnUnitCount = maxSpawnUnitCount;   
+        _maxSpawnUnitCount = maxSpawnUnitCount;
+        UnitsCountChanged?.Invoke(_units.Count);
     }
 
     public void Spawn(Vector3 position)
@@ -33,17 +36,8 @@ public class PlayerSpawner : MonoBehaviour
         if (_unitPrefab == null)
             return;
 
-        if (_transform.childCount < _maxSpawnUnitCount && _unitPrefab.Price <= _wallet.Money)
+        if (_units.Count < _maxSpawnUnitCount && _unitPrefab.Price <= _wallet.Money)
             SpawnUnit(position);
-    }
-
-    private void SpawnUnit(Vector3 position)
-    {
-        var unit = Instantiate(_unitPrefab, position, _unitAngle, _transform);
-        unit.Init(false, _targetParent, _startButton);
-
-        UnitsCountChanged?.Invoke(_transform.childCount);
-        _wallet.RemoveMoney(_unitPrefab.Price);
     }
 
     public void SelectUnit(Unit unit)
@@ -53,16 +47,33 @@ public class PlayerSpawner : MonoBehaviour
 
     public void Clean()
     {
-        for (int i = 0; i < _transform.childCount; i++)        
-            RemoveOneUnit(_transform.GetChild(i).GetComponent<Unit>());        
+        foreach (var unit in _units)
+            DeleteOneUnit(unit);
 
-        UnitsCountChanged?.Invoke(0);
+        _units.Clear();
+        UnitsCountChanged?.Invoke(_units.Count);
     }
 
     public void RemoveOneUnit(Unit unit)
     {
+        _units.Remove(unit);        
+        DeleteOneUnit(unit);
+        UnitsCountChanged?.Invoke(_units.Count);
+    }
+
+    private void DeleteOneUnit(Unit unit)
+    {
         _wallet.AddMoney(unit.Price);
         Destroy(unit.gameObject);
-        UnitsCountChanged?.Invoke(_transform.childCount - 1);
+    }
+
+    private void SpawnUnit(Vector3 position)
+    {
+        var unit = Instantiate(_unitPrefab, position, _unitAngle, _transform);
+        unit.Init(false, _targetParent, _startButton);
+
+        _units.Add(unit);
+        _wallet.RemoveMoney(unit.Price);
+        UnitsCountChanged?.Invoke(_units.Count);
     }
 }
