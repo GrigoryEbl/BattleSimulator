@@ -1,62 +1,47 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Musket : MonoBehaviour
 {
+    private readonly int _penetrationCount = 3;
+
     [SerializeField] private int _damage;
     [SerializeField] private float _maxDistance;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Transform _startPoint;
 
-    private int _penetrationCount = 3;
+    private bool _isEnemy;
 
-    public void RaycastShoot(Transform target)
+    public void SetBattleSide(bool isEnemy)
     {
-        int currentPenetrations = _penetrationCount;
-
-        Vector3 direction = target.position - _startPoint.position;
-
-        RaycastHit[] hits = Physics.RaycastAll(_startPoint.position, direction, _maxDistance);
-        Debug.DrawLine(_startPoint.position, hits[^1].point, Color.yellow, 3);
-
-        hits = SortArray(hits);
-
-        for (int i = 0; i < hits.Length; i++)
-        {
-            if (currentPenetrations == 0)
-                return;
-
-            if (hits[i].collider.TryGetComponent(out IDamageable damageable))
-            {
-                damageable.TakeDamage(_damage);
-
-                print("Shoot in " + hits[i].collider.name + " Health: " + damageable.Health);
-
-                currentPenetrations--;
-            }
-        }
-
+        _isEnemy = isEnemy;
     }
 
-    private RaycastHit[] SortArray(RaycastHit[] hits)
+    public void RaycastShoot()
     {
-        RaycastHit temp;
+        RaycastHit[] hits = Physics.RaycastAll(_startPoint.position, _startPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
 
-        for (int i = 0; i < hits.Length; i++)
+        CalculateHits(hits);
+    }
+
+    private void CalculateHits(RaycastHit[] hits)
+    {
+        List<IDamageable> targets = new List<IDamageable>();
+
+        var sortedHits = hits.OrderBy(hit => hit.distance);
+
+        foreach (var hit in sortedHits)
         {
-            for (int j = i + 1; j < hits.Length; j++)
+            if (hit.collider.TryGetComponent(out IDamageable target) && !targets.Contains(target) && target.IsEnemy != _isEnemy)
             {
-                if (hits[i].distance > hits[j].distance)
-                {
-                    temp = hits[i];
-                    hits[i] = hits[j];
-                    hits[j] = temp;
-                }
+                targets.Add(target);
+                target.TakeDamage(_damage);
+                Debug.Log("попал!");
+
+                if (targets.Count == _penetrationCount)
+                    break;
             }
         }
-
-        return hits;
     }
 }

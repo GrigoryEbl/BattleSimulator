@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Musketeer : Unit
 {
     [SerializeField] private Musket _musket;
-    [SerializeField] private Transform _target;
 
-    public void Shoot()
+    private void Start()
     {
-        _musket.RaycastShoot(_target);
+        _musket.SetBattleSide(IsEnemy);
+    }
+
+    private void Shoot()
+    {
+        _musket.RaycastShoot();
     }
 }
