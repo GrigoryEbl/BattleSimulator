@@ -6,26 +6,19 @@ public class Archer : Unit
     [SerializeField] private Transform _target;
     [SerializeField] private Transform _parabolaRootPrefab;
 
-    private Transform _transform;
-
-    private void Awake()
-    {
-        _transform = transform;
-    }
-
     public void Shoot()
     {
-        _bow.Shoot(SetDirection(_target), _transform);
+        _bow.Shoot(SetDirection(_target), transform);
     }
 
     private void Update()
     {
-        _transform.LookAt(_target);
+        transform.LookAt(_target);
     }
 
     private Transform SetDirection(Transform target)
     {
-        float distance = Vector3.Distance(_transform.localPosition, target.position);
+        float distance = Vector3.Distance(transform.localPosition, target.position);
 
         _parabolaRootPrefab.GetChild(0).position = _parabolaRootPrefab.position;
         _parabolaRootPrefab.GetChild(1).localPosition = new Vector3(_parabolaRootPrefab.localPosition.x, distance / 3, distance / 2);// магические числа
