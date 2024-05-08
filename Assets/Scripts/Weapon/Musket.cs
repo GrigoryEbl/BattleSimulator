@@ -2,25 +2,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Musket : MonoBehaviour
+public class Musket : RangeWeapon
 {
     private readonly int _penetrationCount = 3;
 
     [SerializeField] private int _damage;
     [SerializeField] private float _maxDistance;
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private Transform _startPoint;
 
-    private bool _isEnemy;
-
-    public void SetBattleSide(bool isEnemy)
+    public override void Shoot()
     {
-        _isEnemy = isEnemy;
-    }
-
-    public void RaycastShoot()
-    {
-        RaycastHit[] hits = Physics.RaycastAll(_startPoint.position, _startPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
+        RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
 
         CalculateHits(hits);
     }
@@ -33,7 +25,7 @@ public class Musket : MonoBehaviour
 
         foreach (var hit in sortedHits)
         {
-            if (hit.collider.TryGetComponent(out IDamageable target) && !targets.Contains(target) && target.IsEnemy != _isEnemy)
+            if (hit.collider.TryGetComponent(out IDamageable target) && !targets.Contains(target) && target.IsEnemy != IsEnemy)
             {
                 targets.Add(target);
                 target.TakeDamage(_damage);
