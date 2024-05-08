@@ -78,6 +78,11 @@ public class Unit : MonoBehaviour, IDamageable
         _ragdollHandler.Hit(force, position);
     }
 
+    public void ExplosionHit(float force, Vector3 position, float radius)
+    {
+        _ragdollHandler.ExplosionHit(force, position, radius);
+    }
+
     protected void ResetWeapon()
     {
         _weapon = null;

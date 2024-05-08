@@ -9,14 +9,14 @@ public class RangeUnit : Unit
         _rangeWeapon = (RangeWeapon)UnitWeapon;
     }
 
-    private void Shoot()
-    {        
-        _rangeWeapon.Shoot();
-    }
-
     private void OnValidate()
     {
         if (UnitWeapon is RangeWeapon == false)
-            ResetWeapon();        
+            ResetWeapon();
+    }
+
+    private void Shoot()
+    {        
+        _rangeWeapon.Shoot();
     }
 }

@@ -6,5 +6,8 @@ public interface IDamageable
     public bool IsEnemy { get; }
 
     public void TakeDamage(int damage);
+
     public void Hit(Vector3 force, Vector3 position);
+
+    public void ExplosionHit(float force, Vector3 position, float radius);
 }

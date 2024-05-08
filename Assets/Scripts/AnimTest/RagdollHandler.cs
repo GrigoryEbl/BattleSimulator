@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(AnimatorController))]
 public class RagdollHandler : MonoBehaviour
@@ -29,10 +31,25 @@ public class RagdollHandler : MonoBehaviour
 
     public void Hit(Vector3 force, Vector3 position)
     {
+        if (_isEnable)        
+            return;        
+
         TurnOn(true);
         _joint = _mainBone.AddComponent<FixedJoint>();
         _joint.connectedBody = _mainRigidbody;
         _mainBone.AddForceAtPosition(force, _mainBone.ClosestPointOnBounds(position), ForceMode.Impulse);
+    }
+
+    public void ExplosionHit(float force, Vector3 position, float radius)
+    {
+        if (_isEnable)
+            return;
+
+        TurnOn(true);
+        _joint = _mainBone.AddComponent<FixedJoint>();
+        _joint.connectedBody = _mainRigidbody;
+        _mainBone.AddExplosionForce(force, position, radius);
+        Debug.Log("Взрыв!");
     }
 
     public void TurnOn(bool value)
