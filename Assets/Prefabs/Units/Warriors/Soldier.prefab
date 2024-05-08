@@ -1403,6 +1403,7 @@ GameObject:
   - component: {fileID: 356103384122014289}
   - component: {fileID: 5972413771944883300}
   - component: {fileID: 8636846148727813683}
+  - component: {fileID: 973367978496237353}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -1495,7 +1496,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1520629
+  m_Radius: 0.35
   m_Height: 1.8383799
   m_Direction: 1
   m_Center: {x: 0.0019659996, y: 0.88645005, z: -0.0016188622}
@@ -1556,14 +1557,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5087714542739182026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dc4e5bb2bf8ac46b76da831837284d, type: 3}
+  m_Script: {fileID: 11500000, guid: 27baf2f56dba3824ab75b9805c0157cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 10
   _health: 10
-  _isEnemy: 0
-  _targetParent: {fileID: 0}
-  _startButton: {fileID: 0}
+  _weapon: {fileID: 1804603442083103327}
 --- !u!114 &6465910597470878292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,7 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fbef7918f3b1945b05bd02c43d0df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 1
 --- !u!114 &356103384122014289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1667,6 +1666,21 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &973367978496237353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087714542739182026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27baf2f56dba3824ab75b9805c0157cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _price: 0
+  _health: 0
+  _weapon: {fileID: 0}
 --- !u!1 &5125811271864491256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3591,9 +3605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 2
-  _isScatter: 0
-  _force: 0
-  _parent: {fileID: 7063302313883417101}
 --- !u!1 &9007275355138985942
 GameObject:
   m_ObjectHideFlags: 0

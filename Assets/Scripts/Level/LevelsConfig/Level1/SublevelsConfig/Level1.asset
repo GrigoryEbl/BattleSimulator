@@ -17,4 +17,3 @@ MonoBehaviour:
   _maxSpawnUnitCount: 10
   _unitsConfig:
   - {fileID: 11400000, guid: b299a6484a3be83468da164862a647c9, type: 2}
-  - {fileID: 11400000, guid: e8949ad5521e8594bae432d977b109af, type: 2}

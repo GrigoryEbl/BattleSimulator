@@ -9,6 +9,9 @@ public class TargetSetter : Action
 
     private Transform _targetParent;
 
+    protected Unit Soldier => _unit.Value;
+    protected Transform Target => _target.Value;
+
     public override void OnAwake()
     {
         _targetParent = _unit.Value.TargetParent;
@@ -21,7 +24,7 @@ public class TargetSetter : Action
         return _target.Value == null ? TaskStatus.Failure : TaskStatus.Success;
     }
 
-    private void FindTarget()
+    protected virtual void FindTarget()
     {
         float distance;
         float minDistance = float.MaxValue;

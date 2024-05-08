@@ -1,38 +1,13 @@
-using System;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private int _damage;
-    [SerializeField] private bool _isScatter;
-    [SerializeField] private float _force;
-    [SerializeField] private Unit _parent;
-
     private bool _isEnemy;
 
-    public event Action Hit;
+    protected bool IsEnemy => _isEnemy;
 
-    private void Start()
+    public void SetBattleSide(bool isEnemy)
     {
-        _isEnemy = _parent.IsEnemy;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (_parent != null && other.transform == _parent)
-            return;
-
-        if (other.TryGetComponent(out IDamageable damageable) && damageable.IsEnemy != _isEnemy)
-        {
-            damageable.TakeDamage(_damage);
-            Hit?.Invoke();
-            //print("Hit " + other.name + "Health:" + damageable.Health);
-        }
-
-        if(other.TryGetComponent(out RagdollHandler ragdollHandler) && _isScatter && damageable.IsEnemy != _isEnemy)
-        {
-            Vector3 forceDirection = transform.forward;
-            ragdollHandler.Hit(forceDirection * _force, transform.position);
-        }
+        _isEnemy = isEnemy;
     }
 }
