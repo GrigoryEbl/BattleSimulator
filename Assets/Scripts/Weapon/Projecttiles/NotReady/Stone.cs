@@ -4,22 +4,22 @@ public class Stone : Projectile
 {
     private ParabolaController _parabolaController;
     private Rigidbody _rigidbody;
-    private Weapon _weapon;
+    private MeleeWeapon _weapon;
     private SphereCollider _sphereCollider;
 
-    private void OnEnable()
-    {
-        _weapon.Hit += Disable;
-    }
+    //private void OnEnable()
+    //{
+    //    _weapon.Hit += Disable;
+    //}
 
-    private void OnDisable()
-    {
-        _weapon.Hit -= Disable;
-    }
+    //private void OnDisable()
+    //{
+    //    _weapon.Hit -= Disable;
+    //}
 
     private void Awake()
     {
-        _weapon = GetComponent<Weapon>();
+        _weapon = GetComponent<MeleeWeapon>();
         _rigidbody = GetComponent<Rigidbody>();
         _parabolaController = GetComponent<ParabolaController>();
         _sphereCollider = GetComponent<SphereCollider>();
