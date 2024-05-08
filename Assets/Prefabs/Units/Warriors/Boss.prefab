@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 775022307139719026}
   - component: {fileID: 7692784564150474233}
   - component: {fileID: 1079085657080814210}
-  - component: {fileID: 6965282419912279364}
+  - component: {fileID: 392237594945845676}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -369,7 +369,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.0384433, y: 1, z: 0.9999999}
   m_Center: {x: 1.0192229, y: 0.0000012182178, z: -0.0000004807735}
---- !u!114 &6965282419912279364
+--- !u!114 &392237594945845676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -378,13 +378,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 467370679959106608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbafee4b1567c9d4da32fcc65aa17212, type: 3}
+  m_Script: {fileID: 11500000, guid: 7448424eef66c734b8ee38aaf05e25a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2
-  _isScatter: 1
+  _damage: 5
   _force: 750
-  _parent: {fileID: 5709830615828539230}
 --- !u!1 &508306289573270289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,7 +1698,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1520629
+  m_Radius: 0.35
   m_Height: 1.8383799
   m_Direction: 1
   m_Center: {x: 0.0019659996, y: 0.88645005, z: -0.0016188622}
@@ -1761,14 +1759,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3226561737136655306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3ad372b3115e2a408c943c0fe84b665, type: 3}
+  m_Script: {fileID: 11500000, guid: 27baf2f56dba3824ab75b9805c0157cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 20
-  _health: 20
-  _isEnemy: 0
-  _targetParent: {fileID: 0}
-  _startButton: {fileID: 0}
+  _price: 10
+  _health: 10
+  _weapon: {fileID: 392237594945845676}
 --- !u!114 &7338731301651556306
 MonoBehaviour:
   m_ObjectHideFlags: 0
