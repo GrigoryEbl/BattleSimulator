@@ -1,19 +1,19 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(MeleeWeapon))]
-public class NewProjectile : MonoBehaviour
+[RequireComponent(typeof(Weapon))]
+public class Projectile : MonoBehaviour
 {
     private readonly float _pushDelay = 10f;
 
     private ProjectilesPool _pool;
     private Rigidbody _rigidbody;
-    private MeleeWeapon _weapon;
+    private Weapon _weapon;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _weapon = GetComponent<MeleeWeapon>();
+        _weapon = GetComponent<Weapon>();
     }    
 
     public void Initialize(ProjectilesPool pool)
@@ -21,11 +21,11 @@ public class NewProjectile : MonoBehaviour
         _pool = pool;
     }
 
-    public void Hurl(Transform startPosition, float force, bool isEnemy)
+    public void Hurl(Transform startPoint, Vector3 velocity, bool isEnemy)
     {
-        transform.position = startPosition.position;
-        transform.rotation = startPosition.rotation;
-        _rigidbody.velocity = startPosition.forward * force;
+        transform.position = startPoint.position;
+        transform.rotation = startPoint.rotation;
+        _rigidbody.velocity = velocity;
         _weapon.SetBattleSide(isEnemy);
         Invoke(nameof(Push), _pushDelay);
     }

@@ -12,12 +12,11 @@ GameObject:
   - component: {fileID: 2708659895392010910}
   - component: {fileID: 5038617682049781634}
   - component: {fileID: 1486435153179194397}
-  - component: {fileID: 3709518189095366356}
-  - component: {fileID: -9054304612182183278}
-  - component: {fileID: -3959659690346048263}
-  - component: {fileID: -352547743820571342}
+  - component: {fileID: 7274436273356123079}
+  - component: {fileID: 2241255520363676901}
+  - component: {fileID: 2145990627147272951}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5b9084b34469ead42af50dcab389c3d3, type: 2}
+  - {fileID: 2100000, guid: 8449458fbad17d74798855139244f3fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,29 +102,13 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3709518189095366356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916570737631303967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1094f6b7f846645bf2b7085a2da89e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 10
-  ParabolaRoot: {fileID: 0}
-  Autostart: 1
-  Animation: 1
---- !u!54 &-9054304612182183278
+  m_Radius: 0.50000054
+  m_Center: {x: -0.0000019073486, y: 0.00000017881393, z: 0.00000047683716}
+--- !u!54 &7274436273356123079
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +135,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3959659690346048263
+--- !u!114 &2241255520363676901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,14 +144,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8916570737631303967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad757b0d87484194fb2963179c3151c2, type: 3}
+  m_Script: {fileID: 11500000, guid: cbafee4b1567c9d4da32fcc65aa17212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 3.5
-  _delay: 3
-  _force: 700
-  _explosionEffect: {fileID: 7950152829695744361, guid: 512caeee8c63cd840a38ad72c5cc44db, type: 3}
---- !u!114 &-352547743820571342
+  _damage: 2
+--- !u!114 &2145990627147272951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,6 +157,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8916570737631303967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e191fb9986cee5549b629d780b57bc55, type: 3}
+  m_Script: {fileID: 11500000, guid: cf71cc6e36a793740be1de273b56b000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

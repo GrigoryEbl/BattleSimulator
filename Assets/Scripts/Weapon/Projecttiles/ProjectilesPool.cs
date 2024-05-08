@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class ProjectilesPool : MonoBehaviour
 {
-    [SerializeField] private NewProjectile _projectilePrefab;
+    [SerializeField] private Projectile _projectilePrefab;
 
-    private Queue<NewProjectile> _spawnQueue = new Queue<NewProjectile>();
+    private Queue<Projectile> _spawnQueue = new Queue<Projectile>();
 
-    public void Push(NewProjectile projectile)
+    public void Push(Projectile projectile)
     {
         projectile.gameObject.SetActive(false);
         _spawnQueue.Enqueue(projectile);
     }
 
-    public NewProjectile Pull()
+    public Projectile Pull()
     {
         if (_spawnQueue.Count == 0)
             return CreateProjectile();
@@ -21,7 +21,7 @@ public class ProjectilesPool : MonoBehaviour
         return _spawnQueue.Dequeue();
     }
 
-    private NewProjectile CreateProjectile()
+    private Projectile CreateProjectile()
     {
         var projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
         projectile.Initialize(this);
