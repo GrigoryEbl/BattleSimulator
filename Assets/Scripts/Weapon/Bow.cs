@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(ProjectilesPool))]
 public class Bow : RangeWeapon
 {
-    [SerializeField] private NewProjectile _arrow;
     [SerializeField] private float _force;
 
     private ProjectilesPool _pool;
@@ -18,6 +17,6 @@ public class Bow : RangeWeapon
         Debug.Log(_pool);
         var arrow = _pool.Pull();
         arrow.gameObject.SetActive(true);
-        arrow.Hurl(StartPoint, _force, IsEnemy);
+        arrow.Hurl(StartPoint, StartPoint.forward * _force, IsEnemy);
     }
 }
