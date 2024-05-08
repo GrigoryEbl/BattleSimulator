@@ -27,12 +27,12 @@ public class RagdollHandler : MonoBehaviour
         TurnOn(false);
     }
 
-    public void Hit(Vector3 force, Vector3 hitPosition)
+    public void Hit(Vector3 force, Vector3 position)
     {
         TurnOn(true);
         _joint = _mainBone.AddComponent<FixedJoint>();
         _joint.connectedBody = _mainRigidbody;
-        _mainBone.AddForceAtPosition(force, _mainBone.ClosestPointOnBounds(hitPosition), ForceMode.Impulse);
+        _mainBone.AddForceAtPosition(force, _mainBone.ClosestPointOnBounds(position), ForceMode.Impulse);
     }
 
     public void TurnOn(bool value)

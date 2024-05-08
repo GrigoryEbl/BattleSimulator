@@ -2,10 +2,11 @@ using BehaviorDesigner.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Unit : MonoBehaviour, IDamageable
+public class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
+    [SerializeField] private Weapon _weapon;
 
     private RagdollHandler _ragdollHandler;
     private BehaviorTree _behaviorTree;
@@ -19,6 +20,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
     public Transform TargetParent => _targetParent;
+    protected Weapon UnitWeapon => _weapon;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public abstract class Unit : MonoBehaviour, IDamageable
     public void Init(bool isEnemy, Transform targetParent, Button startButton)
     {
         _isEnemy = isEnemy;
+        _weapon.SetBattleSide(isEnemy);
         _targetParent = targetParent;
         _startButton = startButton;
         _startButton.onClick.AddListener(StartBattle);
@@ -68,6 +71,16 @@ public abstract class Unit : MonoBehaviour, IDamageable
             _health = 0;
             Die();
         }
+    }
+
+    public void Hit(Vector3 force, Vector3 position)
+    {
+        _ragdollHandler.Hit(force, position);
+    }
+
+    protected void ResetWeapon()
+    {
+        _weapon = null;
     }
 
     private void StartBattle()
