@@ -7,7 +7,6 @@ public class Musket : MonoBehaviour
 {
     [SerializeField] private int _damage;
     [SerializeField] private float _maxDistance;
-    [SerializeField] private LayerMask _layerMask;
     [SerializeField] private Transform _startPoint;
 
     private int _penetrationCount = 3;
