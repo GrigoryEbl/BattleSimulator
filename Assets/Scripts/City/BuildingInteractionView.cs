@@ -12,11 +12,13 @@ public class BuildingInteractionView : MonoBehaviour
     private void OnEnable()
     {
         _player.BuildingReached += Activate;
+        _player.BuildingEscaped += Disable;
     }
 
     private void OnDisable()
     {
         _player.BuildingReached -= Activate;
+        _player.BuildingEscaped -= Disable;
     }
 
     private void Activate(BuildingInteraction buildingInteraction)
@@ -24,5 +26,11 @@ public class BuildingInteractionView : MonoBehaviour
         _panel.SetActive(true);
         _textPrice.text = buildingInteraction.Price.ToString();
         _buttonPay.onClick.AddListener(buildingInteraction.Unlock);
+    }
+
+    private void Disable()
+    {
+        _panel.SetActive(false);
+        _buttonPay.onClick.RemoveAllListeners();
     }
 }
