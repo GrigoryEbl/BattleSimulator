@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _money;
+    public event Action<BuildingInteraction> BuildingReached;
 
-    public 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out BuildingInteraction buildingInteraction))
+        {
+            BuildingReached?.Invoke(buildingInteraction);
+        }
+    }
 }

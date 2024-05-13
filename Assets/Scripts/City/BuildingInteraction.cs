@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class BuildingUnlocker : MonoBehaviour
+public class BuildingInteraction : MonoBehaviour
 {
     [SerializeField] private Transform _building;
     [SerializeField] private Transform _lockedBuilding;
+    [SerializeField] private int _price;
+
+    public int Price => _price;
 
     public void Unlock()
     {
