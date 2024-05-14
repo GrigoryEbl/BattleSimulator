@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class ClickHandler : MonoBehaviour
 {
-    [SerializeField] private PlayerSpawner _playerSpawner;
+    [SerializeField] private Spawner _spawner;
 
     private Camera _camera;
 
@@ -25,9 +25,9 @@ public class ClickHandler : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
             if (hitInfo.collider.TryGetComponent(out Ground ground))
-                _playerSpawner.Spawn(hitInfo.point);
+                _spawner.Spawn(hitInfo.point);
             else if (hitInfo.collider.TryGetComponent(out Unit unit))
-                _playerSpawner.RemoveOneUnit(unit);
+                _spawner.RemoveOneUnit(unit);
         }
     }
 }

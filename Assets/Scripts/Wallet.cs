@@ -3,27 +3,21 @@ using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    private int _money;
+    [SerializeField] private int _money = 1000;
 
     public event Action<int> MoneyChanged;
 
     public int Money => _money;
 
-    public void Initialize(int money)
-    {
-        _money = money;
-        MoneyChanged?.Invoke(_money);
-    }
-
     public void AddMoney(int value)
     {
         _money += value;
-        MoneyChanged?.Invoke(_money);
+        MoneyChanged?.Invoke(Money);
     }
 
     public void RemoveMoney(int price)
     {
         _money -= price;
-        MoneyChanged?.Invoke(_money);
+        MoneyChanged?.Invoke(Money);
     }
 }

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +10,7 @@ public class WalletView : MonoBehaviour
 
     private void OnEnable()
     {
+        ShowMoney(_wallet.Money);
         _wallet.MoneyChanged += ShowMoney;
     }
 

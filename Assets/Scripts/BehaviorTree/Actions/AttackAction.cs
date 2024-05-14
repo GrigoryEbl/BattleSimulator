@@ -13,9 +13,9 @@ public class AttackAction : Action
             return TaskStatus.Failure;
 
 
-        if (_target.Value.TryGetComponent(out Unit unit) && unit.Health > 0)
+        if (_target.Value.TryGetComponent(out Unit unit))
         {
-            transform.LookAt(_target.Value);
+            transform.LookAt(unit.transform);
             _animatorController.Value.Attack();
             return TaskStatus.Success;
         }

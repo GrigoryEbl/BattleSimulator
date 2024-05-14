@@ -1,43 +1,61 @@
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Musket : RangeWeapon
+public class Musket : MonoBehaviour
 {
-    private readonly int _penetrationCount = 3;
-
     [SerializeField] private int _damage;
     [SerializeField] private float _maxDistance;
-<<<<<<< HEAD
     [SerializeField] private Transform _startPoint;
-=======
-    [SerializeField] private LayerMask _layerMask;
->>>>>>> 20eb9933200fa2ab1c070e939ebdab17667251d0
 
-    public override void Shoot()
+    private int _penetrationCount = 3;
+
+    public void RaycastShoot(Transform target)
     {
-        RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
+        int currentPenetrations = _penetrationCount;
 
-        CalculateHits(hits);
-    }
+        Vector3 direction = target.position - _startPoint.position;
 
-    private void CalculateHits(RaycastHit[] hits)
-    {
-        List<IDamageable> targets = new List<IDamageable>();
+        RaycastHit[] hits = Physics.RaycastAll(_startPoint.position, direction, _maxDistance);
+        Debug.DrawLine(_startPoint.position, hits[^1].point, Color.yellow, 3);
 
-        var sortedHits = hits.OrderBy(hit => hit.distance);
+        hits = SortArray(hits);
 
-        foreach (var hit in sortedHits)
+        for (int i = 0; i < hits.Length; i++)
         {
-            if (hit.collider.TryGetComponent(out IDamageable target) && !targets.Contains(target) && target.IsEnemy != IsEnemy)
-            {
-                targets.Add(target);
-                target.TakeDamage(_damage);
-                Debug.Log("попал!");
+            if (currentPenetrations == 0)
+                return;
 
-                if (targets.Count == _penetrationCount)
-                    break;
+            if (hits[i].collider.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(_damage);
+
+                print("Shoot in " + hits[i].collider.name + " Health: " + damageable.Health);
+
+                currentPenetrations--;
             }
         }
+
+    }
+
+    private RaycastHit[] SortArray(RaycastHit[] hits)
+    {
+        RaycastHit temp;
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            for (int j = i + 1; j < hits.Length; j++)
+            {
+                if (hits[i].distance > hits[j].distance)
+                {
+                    temp = hits[i];
+                    hits[i] = hits[j];
+                    hits[j] = temp;
+                }
+            }
+        }
+
+        return hits;
     }
 }

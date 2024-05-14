@@ -1,26 +1,27 @@
 using BehaviorDesigner.Runtime;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Unit : MonoBehaviour, IDamageable
+public abstract class Unit : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _price;
     [SerializeField] private int _health;
-    [SerializeField] private Weapon _weapon;
+
+    [Header("Temporary")]
+    [SerializeField] private bool _isEnemy;
+    [SerializeField] private Transform _targetParent;
+    [SerializeField] private Button _startButton;
 
     private RagdollHandler _ragdollHandler;
     private BehaviorTree _behaviorTree;
-    private Transform _targetParent;
     private Transform _transform;
-    private Button _startButton;
     private float _startYPosition;
-    private bool _isEnemy;
 
     public int Health => _health;
     public int Price => _price;
     public bool IsEnemy => _isEnemy;
     public Transform TargetParent => _targetParent;
-    protected Weapon UnitWeapon => _weapon;
 
     private void Awake()
     {
@@ -33,7 +34,6 @@ public class Unit : MonoBehaviour, IDamageable
     public void Init(bool isEnemy, Transform targetParent, Button startButton)
     {
         _isEnemy = isEnemy;
-        _weapon.SetBattleSide(isEnemy);
         _targetParent = targetParent;
         _startButton = startButton;
         _startButton.onClick.AddListener(StartBattle);
@@ -71,21 +71,6 @@ public class Unit : MonoBehaviour, IDamageable
             _health = 0;
             Die();
         }
-    }
-
-    public void Hit(Vector3 force, Vector3 position)
-    {
-        _ragdollHandler.Hit(force, position);
-    }
-
-    public void ExplosionHit(float force, Vector3 position, float radius)
-    {
-        _ragdollHandler.ExplosionHit(force, position, radius);
-    }
-
-    protected void ResetWeapon()
-    {
-        _weapon = null;
     }
 
     private void StartBattle()
