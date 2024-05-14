@@ -8,11 +8,7 @@ public class Musket : RangeWeapon
 
     [SerializeField] private int _damage;
     [SerializeField] private float _maxDistance;
-<<<<<<< HEAD
-    [SerializeField] private Transform _startPoint;
-=======
     [SerializeField] private LayerMask _layerMask;
->>>>>>> 20eb9933200fa2ab1c070e939ebdab17667251d0
 
     public override void Shoot()
     {
