@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UnitSelectButton : MonoBehaviour
 {
     [SerializeField] private Unit _unitPrefab;
-    [SerializeField] private Spawner _spawner;
+    [SerializeField] private PlayerSpawner _playerSpawner;
 
     private Button _button;    
 
@@ -26,6 +26,6 @@ public class UnitSelectButton : MonoBehaviour
 
     private void SetUnit()
     {
-        _spawner.SelectUnit(_unitPrefab);
+        _playerSpawner.SelectUnit(_unitPrefab);
     }
 }
