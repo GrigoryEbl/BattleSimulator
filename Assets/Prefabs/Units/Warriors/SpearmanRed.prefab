@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 1420507706153041417}
   - component: {fileID: 128517715418955171}
   - component: {fileID: 4626804528495135885}
-  - component: {fileID: 3144531267172542324}
+  - component: {fileID: 2904905881633896156}
   m_Layer: 0
   m_Name: SpearmanRed
   m_TagString: Untagged
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3144531267172542324
+--- !u!114 &2904905881633896156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -742,21 +742,21 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 2308055616590634072}
-        - {fileID: 0}
+        - {fileID: 1420507706153041417}
         - {fileID: 9178034038031339716}
         - {fileID: 2308055616590634072}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 6137526015246468024}
+        - {fileID: 6126825104120606500}
+        - {fileID: 6126825104120606500}
+        - {fileID: 2889566109699047736}
+        - {fileID: 1420507706153041417}
+        - {fileID: 6137526015246468024}
         - {fileID: 9178034038031339716}
-        - {fileID: 0}
+        - {fileID: 1420507706153041417}
         - {fileID: 9178034038031339716}
         - {fileID: 2308055616590634072}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1420507706153041417}
+        - {fileID: 6137526015246468024}
         byteData: 
         byteDataArray: 
       Version: 1.7.4

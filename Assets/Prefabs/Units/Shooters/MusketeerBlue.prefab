@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 4748094916672407007}
   - component: {fileID: 4057341305763301534}
   - component: {fileID: 6625434570505737535}
-  - component: {fileID: 5010065111619202554}
+  - component: {fileID: 3671255501792109223}
   m_Layer: 0
   m_Name: MusketeerBlue
   m_TagString: Untagged
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5010065111619202554
+--- !u!114 &3671255501792109223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1087,26 +1087,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 6487682955907228595}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 4748094916672407007}
+        - {fileID: 4576359847397381939}
         - {fileID: 6487682955907228595}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 8338354873887475198}
+        - {fileID: 3160302995159958040}
+        - {fileID: 3160302995159958040}
+        - {fileID: 1802873364261223986}
+        - {fileID: 4748094916672407007}
+        - {fileID: 8338354873887475198}
+        - {fileID: 4576359847397381939}
+        - {fileID: 4748094916672407007}
+        - {fileID: 4576359847397381939}
         - {fileID: 6487682955907228595}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 4748094916672407007}
+        - {fileID: 8338354873887475198}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &4709818667454793741
 GameObject:
   m_ObjectHideFlags: 0

@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 8489595833581098309}
   - component: {fileID: 7491726829762719326}
   - component: {fileID: 2826674048187048525}
-  - component: {fileID: 5944848244235609131}
+  - component: {fileID: -4660633211661251682}
   m_Layer: 0
   m_Name: BossRed
   m_TagString: Untagged
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5944848244235609131
+--- !u!114 &-4660633211661251682
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -811,26 +811,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 2112314319680248339}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 8489595833581098309}
+        - {fileID: 2258122245711511715}
         - {fileID: 2112314319680248339}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 4994373653098862067}
+        - {fileID: 6982416128163610761}
+        - {fileID: 6982416128163610761}
+        - {fileID: 7117698409942931570}
+        - {fileID: 8489595833581098309}
+        - {fileID: 4994373653098862067}
+        - {fileID: 2258122245711511715}
+        - {fileID: 8489595833581098309}
+        - {fileID: 2258122245711511715}
         - {fileID: 2112314319680248339}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 8489595833581098309}
+        - {fileID: 4994373653098862067}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &3983369524650753360
 GameObject:
   m_ObjectHideFlags: 0

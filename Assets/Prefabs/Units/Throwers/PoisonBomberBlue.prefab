@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 8802847091576118578}
   - component: {fileID: 8103328580772956512}
   - component: {fileID: 492157225571836806}
-  - component: {fileID: 5550810865252304090}
+  - component: {fileID: 7301473604352286106}
   m_Layer: 0
   m_Name: PoisonBomberBlue
   m_TagString: Untagged
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5550810865252304090
+--- !u!114 &7301473604352286106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1527,26 +1527,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 1074400109766526890}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 8802847091576118578}
+        - {fileID: 199421727779846343}
         - {fileID: 1074400109766526890}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 6798386100532723758}
+        - {fileID: 4950372460441357740}
+        - {fileID: 4950372460441357740}
+        - {fileID: 1949810288469881231}
+        - {fileID: 8802847091576118578}
+        - {fileID: 6798386100532723758}
+        - {fileID: 199421727779846343}
+        - {fileID: 8802847091576118578}
+        - {fileID: 199421727779846343}
         - {fileID: 1074400109766526890}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 8802847091576118578}
+        - {fileID: 6798386100532723758}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &5569732526421218303
 GameObject:
   m_ObjectHideFlags: 0

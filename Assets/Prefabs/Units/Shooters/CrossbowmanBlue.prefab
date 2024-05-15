@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 1466394060775401066}
   - component: {fileID: 4369097565210552500}
   - component: {fileID: 1336356175581160721}
-  - component: {fileID: 3412946549309998618}
+  - component: {fileID: 8100110519559899423}
   m_Layer: 0
   m_Name: CrossbowmanBlue
   m_TagString: Untagged
@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3412946549309998618
+--- !u!114 &8100110519559899423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1413,26 +1413,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 4795203432196610883}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1466394060775401066}
+        - {fileID: 5772832471459550093}
         - {fileID: 4795203432196610883}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 8531785029900818968}
+        - {fileID: 872437069562198582}
+        - {fileID: 872437069562198582}
+        - {fileID: 7366580899959328153}
+        - {fileID: 1466394060775401066}
+        - {fileID: 8531785029900818968}
+        - {fileID: 5772832471459550093}
+        - {fileID: 1466394060775401066}
+        - {fileID: 5772832471459550093}
         - {fileID: 4795203432196610883}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1466394060775401066}
+        - {fileID: 8531785029900818968}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &3636872726655062261
 GameObject:
   m_ObjectHideFlags: 0

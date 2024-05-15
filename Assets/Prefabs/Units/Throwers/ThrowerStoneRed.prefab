@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 604419144017127935}
   - component: {fileID: 7096651399771362783}
   - component: {fileID: 2375390271233399021}
-  - component: {fileID: 5134979180551594241}
+  - component: {fileID: 4782233962430556400}
   m_Layer: 0
   m_Name: ThrowerStoneRed
   m_TagString: Untagged
@@ -2293,7 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5134979180551594241
+--- !u!114 &4782233962430556400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2339,26 +2339,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 6733540624996427558}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 604419144017127935}
+        - {fileID: 3494964661904932116}
         - {fileID: 6733540624996427558}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1323326898674881846}
+        - {fileID: 288819412151559202}
+        - {fileID: 288819412151559202}
+        - {fileID: 8625772592757342199}
+        - {fileID: 604419144017127935}
+        - {fileID: 1323326898674881846}
+        - {fileID: 3494964661904932116}
+        - {fileID: 604419144017127935}
+        - {fileID: 3494964661904932116}
         - {fileID: 6733540624996427558}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 604419144017127935}
+        - {fileID: 1323326898674881846}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &7867736493714531566
 GameObject:
   m_ObjectHideFlags: 0

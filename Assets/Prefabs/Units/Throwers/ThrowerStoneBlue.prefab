@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 1582219715090296742}
   - component: {fileID: 542366945281983293}
   - component: {fileID: 5429220319321722703}
-  - component: {fileID: 5568779265090428419}
+  - component: {fileID: 4280284350789845873}
   m_Layer: 0
   m_Name: ThrowerStoneBlue
   m_TagString: Untagged
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5568779265090428419
+--- !u!114 &4280284350789845873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1295,26 +1295,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 5643481402853345330}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1582219715090296742}
+        - {fileID: 3644526407784382489}
         - {fileID: 5643481402853345330}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 7914164327084761326}
+        - {fileID: 1056911622193540840}
+        - {fileID: 1056911622193540840}
+        - {fileID: 1412894786852088753}
+        - {fileID: 1582219715090296742}
+        - {fileID: 7914164327084761326}
+        - {fileID: 3644526407784382489}
+        - {fileID: 1582219715090296742}
+        - {fileID: 3644526407784382489}
         - {fileID: 5643481402853345330}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1582219715090296742}
+        - {fileID: 7914164327084761326}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &3640916737097621371
 GameObject:
   m_ObjectHideFlags: 0

@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 766213942990596843}
   - component: {fileID: 7450026454655042090}
   - component: {fileID: 3990086169384040073}
-  - component: {fileID: 8373273394940239924}
+  - component: {fileID: 519833864162697889}
   m_Layer: 0
   m_Name: CrossbowmanRed
   m_TagString: Untagged
@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9537ddafc4c137142a94b023706feab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8373273394940239924
+--- !u!114 &519833864162697889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1539,26 +1539,26 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 9005860123966161464}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 766213942990596843}
+        - {fileID: 3781549871900429251}
         - {fileID: 9005860123966161464}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 1458673002973907837}
+        - {fileID: 4605464180318075160}
+        - {fileID: 4605464180318075160}
+        - {fileID: 7617176966414396407}
+        - {fileID: 766213942990596843}
+        - {fileID: 1458673002973907837}
+        - {fileID: 3781549871900429251}
+        - {fileID: 766213942990596843}
+        - {fileID: 3781549871900429251}
         - {fileID: 9005860123966161464}
-        - {fileID: 0}
-        - {fileID: 0}
+        - {fileID: 766213942990596843}
+        - {fileID: 1458673002973907837}
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &4800931081683550786
 GameObject:
   m_ObjectHideFlags: 0
