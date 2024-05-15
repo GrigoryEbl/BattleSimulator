@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 7063302313883417101, guid: ac2f6085616224746963a77e0f97d4f2, type: 3}
+  _unitPrefab: {fileID: 2554530236790132330, guid: b1bd4fb91e14ea04295ec10cde998b5a, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &45444306
 MonoBehaviour:
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 6956824872019933246, guid: 113762a2da6839547b3a95dfa04d8bfa, type: 3}
+  _unitPrefab: {fileID: 8969567008464805580, guid: d0e97820f69a7d44ab3806d88e0c13b9, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &128486107
 MonoBehaviour:
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 5709830615828539230, guid: 6b8f80e434351cb4fa7d7d37fab86b8c, type: 3}
+  _unitPrefab: {fileID: 8335985719558732927, guid: 46105b7cc5056a84f9eb6b35d57f9601, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &322134271
 MonoBehaviour:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 4805216075927982898, guid: 0bcf5886787b8f945bd4129fa0f1ab21, type: 3}
+  _unitPrefab: {fileID: 5772832471459550093, guid: 43bf9fecd3a0a3a4190fa796be8730a0, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &392070495
 MonoBehaviour:
@@ -2054,7 +2054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 1030126113143800777, guid: 2edd4547106dde74290bd30746f41893, type: 3}
+  _unitPrefab: {fileID: 5552803393310075512, guid: eb2cff2513c67ed4eb471325055c70e7, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &735684060
 MonoBehaviour:
@@ -4017,7 +4017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 1030126113143800777, guid: 6e614c588fd27af4ca01b0a4679d7213, type: 3}
+  _unitPrefab: {fileID: 3644526407784382489, guid: 3ab58dd44cebad240a275a243cc6faf2, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &1345202805
 MonoBehaviour:
@@ -4153,7 +4153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 1030126113143800777, guid: 8551bac05e9a78444a7b0955e5e70079, type: 3}
+  _unitPrefab: {fileID: 199421727779846343, guid: 36c5aa481ea911a42b82b640a4318b8a, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &1578378497
 MonoBehaviour:
@@ -4289,7 +4289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 6244686950624100424, guid: ea8aa9ce8f8734f4f878e978ab2ad5f6, type: 3}
+  _unitPrefab: {fileID: 4576359847397381939, guid: 695f30cec923ea74b9633ba716bb0c1f, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &1588380996
 MonoBehaviour:
@@ -4920,7 +4920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 6984407236097466138, guid: fc640171ae4dc6b4daa8ac3632e41b71, type: 3}
+  _unitPrefab: {fileID: 8054206081254118363, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
   _playerSpawner: {fileID: 649234828}
 --- !u!114 &1935856982
 MonoBehaviour:

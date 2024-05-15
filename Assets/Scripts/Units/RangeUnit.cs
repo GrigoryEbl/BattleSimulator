@@ -3,6 +3,7 @@ using UnityEngine;
 public class RangeUnit : Unit
 {
     private RangeWeapon _rangeWeapon;
+    private Transform _target;
 
     private void Start()
     {
@@ -15,8 +16,13 @@ public class RangeUnit : Unit
             ResetWeapon();
     }
 
+    public void SetTarget(Transform target)
+    {
+        _target = target;
+    }
+
     private void Shoot()
     {        
-        _rangeWeapon.Shoot();
+        _rangeWeapon.Shoot(_target.position);
     }
 }

@@ -31,8 +31,10 @@ public class RagdollHandler : MonoBehaviour
 
     public void Hit(Vector3 force, Vector3 position)
     {
-        if (_isEnable)        
-            return;        
+        if (!_hitBox.enabled)
+            return;
+
+        Debug.Log("Hit");
 
         TurnOn(true);
         _joint = _mainBone.AddComponent<FixedJoint>();
@@ -42,7 +44,7 @@ public class RagdollHandler : MonoBehaviour
 
     public void ExplosionHit(float force, Vector3 position, float radius)
     {
-        if (_isEnable)
+        if (!_hitBox.enabled)
             return;
 
         TurnOn(true);

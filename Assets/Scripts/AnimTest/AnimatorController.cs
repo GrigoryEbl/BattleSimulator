@@ -3,8 +3,7 @@ using UnityEngine;
 public enum UnitAnimatorStates
 {
     idle,
-    run,
-    gettingUp
+    run
 }
 
 [RequireComponent(typeof(Animator))]
@@ -19,12 +18,15 @@ public class AnimatorController : MonoBehaviour
 
     public void SetState(UnitAnimatorStates state)
     {
+        if (_animator.GetInteger(AnimatorNames.State) == (int)state)        
+            return;        
+
         _animator.SetInteger(AnimatorNames.State, (int)state);
     }
 
-    public void Attack()
+    public void SetTrigger(int name)
     {
-        _animator.SetTrigger(AnimatorNames.Attack);
+        _animator.SetTrigger(name);
     }
 
     public void TurnOnAnimator(bool value)

@@ -12,7 +12,7 @@ public class StandUpAction : Action
     {
         _unit.Value.ResetCurrentPosition();
         _ragdollHandler.Value.TurnOn(false);
-        _animatorController.Value.SetState(UnitAnimatorStates.gettingUp);
+        _animatorController.Value.SetTrigger(AnimatorNames.GettingUp);
         _rigidbody.isKinematic = true;
 
         return TaskStatus.Success;

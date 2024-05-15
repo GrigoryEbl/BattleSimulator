@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
-  _force: 750
+  _force: 350
 --- !u!1 &8188750135351354269
 GameObject:
   m_ObjectHideFlags: 0

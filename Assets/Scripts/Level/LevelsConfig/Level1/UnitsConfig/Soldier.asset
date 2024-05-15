@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fd2b71d6cb8004ebf5b390778f2b97, type: 3}
   m_Name: Soldier
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 7063302313883417101, guid: ac2f6085616224746963a77e0f97d4f2, type: 3}
+  _unitPrefab: {fileID: 2216295002493465727, guid: 8fc0886f70625ee4793c7c01edd3982c, type: 3}
   _positions:
   - {x: 3.14, y: -0.48978984, z: -16.302067}
   - {x: 4.94, y: -0.48978984, z: -14.8}

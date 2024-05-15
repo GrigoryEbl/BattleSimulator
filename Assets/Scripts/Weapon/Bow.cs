@@ -13,8 +13,10 @@ public class Bow : RangeWeapon
         _pool.Initialize(IsEnemy);
     }
 
-    public override void Shoot()
+    public override void Shoot(Vector3 targetPosition)
     {
+        base.Shoot(targetPosition);
+
         var arrow = _pool.Pull();
         arrow.gameObject.SetActive(true);
         arrow.Hurl(StartPoint, StartPoint.forward * _force);

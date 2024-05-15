@@ -16,7 +16,7 @@ public class AttackAction : Action
         if (_target.Value.TryGetComponent(out Unit unit) && unit.Health > 0)
         {
             transform.LookAt(_target.Value);
-            _animatorController.Value.Attack();
+            _animatorController.Value.SetTrigger(AnimatorNames.Attack);
             return TaskStatus.Success;
         }
 
