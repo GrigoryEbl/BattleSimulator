@@ -16,6 +16,7 @@ public class Slingshot : Weapon
     private void Awake()
     {
         _pool = GetComponent<ProjectilesPool>();
+        _pool.Initialize(IsEnemy);
     }
 
     public void Shoot(Vector3 targetPosition)
@@ -24,7 +25,7 @@ public class Slingshot : Weapon
         var velocity = _thrower.CalculateVelocityByHeight(_startPoint.position, targetPosition, _currentHeight);
         var bomb = _pool.Pull();
         bomb.gameObject.SetActive(true);
-        bomb.Hurl(_startPoint, velocity, IsEnemy);
+        bomb.Hurl(_startPoint, velocity);
     }
 
     private void SetHeight(Vector3 targetPosition)

@@ -49,8 +49,8 @@ public class Unit : MonoBehaviour, IDamageable
     {
         Fell();
         _transform.parent = null;
-        _behaviorTree.enabled = false;
         _startButton.onClick.RemoveListener(StartBattle);
+        Invoke(nameof(OffBehaviorTree), 1f);//маг. число
     }
 
     public void ResetCurrentPosition()
@@ -86,6 +86,11 @@ public class Unit : MonoBehaviour, IDamageable
     protected void ResetWeapon()
     {
         _weapon = null;
+    }
+
+    private void OffBehaviorTree()
+    {
+        _behaviorTree.enabled = false;
     }
 
     private void StartBattle()

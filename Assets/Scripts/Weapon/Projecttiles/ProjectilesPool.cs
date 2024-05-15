@@ -6,6 +6,12 @@ public class ProjectilesPool : MonoBehaviour
     [SerializeField] private Projectile _projectilePrefab;
 
     private Queue<Projectile> _spawnQueue = new Queue<Projectile>();
+    private bool _isEnemy;    
+
+    public void Initialize(bool isEnemy)
+    {
+        _isEnemy = isEnemy;
+    }
 
     public void Push(Projectile projectile)
     {
@@ -24,7 +30,7 @@ public class ProjectilesPool : MonoBehaviour
     private Projectile CreateProjectile()
     {
         var projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
-        projectile.Initialize(this);
+        projectile.Initialize(this, _isEnemy);
         return projectile;
     }
 }

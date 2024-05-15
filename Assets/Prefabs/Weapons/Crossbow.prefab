@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startPoint: {fileID: 9200629088841970166}
-  _force: 65
+  _force: 20
 --- !u!114 &2832807646268144442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715878128e13edb45bd0f22d7d642e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 540163630061524428, guid: 39cf7072cd5ca8243876a5ae2d69d7c2, type: 3}
+  _projectilePrefab: {fileID: 3132454184571458656, guid: 39cf7072cd5ca8243876a5ae2d69d7c2, type: 3}
 --- !u!1 &5581960676858314300
 GameObject:
   m_ObjectHideFlags: 0
