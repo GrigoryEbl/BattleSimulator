@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 6080764232518635687}
   - component: {fileID: 332005412174912102}
   - component: {fileID: 5638630692612537238}
-  - component: {fileID: 5187175310409397627}
   m_Layer: 0
   m_Name: Spearman
   m_TagString: Untagged
@@ -346,21 +345,6 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
---- !u!114 &5187175310409397627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437650050537302745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27baf2f56dba3824ab75b9805c0157cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _price: 0
-  _health: 0
-  _weapon: {fileID: 0}
 --- !u!1 &487732653335205943
 GameObject:
   m_ObjectHideFlags: 0
