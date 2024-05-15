@@ -1,13 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ProjectilesPool))]
-public class Slingshot : Weapon
+public class Slingshot : RangeWeapon
 {
     private readonly float _range = 10f;
     private readonly float _minHeight = 1f;
     private readonly float _maxHeight = 3f;
-
-    [SerializeField] private Transform _startPoint;
 
     private Thrower _thrower = new Thrower();
     private ProjectilesPool _pool;
@@ -19,13 +17,13 @@ public class Slingshot : Weapon
         _pool.Initialize(IsEnemy);
     }
 
-    public void Shoot(Vector3 targetPosition)
+    public override void Shoot(Vector3 targetPosition)
     {
         SetHeight(targetPosition);
-        var velocity = _thrower.CalculateVelocityByHeight(_startPoint.position, targetPosition, _currentHeight);
+        var velocity = _thrower.CalculateVelocityByHeight(StartPoint.position, targetPosition, _currentHeight);
         var bomb = _pool.Pull();
         bomb.gameObject.SetActive(true);
-        bomb.Hurl(_startPoint, velocity);
+        bomb.Hurl(StartPoint, velocity);
     }
 
     private void SetHeight(Vector3 targetPosition)

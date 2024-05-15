@@ -6,5 +6,8 @@ public abstract class RangeWeapon : Weapon
 
     protected Transform StartPoint => _startPoint;
 
-    public abstract void Shoot();
+    public virtual void Shoot(Vector3 targetPosition)
+    {
+        _startPoint.LookAt(new Vector3(targetPosition.x, _startPoint.position.y, targetPosition.z));
+    }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fd2b71d6cb8004ebf5b390778f2b97, type: 3}
   m_Name: Musket
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 6244686950624100424, guid: ea8aa9ce8f8734f4f878e978ab2ad5f6, type: 3}
+  _unitPrefab: {fileID: 457730170414570418, guid: 6d8532d01c2a3364f8aec9d5dab92794, type: 3}
   _positions:
   - {x: 6.239997, y: -0.48978984, z: -18.692795}
   - {x: 6.2398505, y: -0.48978987, z: -13.61}

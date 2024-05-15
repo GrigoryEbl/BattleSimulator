@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 1
-  _radius: 3.5
+  _radius: 2
   _force: 250
 --- !u!135 &7962394239014368403
 SphereCollider:

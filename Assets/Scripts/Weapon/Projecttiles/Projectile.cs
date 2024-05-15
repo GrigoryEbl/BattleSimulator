@@ -22,7 +22,6 @@ public abstract class Projectile : MonoBehaviour
     {
         _pool = pool;
         _isEnemy = isEnemy;
-        _transform.SetParent(_pool.transform);
     }
 
     public void Hurl(Transform startPoint, Vector3 velocity)
