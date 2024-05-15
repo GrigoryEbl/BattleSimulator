@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2987097058871464377}
   - component: {fileID: 8773932448328557734}
   - component: {fileID: 6556504061114604363}
-  - component: {fileID: 5200664578350917078}
+  - component: {fileID: 4513964127070847262}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 2
---- !u!114 &5200664578350917078
+--- !u!114 &4513964127070847262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,6 +189,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5129960884317028170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf71cc6e36a793740be1de273b56b000, type: 3}
+  m_Script: {fileID: 11500000, guid: d93b9fa4ba9d9374492fa0e87c746083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

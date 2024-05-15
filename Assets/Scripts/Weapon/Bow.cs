@@ -10,13 +10,13 @@ public class Bow : RangeWeapon
     private void Awake()
     {
         _pool = GetComponent<ProjectilesPool>();
+        _pool.Initialize(IsEnemy);
     }
 
     public override void Shoot()
     {
-        Debug.Log(_pool);
         var arrow = _pool.Pull();
         arrow.gameObject.SetActive(true);
-        arrow.Hurl(StartPoint, StartPoint.forward * _force, IsEnemy);
+        arrow.Hurl(StartPoint, StartPoint.forward * _force);
     }
 }

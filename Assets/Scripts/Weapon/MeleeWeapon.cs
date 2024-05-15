@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class MeleeWeapon : Weapon
 {
     [SerializeField] private int _damage;
+
+    public event Action Hited;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,5 +16,6 @@ public class MeleeWeapon : Weapon
     protected virtual void Attack(IDamageable target)
     {
         target.TakeDamage(_damage);
+        Hited?.Invoke();
     }
 }

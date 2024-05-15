@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startPoint: {fileID: 1696822591462640432}
-  _force: 50
+  _force: 15
 --- !u!114 &1964638743131364074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715878128e13edb45bd0f22d7d642e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefab: {fileID: 5090534542577657046, guid: 5f543ace2a115dc43b0c6d7a5cb6698e, type: 3}
+  _projectilePrefab: {fileID: 1501646657118552658, guid: 5f543ace2a115dc43b0c6d7a5cb6698e, type: 3}
 --- !u!1 &9222289206103694799
 GameObject:
   m_ObjectHideFlags: 0
