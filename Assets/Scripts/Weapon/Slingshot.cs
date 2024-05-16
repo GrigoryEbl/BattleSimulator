@@ -4,7 +4,7 @@ using UnityEngine;
 public class Slingshot : RangeWeapon
 {
     private readonly float _range = 10f;
-    private readonly float _minHeight = 1f;
+    private readonly float _minHeight = 0f;
     private readonly float _maxHeight = 3f;
 
     private Thrower _thrower = new Thrower();
