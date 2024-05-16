@@ -1543,6 +1543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpawner: {fileID: 649234828}
+  _startButton: {fileID: 1673106221}
 --- !u!1 &550390583
 GameObject:
   m_ObjectHideFlags: 0

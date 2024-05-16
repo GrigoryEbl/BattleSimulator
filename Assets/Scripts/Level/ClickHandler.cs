@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class ClickHandler : MonoBehaviour
 {
     [SerializeField] private PlayerSpawner _playerSpawner;
+    [SerializeField] private Button _startButton;
 
     private Camera _camera;
 
@@ -12,10 +13,20 @@ public class ClickHandler : MonoBehaviour
         _camera = Camera.main;
     }
 
+    private void OnEnable()
+    {
+        _startButton.onClick.AddListener(OffHandler);
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))        
             SpawnUnit();        
+    }
+
+    private void OnDisable()
+    {
+        _startButton.onClick.RemoveListener(OffHandler);
     }
 
     private void SpawnUnit()
@@ -29,5 +40,10 @@ public class ClickHandler : MonoBehaviour
             else if (hitInfo.collider.TryGetComponent(out Unit unit))
                 _playerSpawner.RemoveOneUnit(unit);
         }
+    }
+
+    private void OffHandler()
+    {
+        enabled = false;
     }
 }
