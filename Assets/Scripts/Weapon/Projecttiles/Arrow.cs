@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(MeleeWeapon))]
@@ -11,8 +10,13 @@ public class Arrow : Projectile
         if (_weapon == null)
             SetWeapon();
 
-        _weapon.enabled = true;
         _weapon.Hited += OnHited;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Ground ground))
+            Push();
     }
 
     private void OnDisable()
@@ -28,7 +32,6 @@ public class Arrow : Projectile
 
     private void OnHited()
     {
-        _weapon.enabled = false;
         Push();
     }
 }
