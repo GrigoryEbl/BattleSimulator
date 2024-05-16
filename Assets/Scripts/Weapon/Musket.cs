@@ -31,7 +31,6 @@ public class Musket : RangeWeapon
             {
                 targets.Add(target);
                 target.TakeDamage(_damage);
-                Debug.Log("попал!");
 
                 if (targets.Count == _penetrationCount)
                     break;

@@ -3,8 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public abstract class Projectile : MonoBehaviour
 {
-    private readonly float _pushDelay = 6f;
-
     private ProjectilesPool _pool;
     private Rigidbody _rigidbody;
     private Transform _transform;
@@ -29,7 +27,6 @@ public abstract class Projectile : MonoBehaviour
         _transform.position = startPoint.position;
         _transform.rotation = startPoint.rotation;
         _rigidbody.velocity = velocity;
-        Invoke(nameof(Push), _pushDelay);
     }
 
     protected void Push()

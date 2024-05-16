@@ -34,8 +34,6 @@ public class RagdollHandler : MonoBehaviour
         if (!_hitBox.enabled)
             return;
 
-        Debug.Log("Hit");
-
         TurnOn(true);
         _joint = _mainBone.AddComponent<FixedJoint>();
         _joint.connectedBody = _mainRigidbody;

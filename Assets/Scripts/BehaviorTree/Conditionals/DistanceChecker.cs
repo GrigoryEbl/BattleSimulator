@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class DistanceChecker : Conditional
 {
-    [SerializeField] private float _minDistance;
-    [SerializeField] private float _maxDistance;
+    [SerializeField] private float _range;
     [SerializeField] private SharedTransform _target;
-
-    private float _range;
-
-    public override void OnAwake()
-    {
-        _range = Random.Range(_minDistance, _maxDistance);
-    }
 
     public override TaskStatus OnUpdate()
     {
