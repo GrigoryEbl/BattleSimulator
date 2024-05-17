@@ -19,8 +19,6 @@ public class Grenade : Bomb
                 target.TakeDamage(_damage);
                 targets.Add(target);
                 target.Hit(Vector3.up * _force, transform.position);
-                //target.ExplosionHit(_force, transform.position, _radius);
-                Debug.Log("Взрыв!");
             }
         }
 
