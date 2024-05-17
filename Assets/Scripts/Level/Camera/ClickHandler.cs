@@ -37,7 +37,7 @@ public class ClickHandler : MonoBehaviour
         {
             if (hitInfo.collider.TryGetComponent(out PlayerGround ground))
                 _playerSpawner.Spawn(hitInfo.point);
-            else if (hitInfo.collider.TryGetComponent(out Unit unit))
+            else if (hitInfo.collider.TryGetComponent(out Unit unit) && !unit.IsEnemy)
                 _playerSpawner.RemoveOneUnit(unit);
         }
     }
