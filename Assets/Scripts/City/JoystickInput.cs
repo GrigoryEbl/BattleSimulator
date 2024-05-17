@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class JoystickInput : MonoBehaviour
+internal class JoystickInput : MonoBehaviour
 {
     [SerializeField] private Movement _movement;
     [SerializeField] private Joystick _joystick;

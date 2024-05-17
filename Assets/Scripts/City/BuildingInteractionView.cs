@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuildingInteractionView : MonoBehaviour
+internal class BuildingInteractionView : MonoBehaviour
 {
     [SerializeField] private GameObject _panel;
     [SerializeField] private Button _buttonPay;

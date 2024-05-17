@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+internal class Player : MonoBehaviour
 {
     public event Action<BuildingInteraction> BuildingReached;
     public event Action BuildingEscaped;
