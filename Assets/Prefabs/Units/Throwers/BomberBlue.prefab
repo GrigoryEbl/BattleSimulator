@@ -96,7 +96,7 @@ Transform:
   m_Children:
   - {fileID: 3561095532031116591}
   m_Father: {fileID: 6243241516845908926}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -50.1429, y: 168.91365, z: -169.43365}
 --- !u!136 &8859920540189012960
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -304,10 +304,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.35
-  m_Height: 1.8383799
+  m_Radius: 0.45
+  m_Height: 2.2
   m_Direction: 1
-  m_Center: {x: 0.0019659996, y: 0.88645005, z: -0.0016188622}
+  m_Center: {x: 0.0019659996, y: 1, z: -0.0016188622}
 --- !u!65 &4254159870303228166
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fbef7918f3b1945b05bd02c43d0df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 2
 --- !u!114 &3966307684945026080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,12 +438,12 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(161.200012,38.8000031)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(3.10827255,134.052048)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(10,120)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-346.41803,135.467087)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"RagdollChecker","NodeData":{"Offset":"(-539.099365,140.256226)"},"ID":4,"Name":"Ragdoll
         Checker","Instant":true,"SharedRagdollHandler_ragdoll":{"Type":"SharedRagdollHandler","Name":"_ragdollHandler","IsShared":true,"RagdollHandlermValue":0}},{"Type":"MovementSourceSetter","NodeData":{"Offset":"(-378.749481,165.000641)"},"ID":5,"Name":"Movement
-        Source Setter","Instant":true,"SharedMovementSource_movementSource":{"Type":"SharedMovementSource","Name":"_movementSource","IsShared":true,"BotMovementSourcemValue":1},"SharedVector3_direction":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-219.60321,142.158691)"},"ID":6,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"StandUpAction","NodeData":{"Offset":"(-84.18662,146.325378)"},"ID":7,"Name":"Stand
-        Up Action","Instant":true,"SharedUnit_unit":{"Type":"SharedUnit","Name":"_unit","IsShared":true,"UnitmValue":2},"SharedRagdollHandler_ragdollHandler":{"Type":"SharedRagdollHandler","Name":"_ragdollHandler","IsShared":true,"RagdollHandlermValue":3},"SharedAnimatorController_animatorController":{"Type":"SharedAnimatorController","Name":"_animatorController","IsShared":true,"AnimatorControllermValue":4},"Rigidbody_rigidbody":5},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(50.526123,150)"},"ID":8,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"StandUpFinisher","NodeData":{"Offset":"(179.884247,160.904724)"},"ID":9,"Name":"Stand
+        Source Setter","Instant":true,"SharedMovementSource_movementSource":{"Type":"SharedMovementSource","Name":"_movementSource","IsShared":true,"BotMovementSourcemValue":1},"SharedVector3_direction":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-219.60321,142.158691)"},"ID":6,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"StandUpAction","NodeData":{"Offset":"(-84.18662,146.325378)"},"ID":7,"Name":"Stand
+        Up Action","Instant":true,"SharedUnit_unit":{"Type":"SharedUnit","Name":"_unit","IsShared":true,"UnitmValue":2},"SharedRagdollHandler_ragdollHandler":{"Type":"SharedRagdollHandler","Name":"_ragdollHandler","IsShared":true,"RagdollHandlermValue":3},"SharedAnimatorController_animatorController":{"Type":"SharedAnimatorController","Name":"_animatorController","IsShared":true,"AnimatorControllermValue":4},"Rigidbody_rigidbody":5},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(50.526123,150)"},"ID":8,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3.5},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"StandUpFinisher","NodeData":{"Offset":"(179.884247,160.904724)"},"ID":9,"Name":"Stand
         Up Finisher","Instant":true,"Rigidbody_rigidbody":6,"Collider_hitBox":7}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1.666275,332.3075)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"DistanceChecker","NodeData":{"Offset":"(-489.095917,152.0525)"},"ID":11,"Name":"Distance
-        Checker","Instant":true,"Single_range":10,"SharedTransform_target":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"MovementSourceSetter","NodeData":{"Offset":"(-304.718719,148.725525)"},"ID":12,"Name":"Movement
-        Source Setter","Instant":true,"SharedMovementSource_movementSource":{"Type":"SharedMovementSource","Name":"_movementSource","IsShared":true,"BotMovementSourcemValue":8},"SharedVector3_direction":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-136.483612,129.999939)"},"ID":13,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"AttackAction","NodeData":{"Offset":"(-13.9339809,135.977234)"},"ID":14,"Name":"Attack
-        Action","Instant":true,"SharedAnimatorController_animatorController":{"Type":"SharedAnimatorController","Name":"_animatorController","IsShared":true,"AnimatorControllermValue":9},"SharedTransform_target":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(118.724342,119.183235)"},"ID":15,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(557.196167,115.681641)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"RangeUnitTargetSetter","NodeData":{"Offset":"(-194.494629,164.633179)"},"ID":17,"Name":"Range
+        Checker","Instant":true,"Single_range":15,"SharedTransform_target":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"MovementSourceSetter","NodeData":{"Offset":"(-304.718719,148.725525)"},"ID":12,"Name":"Movement
+        Source Setter","Instant":true,"SharedMovementSource_movementSource":{"Type":"SharedMovementSource","Name":"_movementSource","IsShared":true,"BotMovementSourcemValue":8},"SharedVector3_direction":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-136.483612,129.999939)"},"ID":13,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"AttackAction","NodeData":{"Offset":"(-13.9339809,135.977234)"},"ID":14,"Name":"Attack
+        Action","Instant":true,"SharedAnimatorController_animatorController":{"Type":"SharedAnimatorController","Name":"_animatorController","IsShared":true,"AnimatorControllermValue":9},"SharedTransform_target":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(118.724342,119.183235)"},"ID":15,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":10},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(557.196167,115.681641)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"RangeUnitTargetSetter","NodeData":{"Offset":"(-194.494629,164.633179)"},"ID":17,"Name":"Range
         Unit Target Setter","Instant":true,"SharedUnit_unit":{"Type":"SharedUnit","Name":"_unit","IsShared":true,"UnitmValue":10},"SharedTransform_target":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"DirectionSetter","NodeData":{"Offset":"(-27.92668,171.312012)"},"ID":18,"Name":"Direction
         Setter","Instant":true,"SharedTransform_target":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedVector3_direction":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"_direction","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"MovementSourceSetter","NodeData":{"Offset":"(149.998779,182.5004)"},"ID":19,"Name":"Movement
         Source Setter","Instant":true,"SharedMovementSource_movementSource":{"Type":"SharedMovementSource","Name":"_movementSource","IsShared":true,"BotMovementSourcemValue":11},"SharedVector3_direction":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"_direction","IsShared":true,"Vector3mValue":"(0,0,0)"}}]}]}]},"Variables":[null,{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"_direction","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedUnit","Name":"_unit","IsShared":true,"UnitmValue":12},{"Type":"SharedRagdollHandler","Name":"_ragdollHandler","IsShared":true,"RagdollHandlermValue":13},{"Type":"SharedMovementSource","Name":"_movementSource","IsShared":true,"BotMovementSourcemValue":14},{"Type":"SharedAnimatorController","Name":"_animatorController","IsShared":true,"AnimatorControllermValue":15}]}'
@@ -509,7 +509,7 @@ Transform:
   - {fileID: 1769357626044004723}
   - {fileID: 1940389969608658149}
   m_Father: {fileID: 4627733840460233588}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.436884, y: 5.849194, z: 4.783633}
 --- !u!65 &3263457971469513089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ Transform:
   m_Children:
   - {fileID: 3908216776764486555}
   m_Father: {fileID: 2057620750845415268}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -19.712156, y: 6.991259, z: -1.2748439}
 --- !u!135 &864875702829614113
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -749,7 +749,7 @@ Transform:
   m_Children:
   - {fileID: 3722556576139405711}
   m_Father: {fileID: 1704542501525800348}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.512214, y: -13.902672, z: -4.8160777}
 --- !u!1 &1395717487550355429
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,7 +781,7 @@ Transform:
   m_Children:
   - {fileID: 6062096506379198226}
   m_Father: {fileID: 387246453073181472}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70.446785, y: 0.000006677422, z: 0.000009531703}
 --- !u!1 &1458760673580262921
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +813,7 @@ Transform:
   m_Children:
   - {fileID: 4439448292057176546}
   m_Father: {fileID: 6358015639018501552}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 77.38248, y: 146.9484, z: -118.95925}
 --- !u!1 &1918174260690662625
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +848,7 @@ Transform:
   m_Children:
   - {fileID: 7427360864360014444}
   m_Father: {fileID: 386899879849191551}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.319168, y: 11.298163, z: 32.31235}
 --- !u!136 &4226528394010913319
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -979,7 +979,7 @@ Transform:
   m_Children:
   - {fileID: 7197357428435670316}
   m_Father: {fileID: 1704542501525800348}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -47.531666, y: 0.729939, z: 169.58447}
 --- !u!136 &8533150666842457044
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1107,7 +1107,7 @@ Transform:
   m_Children:
   - {fileID: 517111299890275266}
   m_Father: {fileID: 1750316572384443296}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 63.961857, y: 26.561451, z: 23.017971}
 --- !u!1 &2221307977777742086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ Transform:
   m_Children:
   - {fileID: 8930986942316647522}
   m_Father: {fileID: 7197357428435670316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 53.315475, y: -3.462256, z: -8.096907}
 --- !u!1 &2317616540477184651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1174,7 @@ Transform:
   m_Children:
   - {fileID: 1750316572384443296}
   m_Father: {fileID: 1704542501525800348}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.7303315, y: 5.375575, z: 172.92392}
 --- !u!136 &154232318216602036
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ Transform:
   m_Children:
   - {fileID: 77324069182733674}
   m_Father: {fileID: 4439448292057176546}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.000028170038, y: -0.000003732807, z: -72.40055}
 --- !u!136 &1692998104860834836
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1436,7 +1436,7 @@ Transform:
   m_Children:
   - {fileID: 387246453073181472}
   m_Father: {fileID: 1769357626044004723}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -37.55031, y: 10.348399, z: -1.7818434}
 --- !u!136 &2683222802669911517
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1562,10 +1562,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7643997471770393308}
-  - {fileID: 7395585839931987892}
-  - {fileID: 2957393243442705512}
+  m_Children: []
   m_Father: {fileID: 4627733840460233588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &6766325092202843157
@@ -1687,7 +1684,7 @@ Transform:
   m_Children:
   - {fileID: 824132518468123919}
   m_Father: {fileID: 3510276731654949615}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.0000005630284, y: -0.000006209357, z: 92.44178}
 --- !u!136 &3498526680930607925
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1846,7 +1843,7 @@ Transform:
   m_Children:
   - {fileID: 277789525471598374}
   m_Father: {fileID: 3372860809926441859}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.7598147, y: 9.512289, z: 3.9565039}
 --- !u!1 &3568737620260900853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,7 +1876,7 @@ Transform:
   - {fileID: 2972608039002015969}
   - {fileID: 8294030146456571142}
   m_Father: {fileID: 7427360864360014444}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20.53398, y: -15.514393, z: 6.0743146}
 --- !u!1 &3918697169952730714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1939,7 @@ Transform:
   m_Children:
   - {fileID: 56898017471624673}
   m_Father: {fileID: 7317932521001803787}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.5892689, y: -0.0026624985, z: -0.19374755}
 --- !u!1 &4507102083007968834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +1971,7 @@ Transform:
   m_Children:
   - {fileID: 537164018816297585}
   m_Father: {fileID: 6358015639018501552}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.387414, y: 2.0996213, z: 3.4975033}
 --- !u!1 &4532390205722511115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,7 +2005,7 @@ Transform:
   - {fileID: 2057620750845415268}
   - {fileID: 386899879849191551}
   m_Father: {fileID: 3722556576139405711}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.8959588, y: -1.6204016, z: -1.374434}
 --- !u!1 &4557335532444212848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,7 +2037,7 @@ Transform:
   m_Children:
   - {fileID: 7317932521001803787}
   m_Father: {fileID: 824132518468123919}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.1785417, y: -0.010759465, z: -0.38778332}
 --- !u!1 &4980192845735103500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,7 +2069,7 @@ Transform:
   m_Children:
   - {fileID: 4578574316231386583}
   m_Father: {fileID: 2972608039002015969}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 16.550478, y: -0.30192953, z: -2.0755641}
 --- !u!1 &5457531155319280443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,7 +2104,7 @@ Transform:
   m_Children:
   - {fileID: 3372860809926441859}
   m_Father: {fileID: 2929127411949438861}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 52.680416, y: -60.370365, z: 0.7805113}
 --- !u!136 &7893653199573025346
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2236,9 +2233,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2957393243442705512}
+  - {fileID: 7395585839931987892}
+  - {fileID: 7643997471770393308}
   - {fileID: 6358015639018501552}
   m_Father: {fileID: 1940389969608658149}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.4160588, y: -1.5624869, z: -1.5006547}
 --- !u!65 &4127343529245024223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2364,7 +2364,7 @@ Transform:
   m_Children:
   - {fileID: 3782461046123421230}
   m_Father: {fileID: 3561095532031116591}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.174362, y: -0.0000067244805, z: -0.000007371827}
 --- !u!1 &6820552816869097018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,7 +2427,7 @@ Transform:
   m_Children:
   - {fileID: 5045072691656219849}
   m_Father: {fileID: 277789525471598374}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.223996, y: 0.16044286, z: 1.4981704}
 --- !u!1 &7122126104665655803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2519,7 @@ Transform:
   m_Children:
   - {fileID: 3510276731654949615}
   m_Father: {fileID: 6358015639018501552}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 78.67134, y: -142.02484, z: 120.370056}
 --- !u!1 &7464924405834643449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,7 +2551,7 @@ Transform:
   m_Children:
   - {fileID: 473814408042811582}
   m_Father: {fileID: 3592018003628387949}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.9730973, y: 0.009336226, z: 0.35912168}
 --- !u!1 &7611547841297793845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,54 +2583,54 @@ Transform:
   m_Children:
   - {fileID: 3592018003628387949}
   m_Father: {fileID: 77324069182733674}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.9460564, y: 0.03742847, z: 0.7201804}
 --- !u!1001 &3350814466873201539
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1773809044619091287}
+    m_TransformParent: {fileID: 3722556576139405711}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00119
+      value: -0.11889552
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01323
+      value: 0.13123488
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00135
+      value: 0.14342332
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7474075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071069
+      value: -0.66436595
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1.947074e-11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 6.854644e-12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2668,47 +2668,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1773809044619091287}
+    m_TransformParent: {fileID: 3722556576139405711}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00006
+      value: 0.0061044674
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01189
+      value: -0.006764896
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00177
+      value: 0.16942407
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7474075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071069
+      value: -0.66436595
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1.947074e-11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 6.854644e-12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2746,47 +2746,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1773809044619091287}
+    m_TransformParent: {fileID: 3722556576139405711}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00105
+      value: 0.10510446
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01069
+      value: -0.12593739
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00177
+      value: 0.15535574
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7474075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071069
+      value: -0.66436595
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1.947074e-11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 6.854644e-12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca277fbb7bdd964439a14735b16e5a76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

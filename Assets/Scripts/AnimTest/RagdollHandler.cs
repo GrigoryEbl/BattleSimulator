@@ -40,18 +40,6 @@ public class RagdollHandler : MonoBehaviour
         _mainBone.AddForceAtPosition(force, _mainBone.ClosestPointOnBounds(position), ForceMode.Impulse);
     }
 
-    public void ExplosionHit(float force, Vector3 position, float radius)
-    {
-        if (!_hitBox.enabled)
-            return;
-
-        TurnOn(true);
-        _joint = _mainBone.AddComponent<FixedJoint>();
-        _joint.connectedBody = _mainRigidbody;
-        _mainBone.AddExplosionForce(force, position, radius);
-        Debug.Log("Взрыв!");
-    }
-
     public void TurnOn(bool value)
     {
         foreach (Rigidbody rigidbody in _rigidbodies)

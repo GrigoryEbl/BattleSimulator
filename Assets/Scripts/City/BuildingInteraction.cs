@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BuildingInteraction : MonoBehaviour
+internal class BuildingInteraction : MonoBehaviour
 {
     [SerializeField] private Transform _building;
     [SerializeField] private Transform _lockedBuilding;

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 public class UnitSelectButton : MonoBehaviour
 {
     [SerializeField] private Unit _unitPrefab;
+    [SerializeField] private TMP_Text _price;
     [SerializeField] private PlayerSpawner _playerSpawner;
 
     private Button _button;    
@@ -12,6 +14,11 @@ public class UnitSelectButton : MonoBehaviour
     private void Awake()
     {
         _button = GetComponent<Button>();
+    }
+
+    private void Start()
+    {
+        _price.text = _unitPrefab.Price.ToString();
     }
 
     private void OnEnable()

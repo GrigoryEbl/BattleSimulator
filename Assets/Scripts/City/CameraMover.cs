@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMover : MonoBehaviour
+internal class CameraMover : MonoBehaviour
 {
     [SerializeField] private Transform _player;
     [SerializeField] private int _cameraPositionZ;
@@ -16,7 +14,7 @@ public class CameraMover : MonoBehaviour
         _transform = transform;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         _target = _player.position;
         _target.z += _cameraPositionZ;
