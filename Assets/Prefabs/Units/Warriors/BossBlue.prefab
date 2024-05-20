@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _price: 10
   _health: 25
-  _weapon: {fileID: 3720984229337428582}
+  _weapon: {fileID: 8507239464561577835}
 --- !u!114 &139433793663567392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,8 +1412,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &4621998126218919233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,9 +2554,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3922554eb2bca54ea6b5cc20714c922, type: 3}
---- !u!114 &3720984229337428582 stripped
+--- !u!4 &7611046324736534472 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6318698246494384410, guid: b3922554eb2bca54ea6b5cc20714c922, type: 3}
+  m_PrefabInstance: {fileID: 4480897862143104722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8507239464561577835 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 976383558075819188, guid: b3922554eb2bca54ea6b5cc20714c922, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5197314383318374841, guid: b3922554eb2bca54ea6b5cc20714c922, type: 3}
   m_PrefabInstance: {fileID: 4480897862143104722}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -2565,8 +2570,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7448424eef66c734b8ee38aaf05e25a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7611046324736534472 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6318698246494384410, guid: b3922554eb2bca54ea6b5cc20714c922, type: 3}
-  m_PrefabInstance: {fileID: 4480897862143104722}
-  m_PrefabAsset: {fileID: 0}

@@ -9,11 +9,17 @@ public class Musket : RangeWeapon
     [SerializeField] private int _damage;
     [SerializeField] private float _maxDistance;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private ParticleSystem _shootEffect;
+
+    public void PlayShootEffect()
+    {
+        
+    }
 
     public override void Shoot(Vector3 targetPosition)
     {
         base.Shoot(targetPosition);
-
+        _shootEffect.Play();
         RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
 
         CalculateHits(hits);
