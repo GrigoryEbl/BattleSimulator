@@ -4907,6 +4907,7 @@ MonoBehaviour:
   _damage: 3
   _radius: 2
   _force: 250
+  _explosionEffect: {fileID: 19848870, guid: a7c694f0877ea874fa57e033221095c3, type: 3}
 --- !u!135 &7962394239014368403
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -6,11 +6,14 @@ public class Grenade : Bomb
     [SerializeField] private int _damage;
     [SerializeField] private float _radius;
     [SerializeField] private float _force;
+    [SerializeField] private ParticleSystem _explosionEffect;
 
     protected override void Explode()
     {
         List<IDamageable> targets = new List<IDamageable>();
         Collider[] colliders = Physics.OverlapSphere(transform.position, _radius);
+
+        Instantiate(_explosionEffect, transform.position, Quaternion.identity);
 
         foreach (Collider nearbyObject in colliders)
         {
@@ -28,6 +31,6 @@ public class Grenade : Bomb
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position,_radius);
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }
