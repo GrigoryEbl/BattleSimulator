@@ -4,6 +4,7 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     [SerializeField] private int _damage;
+    [SerializeField] private ParticleSystem _strikeEffect;
 
     public event Action Hited;
 
@@ -17,5 +18,6 @@ public class MeleeWeapon : Weapon
     {
         target.TakeDamage(_damage);
         Hited?.Invoke();
+        _strikeEffect.Play();
     }
 }
