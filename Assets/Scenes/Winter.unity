@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34803647, g: 0.45102692, b: 0.5348477, a: 1}
+  m_IndirectSpecularColor: {r: 0.34801754, g: 0.45101178, b: 0.53483397, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -586,7 +586,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 12ce3b78ba7aac74e978e340da0fe229, type: 3}
 --- !u!4 &818295102 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2480795678129398948, guid: 12ce3b78ba7aac74e978e340da0fe229, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4183391944784405527, guid: 12ce3b78ba7aac74e978e340da0fe229, type: 3}
   m_PrefabInstance: {fileID: 818295101}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &878706612
@@ -618,8 +618,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1957166627}
-  - {fileID: 818295102}
   - {fileID: 958117828}
   - {fileID: 1703838181}
   - {fileID: 1426203900}
@@ -627,6 +625,8 @@ Transform:
   - {fileID: 1855347686}
   - {fileID: 992048045}
   - {fileID: 254994951}
+  - {fileID: 1957166627}
+  - {fileID: 818295102}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &958117827
@@ -938,7 +938,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: bc777fb2522955b419fe385f52108c7e, type: 3}
 --- !u!4 &1308132761 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5779279363006169944, guid: bc777fb2522955b419fe385f52108c7e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3135881236502633575, guid: bc777fb2522955b419fe385f52108c7e, type: 3}
   m_PrefabInstance: {fileID: 1308132760}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1325801332
@@ -1100,7 +1100,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d0ad9c95e546f9148b19fd2c5d999319, type: 3}
 --- !u!4 &1426203900 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5341178790796633873, guid: d0ad9c95e546f9148b19fd2c5d999319, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6366534544923368057, guid: d0ad9c95e546f9148b19fd2c5d999319, type: 3}
   m_PrefabInstance: {fileID: 1426203899}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1576440392
@@ -1138,7 +1138,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1396,7 +1396,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e594e0bbc2259cc42ac4eeb33255db0d, type: 3}
 --- !u!4 &1703838181 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2431570113857649122, guid: e594e0bbc2259cc42ac4eeb33255db0d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6282947950060005154, guid: e594e0bbc2259cc42ac4eeb33255db0d, type: 3}
   m_PrefabInstance: {fileID: 1703838180}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1707291029
@@ -1827,7 +1827,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
 --- !u!4 &1957166627 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2106068569951061201, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7424655047441894652, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
   m_PrefabInstance: {fileID: 1957166626}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
