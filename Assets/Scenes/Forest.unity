@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34156758, g: 0.35969654, b: 0.33929354, a: 1}
+  m_IndirectSpecularColor: {r: 0.3414342, g: 0.35959533, b: 0.33921066, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,7 +260,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e594e0bbc2259cc42ac4eeb33255db0d, type: 3}
 --- !u!4 &374782745 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2431570113857649122, guid: e594e0bbc2259cc42ac4eeb33255db0d, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6282947950060005154, guid: e594e0bbc2259cc42ac4eeb33255db0d, type: 3}
   m_PrefabInstance: {fileID: 374782744}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &410195687
@@ -392,7 +392,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 12ce3b78ba7aac74e978e340da0fe229, type: 3}
 --- !u!4 &527483858 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2480795678129398948, guid: 12ce3b78ba7aac74e978e340da0fe229, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4183391944784405527, guid: 12ce3b78ba7aac74e978e340da0fe229, type: 3}
   m_PrefabInstance: {fileID: 527483857}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &533570238
@@ -672,7 +672,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d0ad9c95e546f9148b19fd2c5d999319, type: 3}
 --- !u!4 &1024998945 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5341178790796633873, guid: d0ad9c95e546f9148b19fd2c5d999319, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6366534544923368057, guid: d0ad9c95e546f9148b19fd2c5d999319, type: 3}
   m_PrefabInstance: {fileID: 1024998944}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1069606586
@@ -936,7 +936,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: bc777fb2522955b419fe385f52108c7e, type: 3}
 --- !u!4 &1193033107 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5779279363006169944, guid: bc777fb2522955b419fe385f52108c7e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3135881236502633575, guid: bc777fb2522955b419fe385f52108c7e, type: 3}
   m_PrefabInstance: {fileID: 1193033106}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1248840974
@@ -1410,7 +1410,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
 --- !u!4 &1667569442 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2106068569951061201, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7424655047441894652, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
   m_PrefabInstance: {fileID: 1667569441}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839701564
@@ -1448,7 +1448,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1536,8 +1536,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1667569442}
-  - {fileID: 527483858}
   - {fileID: 958826955}
   - {fileID: 374782745}
   - {fileID: 1024998945}
@@ -1545,6 +1543,8 @@ Transform:
   - {fileID: 224675688}
   - {fileID: 2145028093}
   - {fileID: 1087853861}
+  - {fileID: 1667569442}
+  - {fileID: 527483858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2145028092
@@ -3728,6 +3728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8434644338489737767}
     m_Modifications:
+    - target: {fileID: 5991510954720290364, guid: 66e634023de55ff46a8b7022cbdfd7cf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2c7c644700ae724f9ca5344433091ea, type: 2}
     - target: {fileID: 6982608286872407458, guid: 66e634023de55ff46a8b7022cbdfd7cf, type: 3}
       propertyPath: m_Name
       value: ForestPlane
