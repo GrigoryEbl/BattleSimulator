@@ -8,13 +8,13 @@ internal class BuildingInteraction : MonoBehaviour
     [SerializeField] private int _price;
     [SerializeField] private Canvas _priceView;
 
-    private BoxCollider _triggerCollider;
+    private SphereCollider _triggerCollider;
 
     public int Price => _price;
 
     private void Awake()
     {
-        _triggerCollider = GetComponent<BoxCollider>();
+        _triggerCollider = GetComponent<SphereCollider>();
     }
 
     public void Unlock()
