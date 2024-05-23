@@ -24,7 +24,6 @@ public class SpecialWeapon : MeleeWeapon
 
         target.Hit(transform.forward * _force, transform.position);
         Invoke(nameof(SetDelay), _attackTime);
-        _strikeEffect.Play();
     }
 
     private void SetDelay()
