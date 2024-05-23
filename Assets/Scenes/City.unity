@@ -10774,6 +10774,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 710037273}
+  - component: {fileID: 710037275}
+  - component: {fileID: 710037274}
   m_Layer: 0
   m_Name: BuildingThrowerStone
   m_TagString: Untagged
@@ -10800,6 +10802,43 @@ Transform:
   - {fileID: 455648076}
   m_Father: {fileID: 768915074}
   m_LocalEulerAnglesHint: {x: 0, y: -31.405, z: 0}
+--- !u!114 &710037274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710037272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02e580ec65d97445a361aea04d2d539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _building: {fileID: 1409605928}
+  _lockedBuilding: {fileID: 422279805}
+  _price: 0
+  _priceView: {fileID: 455648079}
+--- !u!65 &710037275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710037272}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.3, y: 3.07, z: 3.29}
+  m_Center: {x: 7.14, y: 0.82, z: -1.53}
 --- !u!1001 &718137925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11417,8 +11456,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 768915074}
-  - component: {fileID: 768915075}
-  - component: {fileID: 768915076}
   m_Layer: 0
   m_Name: Buildings
   m_TagString: Untagged
@@ -11451,42 +11488,6 @@ Transform:
   - {fileID: 973613629}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &768915075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768915073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02e580ec65d97445a361aea04d2d539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _building: {fileID: 0}
-  _lockedBuilding: {fileID: 0}
-  _price: 5
---- !u!65 &768915076
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768915073}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.13, y: 1, z: 1.97}
-  m_Center: {x: 0, y: 0.65, z: 3.36}
 --- !u!1 &768953682
 GameObject:
   m_ObjectHideFlags: 0
@@ -22163,7 +22164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27758091726ad24e862afedaf1dcc39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5.43
+  _speed: 15
 --- !u!54 &1498003744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33239,6 +33240,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2120134423}
+  - component: {fileID: 2120134424}
+  - component: {fileID: 2120134425}
   m_Layer: 0
   m_Name: BuildingArcher
   m_TagString: Untagged
@@ -33265,6 +33268,43 @@ Transform:
   - {fileID: 270699368}
   m_Father: {fileID: 768915074}
   m_LocalEulerAnglesHint: {x: 0, y: 356.309, z: 0}
+--- !u!114 &2120134424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120134422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02e580ec65d97445a361aea04d2d539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _building: {fileID: 836909544}
+  _lockedBuilding: {fileID: 1071203821}
+  _price: 0
+  _priceView: {fileID: 270699371}
+--- !u!65 &2120134425
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120134422}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.96, y: 1, z: 3.83}
+  m_Center: {x: -6.61, y: 1.53, z: 5.07}
 --- !u!1 &2125974236
 GameObject:
   m_ObjectHideFlags: 0
