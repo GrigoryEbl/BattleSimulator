@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.446577, g: 0.49641412, b: 0.5748162, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465772, g: 0.49641442, b: 0.5748166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -610,7 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 15806794}
   m_Layer: 0
-  m_Name: BuildingSoldier
+  m_Name: Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9947,7 +9947,7 @@ GameObject:
   - component: {fileID: 546561730}
   - component: {fileID: 546561729}
   m_Layer: 0
-  m_Name: BuildingPoisonBomber
+  m_Name: PoisonBomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12691,7 +12691,7 @@ GameObject:
   - component: {fileID: 710037274}
   - component: {fileID: 710037275}
   m_Layer: 0
-  m_Name: BuildingThrowerStone
+  m_Name: ThrowerStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18336,7 +18336,7 @@ GameObject:
   - component: {fileID: 1059184594}
   - component: {fileID: 1059184593}
   m_Layer: 0
-  m_Name: BuildingMusketeer
+  m_Name: Musketeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25332,7 +25332,7 @@ GameObject:
   - component: {fileID: 1479731773}
   - component: {fileID: 1479731774}
   m_Layer: 0
-  m_Name: BuildingSpearman
+  m_Name: Spearman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25508,7 +25508,7 @@ GameObject:
   - component: {fileID: 1483301391}
   - component: {fileID: 1483301390}
   m_Layer: 0
-  m_Name: BuildingBoss
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30090,7 +30090,7 @@ GameObject:
   - component: {fileID: 1718583400}
   - component: {fileID: 1718583399}
   m_Layer: 0
-  m_Name: BuildingBomber
+  m_Name: Bomber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31823,7 +31823,7 @@ GameObject:
   - component: {fileID: 1823544281}
   - component: {fileID: 1823544280}
   m_Layer: 0
-  m_Name: BuildingCrossbowman
+  m_Name: Crossbowman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37564,7 +37564,7 @@ GameObject:
   - component: {fileID: 2120134424}
   - component: {fileID: 2120134425}
   m_Layer: 0
-  m_Name: BuildingArcher
+  m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44128,8 +44128,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.4
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!1 &6203949573352854905
 GameObject:
   m_ObjectHideFlags: 0
