@@ -1,5 +1,5 @@
 {
-    "idSave": 14,
+    "idSave": 57,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -11,6 +11,20 @@
         false
     ],
     "OpenedBuildings": [
+        "Archer",
+        "ThrowerStone",
+        "PoisonBomber",
+        "Crossbowman",
+        "Spearman",
+        "Bomber",
+        "Boss",
+        "Musketeer",
+        "Mine",
+        "Mine1",
+        "Mine2",
+        "Mine5",
+        "Mine3",
+        "Mine4",
         "Barrier"
     ]
 }

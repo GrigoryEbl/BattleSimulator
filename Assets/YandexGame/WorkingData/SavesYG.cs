@@ -21,7 +21,8 @@ namespace YG
         // Ваши сохранения
 
         public List<string> OpenedBuildings = new List<string>();
-
+        public bool IsFirstBarrierActive = true;
+        public bool IsSecondBarrierActive = true;
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 
 
