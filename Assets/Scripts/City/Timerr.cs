@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class Timerr : MonoBehaviour
 {
     public float Time { get; private set; }
     public float StartTime { get; private set; }

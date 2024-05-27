@@ -1,24 +1,28 @@
 using UnityEngine;
 
-internal class CameraMover : MonoBehaviour
+namespace City
 {
-    [SerializeField] private Transform _player;
-    [SerializeField] private int _cameraPositionZ;
-    [SerializeField] private int _cameraPositionY;
-
-    private Vector3 _target;
-    private Transform _transform;
-
-    private void Awake()
+    internal class CameraMover : MonoBehaviour
     {
-        _transform = transform;
+        [SerializeField] private Transform _player;
+        [SerializeField] private int _cameraPositionZ;
+        [SerializeField] private int _cameraPositionY;
+
+        private Vector3 _target;
+        private Transform _transform;
+
+        private void Awake()
+        {
+            _transform = transform;
+        }
+
+        private void LateUpdate()
+        {
+            _target = _player.position;
+            _target.z += _cameraPositionZ;
+            _target.y += _cameraPositionY;
+            _transform.position = _target;
+        }
     }
 
-    private void LateUpdate()
-    {
-        _target = _player.position;
-        _target.z += _cameraPositionZ;
-        _target.y += _cameraPositionY;
-        _transform.position = _target;
-    }
 }
