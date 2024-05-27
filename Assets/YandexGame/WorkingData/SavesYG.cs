@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace YG
 {
     [System.Serializable]
@@ -18,7 +20,7 @@ namespace YG
 
         // Ваши сохранения
 
-        public string[] OpenedBuildings = new string[9];
+        public List<string> OpenedBuildings = new List<string>();
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 
@@ -27,7 +29,6 @@ namespace YG
         public SavesYG()
         {
             // Допустим, задать значения по умолчанию для отдельных элементов массива
-            OpenedBuildings[0] = "Soldier";
             openLevels[1] = true;
         }
     }
