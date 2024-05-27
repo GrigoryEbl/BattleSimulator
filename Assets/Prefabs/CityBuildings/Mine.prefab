@@ -1078,6 +1078,8 @@ MonoBehaviour:
   _lockedBuilding: {fileID: 2775710969857062168}
   _price: 0
   _priceView: {fileID: 8433622761055633084}
+  _effects:
+  - {fileID: 3255189801237175362}
 --- !u!1 &6289809349061582490
 GameObject:
   m_ObjectHideFlags: 0

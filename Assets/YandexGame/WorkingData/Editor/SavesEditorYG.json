@@ -1,0 +1,19 @@
+{
+    "idSave": 61,
+    "isFirstSession": false,
+    "language": "en",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "OpenedBuildings": [
+        "Barrier",
+        "BarrierBridge"
+    ],
+    "IsFirstBarrierActive": true,
+    "IsSecondBarrierActive": true
+}
