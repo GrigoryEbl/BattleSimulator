@@ -5,7 +5,7 @@ public class CameraInput : MonoBehaviour
     private readonly string _horizontal = "Horizontal";
     private readonly string _vertical = "Vertical";
 
-    [SerializeField] private FloatingJoystick _joystick;
+    [SerializeField] private Joystick _joystick;
 
     public Vector3 MoveInput { get; private set; }
 

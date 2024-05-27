@@ -25,10 +25,14 @@ public class PlayerSpawner : MonoBehaviour
         _transform = transform;
     }
 
+    private void Start()
+    {
+        UnitsCountChanged?.Invoke(_units.Count);
+    }
+
     public void Initialize(int maxSpawnUnitCount)
     {
         _maxSpawnUnitCount = maxSpawnUnitCount;
-        UnitsCountChanged?.Invoke(_units.Count);
     }
 
     public void Spawn(Vector3 position)
