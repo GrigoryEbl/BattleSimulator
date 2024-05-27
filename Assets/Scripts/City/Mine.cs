@@ -1,22 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
-[RequireComponent(typeof(Timer))]
+[RequireComponent(typeof(Timerr))]
 public class Mine : MonoBehaviour
 {
     [SerializeField] private int _chargedMoney;
     [SerializeField] private float _time;
 
-    private int _currentMoney;
-    private Timer _timer;
+    private Wallet _mainWallet;
+    private Timerr _timer;
+
+    public Wallet MainWallet => _mainWallet;
 
 
     private void Awake()
     {
-        _timer = GetComponent<Timer>();
-        StartCoroutine(_timer.Work(_time));
+        _mainWallet = GetComponent<Wallet>();
+        _mainWallet.Initialize(0);
+        _timer = GetComponent<Timerr>();
+        StartTimer();
     }
 
     private void OnEnable()
@@ -33,14 +35,28 @@ public class Mine : MonoBehaviour
     {
         if (other.TryGetComponent(out Player player))
         {
-            if (_currentMoney > 0)
-                player.Wallet.AddMoney(_currentMoney);
+            if (_mainWallet.Money > 0)
+            {
+                Pay(player);
+                StartTimer();
+            }
         }
     }
 
     private void ChargeMoney()
     {
+        _mainWallet.AddMoney(_chargedMoney);
         print("Add money: " + _chargedMoney);
-        _currentMoney += _chargedMoney;
+    }
+
+    private void Pay(Player player)
+    {
+        player.Wallet.AddMoney(_chargedMoney);
+        _mainWallet.RemoveMoney(_chargedMoney);        
+    }
+
+    private void StartTimer()
+    {
+        StartCoroutine(_timer.Work(_time));
     }
 }
