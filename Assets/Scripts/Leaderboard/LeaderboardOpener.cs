@@ -11,13 +11,27 @@ internal class LeaderboardOpener : MonoBehaviour
 
     private Button _leaderboardButton;
 
-    private void Awake() => _leaderboardButton = GetComponent<Button>();
+    private void Awake()
+    {
+        _leaderboardButton = GetComponent<Button>();
+    }
 
-    private void OnEnable() => _leaderboardButton.onClick.AddListener(OnLeaderboardButtonClick);
+    private void OnEnable()
+    {
+        _leaderboardButton.onClick.AddListener(OnLeaderboardButtonClick);
+    }
 
-    private void OnDisable() => _leaderboardButton.onClick.RemoveListener(OnLeaderboardButtonClick);
+    private void OnDisable()
+    {
+        _leaderboardButton.onClick.RemoveListener(OnLeaderboardButtonClick);
+    }
 
-    private void OnLeaderboardButtonClick() => OpenLeaderboard();
+    private void OnLeaderboardButtonClick()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        OpenLeaderboard();
+#endif
+    }
 
     private void OpenLeaderboard()
     {
