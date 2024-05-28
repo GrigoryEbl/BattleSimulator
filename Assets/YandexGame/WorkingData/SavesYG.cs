@@ -20,6 +20,8 @@ namespace YG
 
         // Ваши сохранения
 
+        public int PlayerMoney = 0;
+
         public List<string> OpenedBuildings = new List<string>();
         public bool IsFirstBarrierActive = true;
         public bool IsSecondBarrierActive = true;

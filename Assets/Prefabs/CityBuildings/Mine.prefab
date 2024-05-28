@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chargedMoney: 10
-  _time: 15
+  _time: 100
 --- !u!135 &7848380960449992409
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1298,6 +1298,7 @@ GameObject:
   - component: {fileID: 8910567073319261708}
   - component: {fileID: 6204716854351790832}
   - component: {fileID: 6709892728063681211}
+  - component: {fileID: 7603853376404085291}
   m_Layer: 0
   m_Name: mine (1)
   m_TagString: Untagged
@@ -1373,6 +1374,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7603853376404085291
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206942443335505806}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.9772316
+  m_Center: {x: 0, y: 0, z: 0.37075806}
 --- !u!1 &8489553831135658414
 GameObject:
   m_ObjectHideFlags: 0
