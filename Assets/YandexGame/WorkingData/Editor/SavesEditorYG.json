@@ -1,5 +1,5 @@
 {
-    "idSave": 99,
+    "idSave": 112,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -17,7 +17,17 @@
         "Barrier",
         "BarrierBridge",
         "Mine1",
-        "ThrowerStone"
+        "ThrowerStone",
+        "Spearman",
+        "Mine2",
+        "PoisonBomber",
+        "Crossbowman",
+        "Musketeer",
+        "Mine5",
+        "Bomber",
+        "Mine3",
+        "Boss",
+        "Mine4"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true
