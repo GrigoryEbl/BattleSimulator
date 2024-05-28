@@ -40,6 +40,7 @@ public class PlayerWalletSaver : Wallet
     private void Save()
     {
         YandexGame.savesData.PlayerMoney = _wallet.Money;
+        YandexGame.SaveProgress();
     }
 
     private void GetLoad()
