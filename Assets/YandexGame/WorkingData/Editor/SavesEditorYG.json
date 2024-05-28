@@ -1,5 +1,5 @@
 {
-    "idSave": 61,
+    "idSave": 72,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,9 +10,10 @@
         true,
         false
     ],
+    "PlayerMoney": 0,
     "OpenedBuildings": [
-        "Barrier",
-        "BarrierBridge"
+        "Mine",
+        "Archer"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true
