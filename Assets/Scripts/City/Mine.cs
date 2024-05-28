@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
@@ -6,6 +7,7 @@ public class Mine : MonoBehaviour
 {
     [SerializeField] private int _chargedMoney;
     [SerializeField] private float _time;
+    
 
     private Wallet _mainWallet;
     private Timerr _timer;
@@ -20,6 +22,8 @@ public class Mine : MonoBehaviour
         _timer = GetComponent<Timerr>();
         StartTimer();
     }
+
+    
 
     private void OnEnable()
     {

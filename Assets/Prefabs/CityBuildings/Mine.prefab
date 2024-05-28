@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chargedMoney: 10
-  _time: 15
+  _time: 100
 --- !u!135 &7848380960449992409
 SphereCollider:
   m_ObjectHideFlags: 0

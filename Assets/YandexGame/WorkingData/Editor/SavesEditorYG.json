@@ -1,5 +1,5 @@
 {
-    "idSave": 77,
+    "idSave": 99,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -15,7 +15,9 @@
         "Mine",
         "Archer",
         "Barrier",
-        "BarrierBridge"
+        "BarrierBridge",
+        "Mine1",
+        "ThrowerStone"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true

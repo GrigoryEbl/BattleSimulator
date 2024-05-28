@@ -23,23 +23,18 @@ public class PlayerWalletSaver : Wallet
     private void OnEnable()
     {
         YandexGame.GetDataEvent += GetLoad;
-        _wallet.MoneyChanged += ChangeMoney;
+        _wallet.MoneyChanged += Save;
     }
 
     private void OnDisable()
     {
         YandexGame.GetDataEvent -= GetLoad;
-        _wallet.MoneyChanged -= ChangeMoney;
+        _wallet.MoneyChanged -= Save;
     }
 
-    private void ChangeMoney(int value)
+    private void Save(int value)
     {
-        Save();
-    }
-
-    private void Save()
-    {
-        YandexGame.savesData.PlayerMoney = _wallet.Money;
+        YandexGame.savesData.PlayerMoney = value;
         YandexGame.SaveProgress();
     }
 
