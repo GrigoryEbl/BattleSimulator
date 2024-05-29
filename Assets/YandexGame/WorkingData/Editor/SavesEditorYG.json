@@ -1,5 +1,5 @@
 {
-    "idSave": 148,
+    "idSave": 180,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,13 +10,24 @@
         true,
         false
     ],
-    "PlayerMoney": 0,
+    "PlayerMoney": 50,
     "OpenedBuildings": [
         "Mine1",
         "ThrowerStone",
         "Barrier",
         "BarrierBridge",
-        "Boss"
+        "Boss",
+        "Mine",
+        "Archer",
+        "Mine2",
+        "PoisonBomber",
+        "Crossbowman",
+        "Spearman",
+        "Musketeer",
+        "Mine4",
+        "Mine3",
+        "Bomber",
+        "Mine5"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true
