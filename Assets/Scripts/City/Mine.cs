@@ -23,8 +23,6 @@ public class Mine : MonoBehaviour
         StartTimer();
     }
 
-    
-
     private void OnEnable()
     {
         _timer.TimeOver += ChargeMoney;
