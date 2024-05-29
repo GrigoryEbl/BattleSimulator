@@ -10,6 +10,7 @@ public class PlayerWalletSaver : Wallet
     private void Awake()
     {
         _wallet = GetComponent<Wallet>();
+        GetLoad();
     }
 
     private void Update()

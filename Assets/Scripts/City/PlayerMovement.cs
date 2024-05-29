@@ -8,7 +8,6 @@ internal class Movement : MonoBehaviour
     private Transform _transform;
     private Rigidbody _rigidbody;
 
-    public int Level { get; private set; }
     public bool IsMoving { get; private set; }
 
     private void Awake()
