@@ -1940,7 +1940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714ac8df160a79b408bbb3179b2d331d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 10
+  _price: 90
   _health: 10
   _weapon: {fileID: 5041019679195061976}
 --- !u!114 &1466394060775401066

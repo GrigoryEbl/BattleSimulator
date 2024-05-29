@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class VideoAd : MonoBehaviour
@@ -8,10 +8,16 @@ public class VideoAd : MonoBehaviour
 
     private Button _lockableButton;
 
-    public void Show(Button lockableButton, UnityAction<int> moneyAction, int money)
+    public void Show(Button lockableButton, Action<int> moneyAction, int money)
     {
         _lockableButton = lockableButton;
         Agava.YandexGames.VideoAd.Show(OnOpenCallback, () => moneyAction?.Invoke(money), OnCloseCallback);
+    }
+
+    public void Show(Button lockableButton, Action action)
+    {
+        _lockableButton = lockableButton;
+        Agava.YandexGames.VideoAd.Show(OnOpenCallback, () => action?.Invoke(), OnCloseCallback);
     }
 
     private void OnOpenCallback()
