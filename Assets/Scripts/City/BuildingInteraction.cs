@@ -17,6 +17,8 @@ public class BuildingInteraction : MonoBehaviour
     private void Awake()
     {
         _triggerCollider = GetComponent<SphereCollider>();
+        print(gameObject.name + ": Awake");
+        GetLoad();
     }
 
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
@@ -28,7 +30,7 @@ public class BuildingInteraction : MonoBehaviour
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
         {
             Unlock();
-
+            print(gameObject.name + ": GetLoad");
             for (int i = 0; i < _effects.Length; i++)
             {
                 Destroy(_effects[i].gameObject);
