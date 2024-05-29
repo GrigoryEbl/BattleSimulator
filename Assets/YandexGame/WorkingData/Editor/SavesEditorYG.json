@@ -1,7 +1,7 @@
 {
-    "idSave": 141,
+    "idSave": 145,
     "isFirstSession": false,
-    "language": "ru",
+    "language": "en",
     "promptDone": false,
     "money": 1,
     "newPlayerName": "Hello!",
@@ -13,7 +13,9 @@
     "PlayerMoney": 0,
     "OpenedBuildings": [
         "Mine1",
-        "ThrowerStone"
+        "ThrowerStone",
+        "Barrier",
+        "BarrierBridge"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true
