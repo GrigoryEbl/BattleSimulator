@@ -15,9 +15,9 @@ public class PlayerWalletSaver : Wallet
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))   //Delete
         {
-            _wallet.AddMoney(150);
+            _wallet.AddMoney(150); 
         }
     }
 
