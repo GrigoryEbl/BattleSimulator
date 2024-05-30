@@ -23,7 +23,14 @@ public class Wallet : MonoBehaviour
 
     public void RemoveMoney(int price)
     {
-        _money -= price;
-        MoneyChanged?.Invoke(_money);
+        if (_money >= price)
+        {
+            _money -= price;
+            MoneyChanged?.Invoke(_money);
+        }
+        else
+        {
+            print("Недостаточно денег");
+        }
     }
 }

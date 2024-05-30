@@ -19,7 +19,7 @@ public class BuildingInteraction : MonoBehaviour
     private void Awake()
     {
         _triggerCollider = GetComponent<SphereCollider>();
-        print(gameObject.name + ": Awake");
+
         GetLoad();
     }
 
@@ -32,7 +32,7 @@ public class BuildingInteraction : MonoBehaviour
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
         {
             Unlock();
-            print(gameObject.name + ": GetLoad");
+
             for (int i = 0; i < _effects.Length; i++)
             {
                 Destroy(_effects[i].gameObject);
@@ -42,13 +42,20 @@ public class BuildingInteraction : MonoBehaviour
 
     public void Unlock()
     {
+        Buy();
         _lockedBuilding.gameObject.SetActive(false);
         _building.gameObject.SetActive(true);
         _triggerCollider.enabled = false;
         _priceView.gameObject.SetActive(false);
         BuildingUnlocked?.Invoke();
+
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
             SaveData();
+    }
+
+    private void Buy()
+    {
+
     }
 
     private void SaveData()
