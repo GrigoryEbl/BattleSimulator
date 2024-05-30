@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startPoint: {fileID: 9200629088841970166}
-  _force: 18
+  _force: 40
 --- !u!114 &2832807646268144442
 MonoBehaviour:
   m_ObjectHideFlags: 0
