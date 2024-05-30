@@ -42,7 +42,6 @@ public class BuildingInteraction : MonoBehaviour
 
     public void Unlock()
     {
-        Buy();
         _lockedBuilding.gameObject.SetActive(false);
         _building.gameObject.SetActive(true);
         _triggerCollider.enabled = false;
@@ -53,9 +52,10 @@ public class BuildingInteraction : MonoBehaviour
             SaveData();
     }
 
-    private void Buy()
+    public void Buy(Wallet wallet)
     {
-
+        if (wallet.TryRemoveMoney(_price) == true)
+            Unlock();
     }
 
     private void SaveData()

@@ -77,7 +77,7 @@ public class PlayerSpawner : MonoBehaviour
         unit.Init(false, _targetParent, _startButton);
 
         _units.Add(unit);
-        _wallet.RemoveMoney(unit.Price);
+        _wallet.TryRemoveMoney(unit.Price);
         UnitsCountChanged?.Invoke(_units.Count);
     }
 }
