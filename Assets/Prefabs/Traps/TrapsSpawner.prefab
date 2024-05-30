@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 2789295796906925925}
   - component: {fileID: 2724570179559199321}
   m_Layer: 0
-  m_Name: Traps
+  m_Name: TrapsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
