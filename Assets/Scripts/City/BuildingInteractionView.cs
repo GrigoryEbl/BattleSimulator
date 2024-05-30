@@ -25,7 +25,7 @@ internal class BuildingInteractionView : MonoBehaviour
     {
         _panel.SetActive(true);
         _textPrice.text = buildingInteraction.Price.ToString();
-        _buttonPay.onClick.AddListener(buildingInteraction.Unlock);
+        _buttonPay.onClick.AddListener(delegate { buildingInteraction.Buy(_player.Wallet); });
         _buttonPay.onClick.AddListener(Disable);
     }
 

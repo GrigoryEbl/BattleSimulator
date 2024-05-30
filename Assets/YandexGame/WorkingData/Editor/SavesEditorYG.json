@@ -1,7 +1,7 @@
 {
-    "idSave": 203,
+    "idSave": 318,
     "isFirstSession": false,
-    "language": "en",
+    "language": "ru",
     "promptDone": false,
     "money": 1,
     "newPlayerName": "Hello!",
@@ -10,20 +10,8 @@
         true,
         false
     ],
-    "PlayerMoney": 10,
-    "OpenedBuildings": [
-        "Archer",
-        "ThrowerStone",
-        "Barrier",
-        "Spearman",
-        "Crossbowman",
-        "PoisonBomber",
-        "BarrierBridge",
-        "Musketeer",
-        "Boss",
-        "Mine3",
-        "Bomber"
-    ],
+    "PlayerMoney": 0,
+    "OpenedBuildings": [],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true
 }
