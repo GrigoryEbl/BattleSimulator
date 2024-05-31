@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +6,7 @@ public class AdvertisingEndLevelButton : MonoBehaviour
 {
     [SerializeField] private VideoAd _videoAd;
     [SerializeField] private BattleSceneLoader _sceneLoader;
+    [SerializeField] private LevelSaver _levelSaver;
 
     private Button _button;
 
@@ -19,22 +17,26 @@ public class AdvertisingEndLevelButton : MonoBehaviour
 
     private void OnEnable()
     {
-        _button.onClick.AddListener(FinishLevel);
+        _button.onClick.AddListener(OnButtonClick);
     }
 
     private void OnDisable()
     {
-        _button.onClick.RemoveListener(FinishLevel);
+        _button.onClick.RemoveListener(OnButtonClick);
+    }
+
+    private void OnButtonClick()
+    {
+#if UNITY_WEBGL && !UNITY_EDITOR
+        _videoAd.Show(_button, FinishLevel);
+#else
+        FinishLevel();
+#endif
     }
 
     private void FinishLevel()
     {
-        //Добавить сохранение прогресса
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-        _videoAd.Show(_button, _sceneLoader.Load);
-#else
+        _levelSaver.FinishLevel();
         _sceneLoader.Load();
-#endif
     }
 }

@@ -5882,6 +5882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _videoAd: {fileID: 468831580}
   _sceneLoader: {fileID: 117191130}
+  _levelSaver: {fileID: 1117838704}
 --- !u!1 &1112654257
 GameObject:
   m_ObjectHideFlags: 0
