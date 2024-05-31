@@ -12285,7 +12285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064d4aece47d82f4b831685337a123d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallet: {fileID: 619542357}
+  _wallet: {fileID: 1099265884}
   _videoAd: {fileID: 249057826}
   _rewardMoneyCount: 25
 --- !u!114 &2069806276

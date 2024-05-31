@@ -8269,7 +8269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064d4aece47d82f4b831685337a123d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallet: {fileID: 1355019300}
+  _wallet: {fileID: 1117838705}
   _videoAd: {fileID: 468831580}
   _rewardMoneyCount: 25
 --- !u!114 &1468913433
