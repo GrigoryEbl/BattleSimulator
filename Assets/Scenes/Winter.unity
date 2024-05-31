@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _videoAd: {fileID: 1760301330}
-  _sceneLoader: {fileID: 518577298}
+  _sceneLoader: {fileID: 315841496}
 --- !u!114 &24288248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: SpearmanHouse
   _unitPrefab: {fileID: 8969567008464805580, guid: d0e97820f69a7d44ab3806d88e0c13b9, type: 3}
   _price: {fileID: 1085629547}
   _playerSpawner: {fileID: 955317899}
@@ -2527,7 +2527,7 @@ GameObject:
   - component: {fileID: 315841495}
   - component: {fileID: 315841496}
   m_Layer: 0
-  m_Name: RestartSceneLoader
+  m_Name: BattleSceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2891,7 +2891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: BomberHouse
   _unitPrefab: {fileID: 5552803393310075512, guid: eb2cff2513c67ed4eb471325055c70e7, type: 3}
   _price: {fileID: 250920392}
   _playerSpawner: {fileID: 955317899}
@@ -4435,6 +4435,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a8fe717fe6f2f140a46fe2ea76e0602, type: 3}
+--- !u!1001 &703363870
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_Name
+      value: YandexGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
 --- !u!1 &728140566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,7 +4878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4431eaffa8bb6154e98b9bc727dbbeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneLoader: {fileID: 518577298}
+  _sceneLoader: {fileID: 315841496}
 --- !u!114 &807992612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5755,7 +5812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: BossHouse
   _unitPrefab: {fileID: 8335985719558732927, guid: 46105b7cc5056a84f9eb6b35d57f9601, type: 3}
   _price: {fileID: 527720978}
   _playerSpawner: {fileID: 955317899}
@@ -6738,7 +6795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: StoneThrowerHouse
   _unitPrefab: {fileID: 3644526407784382489, guid: 3ab58dd44cebad240a275a243cc6faf2, type: 3}
   _price: {fileID: 295787563}
   _playerSpawner: {fileID: 955317899}
@@ -6835,6 +6892,7 @@ GameObject:
   - component: {fileID: 1102682691}
   - component: {fileID: 1102682689}
   - component: {fileID: 1102682688}
+  - component: {fileID: 1102682692}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -6857,6 +6915,7 @@ MonoBehaviour:
   _startButton: {fileID: 339578256}
   _enemySpawner: {fileID: 95392761}
   _playerSpawner: {fileID: 955317900}
+  _levelSaver: {fileID: 1102682692}
   _drawPanel: {fileID: 1979992877}
   _gameOverPanel: {fileID: 761638613}
   _congratulationsPanel: {fileID: 1620206384}
@@ -6877,6 +6936,7 @@ MonoBehaviour:
   _wallet: {fileID: 1299378474}
   _enemySpawner: {fileID: 95392762}
   _playerSpawner: {fileID: 955317899}
+  _levelSaver: {fileID: 1102682692}
 --- !u!4 &1102682691
 Transform:
   m_ObjectHideFlags: 0
@@ -6892,6 +6952,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102682692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102682687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fb8ac8d50a7884a81c24edb5a3aaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1102720556
 GameObject:
   m_ObjectHideFlags: 0
@@ -7236,7 +7308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: SoldierHouse
   _unitPrefab: {fileID: 2554530236790132330, guid: b1bd4fb91e14ea04295ec10cde998b5a, type: 3}
   _price: {fileID: 575847150}
   _playerSpawner: {fileID: 955317899}
@@ -8017,7 +8089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: PoisonBomberHouse
   _unitPrefab: {fileID: 199421727779846343, guid: 36c5aa481ea911a42b82b640a4318b8a, type: 3}
   _price: {fileID: 1772648125}
   _playerSpawner: {fileID: 955317899}
@@ -11147,7 +11219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: ArcherHouse
   _unitPrefab: {fileID: 8054206081254118363, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
   _price: {fileID: 46676807}
   _playerSpawner: {fileID: 955317899}
@@ -11718,7 +11790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: MusketeerHouse
   _unitPrefab: {fileID: 4576359847397381939, guid: 695f30cec923ea74b9633ba716bb0c1f, type: 3}
   _price: {fileID: 1408027324}
   _playerSpawner: {fileID: 955317899}
@@ -12447,7 +12519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: CrossbowmanHouse
   _unitPrefab: {fileID: 5772832471459550093, guid: 43bf9fecd3a0a3a4190fa796be8730a0, type: 3}
   _price: {fileID: 1102720557}
   _playerSpawner: {fileID: 955317899}
@@ -13137,3 +13209,4 @@ SceneRoots:
   - {fileID: 141920209}
   - {fileID: 1568976090}
   - {fileID: 1246927522}
+  - {fileID: 703363870}

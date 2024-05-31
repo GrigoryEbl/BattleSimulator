@@ -11,20 +11,12 @@ public class LevelStarter : MonoBehaviour
     [SerializeField] private Wallet _wallet;
     [SerializeField] private EnemySpawner _enemySpawner;
     [SerializeField] private PlayerSpawner _playerSpawner;
-
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += PrepareLevel;
-    }
+    [SerializeField] private LevelSaver _levelSaver;
 
     private void Start()
     {
-        PrepareLevel();//Убрать при билдинге
-    }
-
-    private void OnDisable()
-    {
-        YandexGame.GetDataEvent -= PrepareLevel;
+        if (YandexGame.SDKEnabled)
+            PrepareLevel();
     }
 
     private void Initialize(LevelConfig levelConfig)
@@ -32,6 +24,7 @@ public class LevelStarter : MonoBehaviour
         _wallet.Initialize(levelConfig.LevelMoney);
         _enemySpawner.Initialize(levelConfig.UnitsConfig);
         _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
+        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.Number);
     }
 
     private LevelConfig GetCurrentLevel()

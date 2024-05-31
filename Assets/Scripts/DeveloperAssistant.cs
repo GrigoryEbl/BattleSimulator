@@ -1,5 +1,6 @@
 using Lean.Localization;
 using UnityEngine;
+using YG;
 
 public class DeveloperAssistant : MonoBehaviour
 {
@@ -11,4 +12,11 @@ public class DeveloperAssistant : MonoBehaviour
 
     [ContextMenu("SetRussian")]
     public void SetRussian() => LeanLocalization.SetCurrentLanguageAll("Russian");
+
+    [ContextMenu("Reset")]
+    public void ResetProgress()
+    {
+        YandexGame.ResetSaveProgress();
+        YandexGame.SaveProgress();
+    }
 }

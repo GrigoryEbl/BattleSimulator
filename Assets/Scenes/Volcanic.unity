@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _videoAd: {fileID: 1776480069}
-  _sceneLoader: {fileID: 1034593057}
+  _sceneLoader: {fileID: 1809073278}
 --- !u!114 &55992315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: BomberHouse
   _unitPrefab: {fileID: 5552803393310075512, guid: eb2cff2513c67ed4eb471325055c70e7, type: 3}
   _price: {fileID: 2143515001}
   _playerSpawner: {fileID: 1975130956}
@@ -3001,7 +3001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: SoldierHouse
   _unitPrefab: {fileID: 2554530236790132330, guid: b1bd4fb91e14ea04295ec10cde998b5a, type: 3}
   _price: {fileID: 970867078}
   _playerSpawner: {fileID: 1975130956}
@@ -3445,7 +3445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: StoneThrowerHouse
   _unitPrefab: {fileID: 3644526407784382489, guid: 3ab58dd44cebad240a275a243cc6faf2, type: 3}
   _price: {fileID: 425260220}
   _playerSpawner: {fileID: 1975130956}
@@ -3751,7 +3751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: ArcherHouse
   _unitPrefab: {fileID: 8054206081254118363, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
   _price: {fileID: 713120232}
   _playerSpawner: {fileID: 1975130956}
@@ -6063,7 +6063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4431eaffa8bb6154e98b9bc727dbbeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneLoader: {fileID: 1034593057}
+  _sceneLoader: {fileID: 1809073278}
 --- !u!114 &975541314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6744,7 +6744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: PoisonBomberHouse
   _unitPrefab: {fileID: 199421727779846343, guid: 36c5aa481ea911a42b82b640a4318b8a, type: 3}
   _price: {fileID: 1120110914}
   _playerSpawner: {fileID: 1975130956}
@@ -7109,6 +7109,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101354681}
   m_CullTransparentMesh: 1
+--- !u!1001 &1106666999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_Name
+      value: YandexGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
 --- !u!1 &1113919054
 GameObject:
   m_ObjectHideFlags: 0
@@ -9987,7 +10044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: MusketeerHouse
   _unitPrefab: {fileID: 4576359847397381939, guid: 695f30cec923ea74b9633ba716bb0c1f, type: 3}
   _price: {fileID: 242467062}
   _playerSpawner: {fileID: 1975130956}
@@ -10782,7 +10839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: SpearmanHouse
   _unitPrefab: {fileID: 8969567008464805580, guid: d0e97820f69a7d44ab3806d88e0c13b9, type: 3}
   _price: {fileID: 1361915647}
   _playerSpawner: {fileID: 1975130956}
@@ -11184,7 +11241,7 @@ GameObject:
   - component: {fileID: 1809073277}
   - component: {fileID: 1809073278}
   m_Layer: 0
-  m_Name: RestartSceneLoader
+  m_Name: BattleSceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11693,7 +11750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: BossHouse
   _unitPrefab: {fileID: 8335985719558732927, guid: 46105b7cc5056a84f9eb6b35d57f9601, type: 3}
   _price: {fileID: 2003970776}
   _playerSpawner: {fileID: 1975130956}
@@ -12335,7 +12392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _buildingName: 
+  _buildingName: CrossbowmanHouse
   _unitPrefab: {fileID: 5772832471459550093, guid: 43bf9fecd3a0a3a4190fa796be8730a0, type: 3}
   _price: {fileID: 1623126001}
   _playerSpawner: {fileID: 1975130956}
@@ -12791,6 +12848,7 @@ GameObject:
   - component: {fileID: 2140276139}
   - component: {fileID: 2140276137}
   - component: {fileID: 2140276136}
+  - component: {fileID: 2140276140}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -12813,6 +12871,7 @@ MonoBehaviour:
   _startButton: {fileID: 1416122825}
   _enemySpawner: {fileID: 1296864160}
   _playerSpawner: {fileID: 1975130957}
+  _levelSaver: {fileID: 2140276140}
   _drawPanel: {fileID: 1333614494}
   _gameOverPanel: {fileID: 261587943}
   _congratulationsPanel: {fileID: 108466153}
@@ -12833,6 +12892,7 @@ MonoBehaviour:
   _wallet: {fileID: 1021073772}
   _enemySpawner: {fileID: 1296864161}
   _playerSpawner: {fileID: 1975130956}
+  _levelSaver: {fileID: 2140276140}
 --- !u!4 &2140276139
 Transform:
   m_ObjectHideFlags: 0
@@ -12848,6 +12908,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2140276140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140276135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fb8ac8d50a7884a81c24edb5a3aaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143515000
 GameObject:
   m_ObjectHideFlags: 0
@@ -13142,3 +13214,4 @@ SceneRoots:
   - {fileID: 1975130957}
   - {fileID: 136026401}
   - {fileID: 44415900}
+  - {fileID: 1106666999}

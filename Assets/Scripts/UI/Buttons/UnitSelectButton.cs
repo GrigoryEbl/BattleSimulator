@@ -20,22 +20,22 @@ public class UnitSelectButton : MonoBehaviour
         _button = GetComponent<Button>();
     }
 
+    private void OnEnable()
+    {
+        _button.onClick.AddListener(SetUnit);
+    }
+
     private void Start()
     {
         _price.text = _unitPrefab.Price.ToString();
-        Initialize();//Убрать, когда будем собирать билд
-    }
 
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += Initialize;
-        _button.onClick.AddListener(SetUnit);
+        if (YandexGame.SDKEnabled)
+            Initialize();
     }
 
     private void OnDisable()
     {
         _button.onClick.RemoveListener(SetUnit);
-        YandexGame.GetDataEvent -= Initialize;
     }
 
     private void Initialize()

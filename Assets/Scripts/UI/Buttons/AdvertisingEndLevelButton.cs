@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class AdvertisingEndLevelButton : MonoBehaviour
 {
     [SerializeField] private VideoAd _videoAd;
-    [SerializeField] private TunableSceneLoader _sceneLoader;
+    [SerializeField] private BattleSceneLoader _sceneLoader;
 
     private Button _button;
 

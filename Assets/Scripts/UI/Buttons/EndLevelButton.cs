@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(InterstitialAd))]
 internal class EndLevelButton : MonoBehaviour
 {
-    [SerializeField] private TunableSceneLoader _sceneLoader;
+    [SerializeField] private BattleSceneLoader _sceneLoader;
 
     private Button _button;
     private InterstitialAd _interstitialAd;
