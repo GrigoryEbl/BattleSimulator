@@ -1,41 +1,54 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using YG;
 
-[RequireComponent(typeof(LevelsPool))]
 public class LevelStarter : MonoBehaviour
 {
+    [SerializeField] private List<LevelConfig> _levelsConfigs;
+
     [SerializeField] private Wallet _wallet;
     [SerializeField] private EnemySpawner _enemySpawner;
     [SerializeField] private PlayerSpawner _playerSpawner;
 
-    private LevelsPool _levelsPool;
-    private LevelConfig _levelConfig;
-
-    private void Awake()
+    private void OnEnable()
     {
-        _levelsPool = GetComponent<LevelsPool>();
-
-        FindLevelConfig();
-        Initialize();
+        YandexGame.GetDataEvent += PrepareLevel;
     }
 
     private void Start()
     {
-        _enemySpawner.Spawn();
+        PrepareLevel();//Убрать при билдинге
     }
 
-    private void Initialize()
+    private void OnDisable()
     {
-        _wallet.Initialize(_levelConfig.Money);
-        _enemySpawner.Initialize(_levelConfig.UnitsConfig);
-        _playerSpawner.Initialize(_levelConfig.MaxSpawnUnitCount);
+        YandexGame.GetDataEvent -= PrepareLevel;
     }
 
-    private void FindLevelConfig()
+    private void Initialize(LevelConfig levelConfig)
     {
-        _levelConfig = _levelsPool.GetCurrentLevel();
+        _wallet.Initialize(levelConfig.LevelMoney);
+        _enemySpawner.Initialize(levelConfig.UnitsConfig);
+        _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
+    }
 
-        if (_levelConfig == null)
+    private LevelConfig GetCurrentLevel()
+    {
+        int levelNumber = Mathf.Min(YandexGame.savesData.CurrentLevel, _levelsConfigs.Count);
+
+        return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
+    }
+
+    private void PrepareLevel()
+    {
+        var levelConfig = GetCurrentLevel();
+
+        if (levelConfig == null)
             throw new ArgumentNullException(nameof(LevelConfig));
+
+        Initialize(levelConfig);
+        _enemySpawner.Spawn();
     }
 }

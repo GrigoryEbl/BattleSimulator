@@ -5880,7 +5880,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1117838703}
-  - component: {fileID: 1117838702}
   - component: {fileID: 1117838701}
   - component: {fileID: 1117838700}
   m_Layer: 0
@@ -5920,24 +5919,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08a4e08a452d134ca56ee3178f094d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelsConfigs:
+  - {fileID: 11400000, guid: 943ce83b01fb0a444b7242530ee99c2d, type: 2}
   _wallet: {fileID: 1355019300}
   _enemySpawner: {fileID: 969772530}
   _playerSpawner: {fileID: 855962679}
---- !u!114 &1117838702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117838699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8693a9a050b03943afad6d201a430aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelNumber: 1
-  _levelConfig:
-  - {fileID: 11400000, guid: 943ce83b01fb0a444b7242530ee99c2d, type: 2}
 --- !u!4 &1117838703
 Transform:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10324512, g: 0.41670483, b: 0.5239221, a: 1}
+  m_IndirectSpecularColor: {r: 0.10329469, g: 0.4166965, b: 0.5239485, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -677,6 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 8969567008464805580, guid: d0e97820f69a7d44ab3806d88e0c13b9, type: 3}
   _price: {fileID: 1890674993}
   _playerSpawner: {fileID: 978790525}
@@ -2691,6 +2692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 8054206081254118363, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
   _price: {fileID: 2013277285}
   _playerSpawner: {fileID: 978790525}
@@ -3850,6 +3852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 5552803393310075512, guid: eb2cff2513c67ed4eb471325055c70e7, type: 3}
   _price: {fileID: 611004983}
   _playerSpawner: {fileID: 978790525}
@@ -5387,6 +5390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 2554530236790132330, guid: b1bd4fb91e14ea04295ec10cde998b5a, type: 3}
   _price: {fileID: 975498422}
   _playerSpawner: {fileID: 978790525}
@@ -6470,6 +6474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 199421727779846343, guid: 36c5aa481ea911a42b82b640a4318b8a, type: 3}
   _price: {fileID: 1606983332}
   _playerSpawner: {fileID: 978790525}
@@ -6564,7 +6569,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1099265882}
-  - component: {fileID: 1099265881}
   - component: {fileID: 1099265880}
   - component: {fileID: 1099265879}
   m_Layer: 0
@@ -6604,24 +6608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08a4e08a452d134ca56ee3178f094d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _levelsConfigs:
+  - {fileID: 11400000, guid: 943ce83b01fb0a444b7242530ee99c2d, type: 2}
   _wallet: {fileID: 619542357}
   _enemySpawner: {fileID: 1492989925}
   _playerSpawner: {fileID: 978790525}
---- !u!114 &1099265881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099265878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8693a9a050b03943afad6d201a430aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelNumber: 1
-  _levelConfig:
-  - {fileID: 11400000, guid: 943ce83b01fb0a444b7242530ee99c2d, type: 2}
 --- !u!4 &1099265882
 Transform:
   m_ObjectHideFlags: 0
@@ -7569,6 +7560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 5772832471459550093, guid: 43bf9fecd3a0a3a4190fa796be8730a0, type: 3}
   _price: {fileID: 614520222}
   _playerSpawner: {fileID: 978790525}
@@ -7706,6 +7698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 3644526407784382489, guid: 3ab58dd44cebad240a275a243cc6faf2, type: 3}
   _price: {fileID: 824060244}
   _playerSpawner: {fileID: 978790525}
@@ -8428,6 +8421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 8335985719558732927, guid: 46105b7cc5056a84f9eb6b35d57f9601, type: 3}
   _price: {fileID: 380721461}
   _playerSpawner: {fileID: 978790525}
@@ -11808,6 +11802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: 
   _unitPrefab: {fileID: 4576359847397381939, guid: 695f30cec923ea74b9633ba716bb0c1f, type: 3}
   _price: {fileID: 2116370089}
   _playerSpawner: {fileID: 978790525}
