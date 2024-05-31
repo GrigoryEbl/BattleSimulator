@@ -24,7 +24,7 @@ public class LevelStarter : MonoBehaviour
         _wallet.Initialize(levelConfig.LevelMoney);
         _enemySpawner.Initialize(levelConfig.UnitsConfig);
         _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
-        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.Number);
+        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.Number, levelConfig.MoneyReward);
     }
 
     private LevelConfig GetCurrentLevel()

@@ -5,13 +5,17 @@ public class LevelSaver : MonoBehaviour
 {
     private readonly int _levelStep = 1;
 
+    [SerializeField] private PlayerWallet _wallet;
+
     private int _currentLevelNumber;
     private int _levelsCount;
+    private int _moneyReward;
     
-    public void Initialize(int levelsCount, int currentLevelNumber)
+    public void Initialize(int levelsCount, int currentLevelNumber, int moneyReward)
     {
         _levelsCount = levelsCount;
         _currentLevelNumber = currentLevelNumber;
+        _moneyReward = moneyReward;
     }
 
     public void FinishLevel()
@@ -26,6 +30,7 @@ public class LevelSaver : MonoBehaviour
             YandexGame.savesData.CurrentLevel = YandexGame.savesData.CurrentLevel + _levelStep;
         }
 
+        _wallet.AddMoney(_moneyReward);
         YandexGame.SaveProgress();
     }
 }

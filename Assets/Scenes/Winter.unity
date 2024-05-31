@@ -6893,6 +6893,8 @@ GameObject:
   - component: {fileID: 1102682689}
   - component: {fileID: 1102682688}
   - component: {fileID: 1102682692}
+  - component: {fileID: 1102682694}
+  - component: {fileID: 1102682693}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -6962,6 +6964,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fb8ac8d50a7884a81c24edb5a3aaed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallet: {fileID: 1102682693}
+--- !u!114 &1102682693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102682687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ad937f4b7e2fb49ae70fa8014905ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1102682694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102682687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41eb76f304597148a626e9697fb006a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1102720556
