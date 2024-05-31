@@ -35,8 +35,6 @@ public class ClickHandler : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
-            Debug.Log(hitInfo.collider.name);
-
             if (hitInfo.collider.TryGetComponent(out PlayerGround ground))
                 _playerSpawner.Spawn(hitInfo.point);
             else if (hitInfo.collider.TryGetComponent(out Unit unit) && !unit.IsEnemy)

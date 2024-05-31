@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34156758, g: 0.35969654, b: 0.33929354, a: 1}
+  m_IndirectSpecularColor: {r: 0.3414527, g: 0.35960898, b: 0.33922234, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: SpearmanHouse
   _unitPrefab: {fileID: 8969567008464805580, guid: d0e97820f69a7d44ab3806d88e0c13b9, type: 3}
   _price: {fileID: 827979433}
   _playerSpawner: {fileID: 855962679}
@@ -1179,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: SoldierHouse
   _unitPrefab: {fileID: 2554530236790132330, guid: b1bd4fb91e14ea04295ec10cde998b5a, type: 3}
   _price: {fileID: 1344032231}
   _playerSpawner: {fileID: 855962679}
@@ -1316,6 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: BossHouse
   _unitPrefab: {fileID: 8335985719558732927, guid: 46105b7cc5056a84f9eb6b35d57f9601, type: 3}
   _price: {fileID: 844811191}
   _playerSpawner: {fileID: 855962679}
@@ -1664,6 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: BomberHouse
   _unitPrefab: {fileID: 5552803393310075512, guid: eb2cff2513c67ed4eb471325055c70e7, type: 3}
   _price: {fileID: 1687258749}
   _playerSpawner: {fileID: 855962679}
@@ -5164,6 +5168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: MusketeerHouse
   _unitPrefab: {fileID: 4576359847397381939, guid: 695f30cec923ea74b9633ba716bb0c1f, type: 3}
   _price: {fileID: 282480100}
   _playerSpawner: {fileID: 855962679}
@@ -6376,6 +6381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: PoisonBomberHouse
   _unitPrefab: {fileID: 199421727779846343, guid: 36c5aa481ea911a42b82b640a4318b8a, type: 3}
   _price: {fileID: 1251697101}
   _playerSpawner: {fileID: 855962679}
@@ -10557,6 +10563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: CrossbowmanHouse
   _unitPrefab: {fileID: 5772832471459550093, guid: 43bf9fecd3a0a3a4190fa796be8730a0, type: 3}
   _price: {fileID: 1548110338}
   _playerSpawner: {fileID: 855962679}
@@ -12002,6 +12009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: StoneThrowerHouse
   _unitPrefab: {fileID: 3644526407784382489, guid: 3ab58dd44cebad240a275a243cc6faf2, type: 3}
   _price: {fileID: 2005079740}
   _playerSpawner: {fileID: 855962679}
@@ -12972,6 +12980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ab09108a71a9f4e9235df9438568b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buildingName: ArcherHouse
   _unitPrefab: {fileID: 8054206081254118363, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
   _price: {fileID: 338428036}
   _playerSpawner: {fileID: 855962679}
