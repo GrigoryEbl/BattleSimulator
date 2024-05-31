@@ -15,21 +15,20 @@ public class Wallet : MonoBehaviour
         MoneyChanged?.Invoke(_money);
     }
 
-    public void AddMoney(int value)
+    public virtual void AddMoney(int value)
     {
         _money += value;
         MoneyChanged?.Invoke(_money);
     }
 
-    public bool TryRemoveMoney(int price)
+    public bool CanBuy(int price)
     {
-        if (_money >= price)
-        {
-            _money -= price;
-            MoneyChanged?.Invoke(_money);
-            return true;
-        }
+        return price <= _money;
+    }
 
-        return false;
+    public virtual void RemoveMoney(int price)
+    {
+        _money -= price;
+        MoneyChanged?.Invoke(_money);
     }
 }

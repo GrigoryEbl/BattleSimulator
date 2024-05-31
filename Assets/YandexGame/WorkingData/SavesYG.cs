@@ -21,6 +21,7 @@ namespace YG
         // Ваши сохранения
 
         public int PlayerMoney = 0;
+        public int Score = 0;
 
         public List<string> OpenedBuildings = new List<string>() { "SoldierHouse" };
         public bool IsFirstBarrierActive = true;

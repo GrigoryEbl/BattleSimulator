@@ -53,8 +53,8 @@ public class Mine : MonoBehaviour
 
     private void Pay(Player player)
     {
-        player.Wallet.AddMoney(_chargedMoney);
-        _mainWallet.TryRemoveMoney(_chargedMoney);        
+        player.Wallet.AddMoney(_mainWallet.Money);
+        _mainWallet.RemoveMoney(_mainWallet.Money);
     }
 
     private void StartTimer()

@@ -54,8 +54,11 @@ public class BuildingInteraction : MonoBehaviour
 
     public void Buy(Wallet wallet)
     {
-        if (wallet.TryRemoveMoney(_price) == true)
+        if (wallet.CanBuy(_price))
+        {
+            wallet.RemoveMoney(_price);
             Unlock();
+        }
     }
 
     private void SaveData()
