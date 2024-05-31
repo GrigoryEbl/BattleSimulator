@@ -1,5 +1,5 @@
 {
-    "idSave": 330,
+    "idSave": 369,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,11 +10,14 @@
         true,
         false
     ],
-    "PlayerMoney": 0,
+    "PlayerMoney": 275,
+    "Score": 375,
     "OpenedBuildings": [
-        "Archer",
-        "Barrier"
+        "SoldierHouse",
+        "ArcherHouse"
     ],
     "IsFirstBarrierActive": true,
-    "IsSecondBarrierActive": true
+    "IsSecondBarrierActive": true,
+    "CurrentLevel": 2,
+    "CurrentMap": 3
 }

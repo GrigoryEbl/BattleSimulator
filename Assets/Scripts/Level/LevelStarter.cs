@@ -1,41 +1,47 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using YG;
 
-[RequireComponent(typeof(LevelsPool))]
 public class LevelStarter : MonoBehaviour
 {
+    [SerializeField] private List<LevelConfig> _levelsConfigs;
+
     [SerializeField] private Wallet _wallet;
     [SerializeField] private EnemySpawner _enemySpawner;
     [SerializeField] private PlayerSpawner _playerSpawner;
-
-    private LevelsPool _levelsPool;
-    private LevelConfig _levelConfig;
-
-    private void Awake()
-    {
-        _levelsPool = GetComponent<LevelsPool>();
-
-        FindLevelConfig();
-        Initialize();
-    }
+    [SerializeField] private LevelSaver _levelSaver;
 
     private void Start()
     {
-        _enemySpawner.Spawn();
+        if (YandexGame.SDKEnabled)
+            PrepareLevel();
     }
 
-    private void Initialize()
+    private void Initialize(LevelConfig levelConfig)
     {
-        _wallet.Initialize(_levelConfig.Money);
-        _enemySpawner.Initialize(_levelConfig.UnitsConfig);
-        _playerSpawner.Initialize(_levelConfig.MaxSpawnUnitCount);
+        _wallet.Initialize(levelConfig.LevelMoney);
+        _enemySpawner.Initialize(levelConfig.UnitsConfig);
+        _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
+        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.Number, levelConfig.MoneyReward);
     }
 
-    private void FindLevelConfig()
+    private LevelConfig GetCurrentLevel()
     {
-        _levelConfig = _levelsPool.GetCurrentLevel();
+        int levelNumber = Mathf.Min(YandexGame.savesData.CurrentLevel, _levelsConfigs.Count);
 
-        if (_levelConfig == null)
+        return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
+    }
+
+    private void PrepareLevel()
+    {
+        var levelConfig = GetCurrentLevel();
+
+        if (levelConfig == null)
             throw new ArgumentNullException(nameof(LevelConfig));
+
+        Initialize(levelConfig);
+        _enemySpawner.Spawn();
     }
 }

@@ -40,7 +40,7 @@ public class PlayerSpawner : MonoBehaviour
         if (_unitPrefab == null)
             return;
 
-        if (_units.Count < _maxSpawnUnitCount && _unitPrefab.Price <= _wallet.Money)
+        if (_units.Count < _maxSpawnUnitCount && _wallet.CanBuy(_unitPrefab.Price))
             SpawnUnit(position);
     }
 
@@ -77,7 +77,7 @@ public class PlayerSpawner : MonoBehaviour
         unit.Init(false, _targetParent, _startButton);
 
         _units.Add(unit);
-        _wallet.TryRemoveMoney(unit.Price);
+        _wallet.RemoveMoney(unit.Price);
         UnitsCountChanged?.Invoke(_units.Count);
     }
 }

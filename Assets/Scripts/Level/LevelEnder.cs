@@ -9,6 +9,7 @@ public class LevelEnder : MonoBehaviour
     [SerializeField] private Button _startButton;
     [SerializeField] private Transform _enemySpawner;
     [SerializeField] private Transform _playerSpawner;
+    [SerializeField] private LevelSaver _levelSaver;
 
     [Header("Result Panels")]
     [SerializeField] private GameObject _drawPanel;
@@ -36,13 +37,16 @@ public class LevelEnder : MonoBehaviour
             yield return _delay;
 
         if (_enemySpawner.childCount == 0 && _playerSpawner.childCount == 0)
-        {
             _drawPanel.SetActive(true);
-        }
+        else if (_playerSpawner.childCount == 0)
+            _gameOverPanel.SetActive(true);
         else
-        {
-            _congratulationsPanel.SetActive(_enemySpawner.childCount == 0);
-            _gameOverPanel.SetActive(_playerSpawner.childCount == 0);
-        }
+            FinishLevel();
+    }
+
+    private void FinishLevel()
+    {
+        _levelSaver.FinishLevel();
+        _congratulationsPanel.SetActive(true);
     }
 }
