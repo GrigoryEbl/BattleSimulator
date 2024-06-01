@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47fd2b71d6cb8004ebf5b390778f2b97, type: 3}
-  m_Name: SoldierTest
+  m_Name: Spearman
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 2216295002493465727, guid: 8fc0886f70625ee4793c7c01edd3982c, type: 3}
+  _unitPrefab: {fileID: 9178034038031339716, guid: 9ead6b9ba7ad19144ab301c54da32269, type: 3}
   _positions:
-  - {x: 3.14, y: -0.48978984, z: -16.302067}
+  - {x: 3.43, y: 1.2, z: -26.68}
+  - {x: 3.54, y: 1.2, z: -30.76}
