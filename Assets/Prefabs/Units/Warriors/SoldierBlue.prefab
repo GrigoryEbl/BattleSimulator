@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27baf2f56dba3824ab75b9805c0157cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 10
+  _price: 50
   _health: 10
   _weapon: {fileID: 1259284523571531530}
 --- !u!114 &3204156593844509924

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47fd2b71d6cb8004ebf5b390778f2b97, type: 3}
-  m_Name: Musket
+  m_Name: Archer
   m_EditorClassIdentifier: 
-  _unitPrefab: {fileID: 457730170414570418, guid: 6d8532d01c2a3364f8aec9d5dab92794, type: 3}
+  _unitPrefab: {fileID: 3304783182819056272, guid: 8bac1f7842f7d9e408c02dd7d536a2fb, type: 3}
   _positions:
-  - {x: 6.239997, y: -0.48978984, z: -18.692795}
-  - {x: 6.2398505, y: -0.48978987, z: -13.61}
+  - {x: 8.59, y: 1.1688704, z: -31.21}
+  - {x: 8.59, y: 1.1688704, z: -24.29}

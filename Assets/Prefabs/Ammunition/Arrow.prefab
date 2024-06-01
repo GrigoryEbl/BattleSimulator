@@ -5098,23 +5098,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19821506, guid: 14bb13abe3804f242b49ffc7f2604227, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19832174, guid: 14bb13abe3804f242b49ffc7f2604227, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19848820, guid: 14bb13abe3804f242b49ffc7f2604227, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19862146, guid: 14bb13abe3804f242b49ffc7f2604227, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19866650, guid: 14bb13abe3804f242b49ffc7f2604227, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19918590, guid: 14bb13abe3804f242b49ffc7f2604227, type: 3}
       propertyPath: m_Materials.Array.size

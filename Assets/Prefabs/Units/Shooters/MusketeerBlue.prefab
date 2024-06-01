@@ -5887,7 +5887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714ac8df160a79b408bbb3179b2d331d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 125
+  _price: 150
   _health: 10
   _weapon: {fileID: 6618038236781585421}
 --- !u!114 &4748094916672407007
