@@ -6670,11 +6670,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelsConfigs:
-  - {fileID: 11400000, guid: 6ec6b11aa450d6d4dbeb8f2de1d4c86f, type: 2}
-  - {fileID: 11400000, guid: c12a1e9ec79c5694d86093c1ffda110e, type: 2}
-  - {fileID: 11400000, guid: 7e4d7658aefd4f24cbad7a4d3ed7d2fd, type: 2}
-  - {fileID: 11400000, guid: 5b981376c75446d4abcd75178060c0d6, type: 2}
-  - {fileID: 11400000, guid: e23b5c604b8228c488f1a08cc6a387a3, type: 2}
+  - {fileID: 11400000, guid: 7ce1fa1af48494547955748485672fae, type: 2}
+  - {fileID: 11400000, guid: 81b960e3c6cfdcc48a13708afb235764, type: 2}
+  - {fileID: 11400000, guid: f1b6fd5ceb53e1446ad5c37e3ad8e785, type: 2}
+  - {fileID: 11400000, guid: b00a77b81aa922b4ea6858df3b47773d, type: 2}
+  - {fileID: 11400000, guid: 65c1a9d2187f73243bd297aca394f778, type: 2}
   _wallet: {fileID: 619542357}
   _enemySpawner: {fileID: 1492989925}
   _playerSpawner: {fileID: 978790525}
