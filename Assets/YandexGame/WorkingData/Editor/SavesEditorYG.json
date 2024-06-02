@@ -1,7 +1,7 @@
 {
-    "idSave": 538,
+    "idSave": 554,
     "isFirstSession": false,
-    "language": "ru",
+    "language": "en",
     "promptDone": false,
     "money": 1,
     "newPlayerName": "Hello!",
@@ -10,10 +10,11 @@
         true,
         false
     ],
-    "PlayerMoney": 0,
-    "Score": 0,
+    "PlayerMoney": 225,
+    "Score": 300,
     "OpenedBuildings": [
-        "SoldierHouse"
+        "SoldierHouse",
+        "StoneThrowerHouse"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true,
