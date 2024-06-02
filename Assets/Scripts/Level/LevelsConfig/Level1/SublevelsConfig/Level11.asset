@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _number: 11
   _levelMoney: 1150
-  _moneyReward: 130
+  _moneyReward: 230
   _maxSpawnUnitCount: 10
   _unitsConfig:
   - {fileID: 11400000, guid: 5b32ee9c39d5b1a4fa9be83d39c1cfb1, type: 2}
