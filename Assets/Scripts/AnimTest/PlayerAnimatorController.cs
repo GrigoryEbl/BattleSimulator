@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimatorController : AnimatorController
+public class PlayerAnimatorController : MonoBehaviour
 {
     private Movement _movement;
     private AnimatorController _animatorController;
@@ -26,13 +26,13 @@ public class PlayerAnimatorController : AnimatorController
 
     private void SetState(bool isMoving)
     {
-        if (!isMoving)
+        if (isMoving)
         {
-            _animatorController. SetState(UnitAnimatorStates.idle);
+            _animatorController. SetState(UnitAnimatorStates.run);
         }
         else
         {
-            _animatorController. SetState(UnitAnimatorStates.run);
+            _animatorController. SetState(UnitAnimatorStates.idle);
         }
 
     }
