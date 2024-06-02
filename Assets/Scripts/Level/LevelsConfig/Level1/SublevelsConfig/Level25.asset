@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: Level25
   m_EditorClassIdentifier: 
   _number: 25
-  _levelMoney: 450
+  _levelMoney: 4500
   _moneyReward: 130
   _maxSpawnUnitCount: 10
-  _unitsConfig: []
+  _unitsConfig:
+  - {fileID: 11400000, guid: 516b5d9161162f54bb747eac393b14b8, type: 2}
+  - {fileID: 11400000, guid: f976f5a596df4f749b6fb388928b5814, type: 2}
+  - {fileID: 11400000, guid: 0280d98bbcfccbb45ba5e581a0b2f502, type: 2}
+  - {fileID: 11400000, guid: f084c244a905eb14a841b2f58d40bc8c, type: 2}
+  - {fileID: 11400000, guid: 303fe78086694db46869f941cd234bbe, type: 2}
+  - {fileID: 11400000, guid: ddaf9464cdd5ac04a9ac9d626cbba6cd, type: 2}

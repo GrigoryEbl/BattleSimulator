@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   _number: 2
-  _levelMoney: 300
+  _levelMoney: 230
   _moneyReward: 50
   _maxSpawnUnitCount: 7
   _unitsConfig:
