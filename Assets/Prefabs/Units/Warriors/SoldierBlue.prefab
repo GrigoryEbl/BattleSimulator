@@ -1984,7 +1984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 50
-  _health: 10
+  _health: 8
   _weapon: {fileID: 1259284523571531530}
 --- !u!114 &3204156593844509924
 MonoBehaviour:
