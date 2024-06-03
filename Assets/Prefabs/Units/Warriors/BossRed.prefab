@@ -725,8 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27baf2f56dba3824ab75b9805c0157cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _price: 10
-  _health: 25
+  _price: 250
+  _health: 16
   _weapon: {fileID: 9195832175406979376}
 --- !u!114 &8489595833581098309
 MonoBehaviour:
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fbef7918f3b1945b05bd02c43d0df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 1
 --- !u!114 &7491726829762719326
 MonoBehaviour:
   m_ObjectHideFlags: 0
