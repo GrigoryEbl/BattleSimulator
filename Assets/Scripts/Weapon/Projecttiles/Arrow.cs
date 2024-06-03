@@ -8,14 +8,14 @@ public class Arrow : Projectile
     private void OnEnable()
     {
         if (_weapon == null)
-            SetWeapon();
+            _weapon = GetComponent<MeleeWeapon>();
 
         _weapon.Hited += OnHited;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.TryGetComponent(out Ground ground))
+        if (collision.collider.TryGetComponent(out Ground ground))
             Push();
     }
 
@@ -24,9 +24,10 @@ public class Arrow : Projectile
         _weapon.Hited -= OnHited;
     }
 
-    private void SetWeapon()
+    public override void Initialize(ProjectilesPool pool, bool isEnemy)
     {
-        _weapon = GetComponent<MeleeWeapon>();
+        base.Initialize(pool, isEnemy);
+        
         _weapon.SetBattleSide(IsEnemy);
     }
 
