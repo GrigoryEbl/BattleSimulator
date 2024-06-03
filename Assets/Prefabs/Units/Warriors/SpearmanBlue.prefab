@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 75
-  _health: 10
+  _health: 12
   _weapon: {fileID: 2267165318982770864}
 --- !u!114 &1835981241719690536
 MonoBehaviour:
