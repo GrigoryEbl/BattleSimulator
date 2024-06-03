@@ -9,6 +9,15 @@ public class Wallet : MonoBehaviour
 
     public int Money => _money;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))   //Delete
+        {
+            AddMoney(150);
+        }
+    }
+
+
     public void Initialize(int money)
     {
         _money = money;
