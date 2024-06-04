@@ -5,6 +5,7 @@ public class MeleeWeapon : Weapon
 {
     [SerializeField] private int _damage;
     [SerializeField] private ParticleSystem _strikeEffect;
+    [SerializeField] private AudioSource _audioEffect;
 
     public event Action Hited;
 
@@ -19,5 +20,7 @@ public class MeleeWeapon : Weapon
         target.TakeDamage(_damage);
         Hited?.Invoke();
         _strikeEffect.Play();
+        _audioEffect.Play();
+        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
     }
 }

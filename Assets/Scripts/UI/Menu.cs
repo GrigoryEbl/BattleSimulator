@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class Menu : MonoBehaviour
     private readonly float _minVolume = 0f;
 
     [SerializeField] private FocusTracker _focusTracker;
+
+    private void Start()
+    {
+
+        SceneManager.LoadScene((int)SceneNames.Mines, LoadSceneMode.Additive);
+    }
 
     public void OpenPanel(GameObject panel) => panel.SetActive(true);
 

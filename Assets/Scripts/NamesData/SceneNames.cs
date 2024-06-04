@@ -7,5 +7,6 @@ public enum SceneNames
     Volcanic,
     Tropics,
     Winter,
-    Castle
+    Castle,
+    Mines
 };

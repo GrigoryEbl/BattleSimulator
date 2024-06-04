@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle.unity
     guid: 0003b16424c6f014a84479c4a4a025c7
+  - enabled: 1
+    path: Assets/Scenes/Mines.unity
+    guid: 14ff783c3b168df46958840e134c3c64
   m_configObjects: {}

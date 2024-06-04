@@ -14,6 +14,7 @@ public class Grenade : Bomb
         Collider[] colliders = Physics.OverlapSphere(transform.position, _radius);
 
         Instantiate(_explosionEffect, transform.position, Quaternion.identity);
+        PlayExlodeEffcet();
 
         foreach (Collider nearbyObject in colliders)
         {
