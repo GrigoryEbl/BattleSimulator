@@ -19,4 +19,10 @@ public class DeveloperAssistant : MonoBehaviour
         YandexGame.ResetSaveProgress();
         YandexGame.SaveProgress();
     }
+
+    [ContextMenu("CaptureScreenshot")]
+    public void CaptureScreenshot()
+    {
+        ScreenCapture.CaptureScreenshot("Tutorial.png");
+    }
 }
