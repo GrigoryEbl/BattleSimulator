@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 43.671
       objectReference: {fileID: 0}
+    - target: {fileID: 4667945762322174550, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _chargedMoney
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5339125756806622849, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Camera
       value: 
@@ -183,6 +187,10 @@ PrefabInstance:
     - target: {fileID: 5509340894104936477, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Name
       value: Mine2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776227533009696038, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _price
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -242,6 +250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 13.671
       objectReference: {fileID: 0}
+    - target: {fileID: 4667945762322174550, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _chargedMoney
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5339125756806622849, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Camera
       value: 
@@ -249,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 5509340894104936477, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Name
       value: Mine3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776227533009696038, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _price
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -318,6 +334,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -79.527
       objectReference: {fileID: 0}
+    - target: {fileID: 4667945762322174550, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _chargedMoney
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5339125756806622849, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Camera
       value: 
@@ -325,6 +345,10 @@ PrefabInstance:
     - target: {fileID: 5509340894104936477, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Name
       value: Mine4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776227533009696038, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _price
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -378,6 +402,10 @@ PrefabInstance:
     - target: {fileID: 3777153808594365366, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 28.671
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667945762322174550, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _chargedMoney
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5339125756806622849, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Camera
@@ -495,9 +523,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5339125756806622849, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
-      propertyPath: m_Camera
-      value: 
+    - target: {fileID: 4667945762322174550, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _chargedMoney
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5509340894104936477, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Name
@@ -556,6 +584,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 47.083
       objectReference: {fileID: 0}
+    - target: {fileID: 4667945762322174550, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _chargedMoney
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5339125756806622849, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Camera
       value: 
@@ -563,6 +595,10 @@ PrefabInstance:
     - target: {fileID: 5509340894104936477, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
       propertyPath: m_Name
       value: Mine5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776227533009696038, guid: e1b5b57cbad2c064194e307dc1ca4d7f, type: 3}
+      propertyPath: _price
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
