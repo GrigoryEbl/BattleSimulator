@@ -19,13 +19,12 @@ public class BuildingInteraction : MonoBehaviour
     private void Awake()
     {
         _triggerCollider = GetComponent<SphereCollider>();
-
-        GetLoad();
     }
 
-    private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
-
-    private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
+    private void Start()
+    {
+        GetLoad();
+    }
 
     private void GetLoad()
     {
@@ -50,6 +49,8 @@ public class BuildingInteraction : MonoBehaviour
 
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
             SaveData();
+
+        print('*' + transform.gameObject.name + ": UNLOCKED BI*");
     }
 
     public void Buy(Wallet wallet)
