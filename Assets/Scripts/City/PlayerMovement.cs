@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-internal class Movement : MonoBehaviour
+internal class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed;
 

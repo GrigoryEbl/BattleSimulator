@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionBarrier : MonoBehaviour
+internal class ExplosionBarrier : MonoBehaviour
 {
     [SerializeField] private GameObject _explosionEffect;
     [SerializeField] private GameObject _destructible;
-    [SerializeField] private GameObject _dinamite;
+    [SerializeField] private GameObject _dynamite;
 
     public void Explode()
     {
         _explosionEffect.SetActive(true);
         _destructible.SetActive(false);
-        _dinamite.SetActive(false);
+        _dynamite.SetActive(false);
     }
 }

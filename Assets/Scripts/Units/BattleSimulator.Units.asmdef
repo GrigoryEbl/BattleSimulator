@@ -1,0 +1,19 @@
+{
+    "name": "BattleSimulator.Units",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3c217ea3b8460ec46b9afae79b934a03",
+        "GUID:54b0851ff50dc6b46a12d16fc632a6da",
+        "GUID:21b0c8d1703a94250bfac916590cea4f",
+        "GUID:c83266e78bc8c1c43839545effe4f49a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

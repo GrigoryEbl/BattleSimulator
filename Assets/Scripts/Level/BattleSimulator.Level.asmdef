@@ -1,0 +1,20 @@
+{
+    "name": "BattleSimulator.Level",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f4f501b587688c049990484a807c41ef",
+        "GUID:33eca1d241874e0499d557b96b251910",
+        "GUID:da745f80721ab6f4b9bbba784f0d00d6",
+        "GUID:cab084fe42d5a2a4096d348f99e2344f",
+        "GUID:c83266e78bc8c1c43839545effe4f49a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
