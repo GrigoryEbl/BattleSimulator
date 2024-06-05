@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class Unit : MonoBehaviour, IDamageable
 {
+    private readonly float _deathDelay = 2.5f;
+
     [SerializeField] private int _price;
     [SerializeField] private int _health;
     [SerializeField] private Weapon _weapon;
@@ -39,7 +41,6 @@ public class Unit : MonoBehaviour, IDamageable
         _startButton.onClick.AddListener(StartBattle);
     }
     
-    [ContextMenu("Fell")]
     public void Fell()
     {        
         _ragdollHandler.TurnOn(true);
@@ -49,8 +50,9 @@ public class Unit : MonoBehaviour, IDamageable
     {
         Fell();
         _transform.parent = null;
+        _weapon.enabled = false;
         _startButton.onClick.RemoveListener(StartBattle);
-        Invoke(nameof(OffBehaviorTree), 1f);//маг. число
+        Invoke(nameof(RemoveBody), _deathDelay);
     }
 
     public void ResetCurrentPosition()
@@ -83,9 +85,10 @@ public class Unit : MonoBehaviour, IDamageable
         _weapon = null;
     }
 
-    private void OffBehaviorTree()
+    private void RemoveBody()
     {
         _behaviorTree.enabled = false;
+        _ragdollHandler.RemoveBody();
     }
 
     private void StartBattle()

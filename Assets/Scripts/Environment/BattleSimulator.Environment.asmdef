@@ -1,0 +1,16 @@
+{
+    "name": "BattleSimulator.Environment",
+    "rootNamespace": "",
+    "references": [
+        "GUID:da745f80721ab6f4b9bbba784f0d00d6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

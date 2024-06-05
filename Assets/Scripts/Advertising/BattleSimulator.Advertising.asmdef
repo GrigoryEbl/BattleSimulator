@@ -1,0 +1,17 @@
+{
+    "name": "BattleSimulator.Advertising",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ef7e0e3eb213f324c87b70a782844fb6",
+        "GUID:cb84168cfeb4b3847bf0f8244c0e51bb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

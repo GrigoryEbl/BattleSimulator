@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ClickHandler : MonoBehaviour
@@ -32,6 +33,9 @@ public class ClickHandler : MonoBehaviour
     private void SpawnUnit()
     {
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {

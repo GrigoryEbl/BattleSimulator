@@ -3,7 +3,7 @@ using UnityEngine;
 
 internal class JoystickInput : MonoBehaviour
 {
-    [SerializeField] private Movement _movement;
+    [SerializeField] private PlayerMovement _movement;
     [SerializeField] private Joystick _joystick;
 
     public event Action Moved;
