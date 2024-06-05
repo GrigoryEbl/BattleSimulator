@@ -17,8 +17,9 @@ public class UnitIconHandler : MonoBehaviour
     private void OnEnable() => _buildingInteraction.BuildingUnlocked += Show;
     private void OnDisable () => _buildingInteraction.BuildingUnlocked -= Show;
 
-    public void Show()
+    private void Show()
     {
-        _image.color = Color.white;
+        _image.color = new Color(255, 255, 255, 255);
+        print('*' + transform.parent.gameObject.name + ": UNLOCKED icon*");
     }
 }
