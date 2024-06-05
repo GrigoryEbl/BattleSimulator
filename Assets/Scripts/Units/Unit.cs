@@ -50,6 +50,7 @@ public class Unit : MonoBehaviour, IDamageable
     {
         Fell();
         _transform.parent = null;
+        _weapon.enabled = false;
         _startButton.onClick.RemoveListener(StartBattle);
         Invoke(nameof(RemoveBody), _deathDelay);
     }
