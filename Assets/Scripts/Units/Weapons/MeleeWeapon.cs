@@ -20,7 +20,6 @@ public class MeleeWeapon : Weapon
         target.TakeDamage(_damage);
         Hited?.Invoke();
         _strikeEffect.Play();
-        _audioEffect.Play();
         AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
     }
 }

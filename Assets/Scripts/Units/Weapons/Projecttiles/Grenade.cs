@@ -13,8 +13,8 @@ public class Grenade : Bomb
         List<IDamageable> targets = new List<IDamageable>();
         Collider[] colliders = Physics.OverlapSphere(transform.position, _radius);
 
+        base.Explode();
         Instantiate(_explosionEffect, transform.position, Quaternion.identity);
-        PlayExlodeEffcet();
 
         foreach (Collider nearbyObject in colliders)
         {

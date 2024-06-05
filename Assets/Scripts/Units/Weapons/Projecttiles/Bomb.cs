@@ -10,9 +10,7 @@ public abstract class Bomb : Projectile
             Explode();
     }
 
-    protected abstract void Explode();
-
-    protected void PlayExlodeEffcet()
+    protected virtual void Explode()
     {
         AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
     }

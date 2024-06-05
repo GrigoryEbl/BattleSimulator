@@ -12,16 +12,11 @@ public class Musket : RangeWeapon
     [SerializeField] private ParticleSystem _shootEffect;
     [SerializeField] private AudioSource _audioEffect;
 
-    public void PlayShootEffect()
-    {
-        _shootEffect.Play();
-        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
-    }
-
     public override void Shoot(Vector3 targetPosition)
     {
         base.Shoot(targetPosition);
-        PlayShootEffect();
+
+        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
         RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
 
         CalculateHits(hits);
