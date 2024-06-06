@@ -1,7 +1,7 @@
 {
-    "idSave": 1105,
+    "idSave": 1126,
     "isFirstSession": false,
-    "language": "en",
+    "language": "ru",
     "promptDone": false,
     "money": 1,
     "newPlayerName": "Hello!",
@@ -10,20 +10,11 @@
         true,
         false
     ],
-    "PlayerMoney": 1525,
-    "Score": 9300,
+    "PlayerMoney": 200,
+    "Score": 750,
     "OpenedBuildings": [
         "SoldierHouse",
-        "StoneThrowerHouse",
-        "Barrier",
-        "ArcherHouse",
-        "SpearmanHouse",
-        "CrossbowmanHouse",
-        "PoisonBomberHouse",
-        "BarrierBridge",
-        "MusketeerHouse",
-        "BomberHouse",
-        "BossHouse"
+        "Barrier"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true,

@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9368
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9368
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9368
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.3779
+      value: 1.3801
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1678.46
+      value: 1678.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 76.596
+      value: 76.641
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60,9 +60,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082271958561512970, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -92,6 +100,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2861301693589371847}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1336618841882149082}
   m_SourcePrefab: {fileID: 100100000, guid: 37f3b26f900fb1e4b8fa8087ee8a9473, type: 3}
 --- !u!1 &3824075987579052662 stripped
 GameObject:
@@ -138,8 +149,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.31004798, y: 0.05842585, z: 0.3549709}
-  m_Center: {x: -0.015422456, y: -0.025809474, z: 0.053807165}
+  m_Size: {x: 0.61237764, y: 1.9286274, z: 0.42785308}
+  m_Center: {x: -0.02732262, y: 0.90929127, z: 0.01736609}
 --- !u!54 &7123696543752487130
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,7 +176,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &6060612766480328657
 MonoBehaviour:
@@ -216,7 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9a5ef92462844408ed95ac08a1a3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsMoving: 0
 --- !u!114 &2861301693589371847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,5 +237,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f41eb76f304597148a626e9697fb006a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1336618841882149082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3824075987579052662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c5dffb33467c04d83758fa1d2e5c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
