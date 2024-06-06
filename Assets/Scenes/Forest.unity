@@ -9119,7 +9119,7 @@ MonoBehaviour:
     Text: Warriors
     Object: {fileID: 0}
   - Language: Russian
-    Text: "\u0412\u043E\u0439\u043D\u044B"
+    Text: "\u0412\u043E\u0438\u043D\u044B"
     Object: {fileID: 0}
   - Language: Turkish
     Text: "Sava\u015F\xE7\u0131lar"
@@ -14327,7 +14327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u043E\u0439\u043D\u044B"
+  m_text: "\u0412\u043E\u0438\u043D\u044B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
