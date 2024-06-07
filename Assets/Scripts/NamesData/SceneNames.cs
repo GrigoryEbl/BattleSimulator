@@ -8,5 +8,6 @@ public enum SceneNames
     Tropics,
     Winter,
     Castle,
+    LevelChoiceScene,
     Mines
 };

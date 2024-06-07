@@ -12,7 +12,6 @@ public class TutorialSlideScroller : MonoBehaviour
     private void OnEnable()
     {
         _currentSlide = 0;
-
         Scroll();
     }
 
@@ -20,24 +19,33 @@ public class TutorialSlideScroller : MonoBehaviour
     {
         if (_currentSlide >= _slides.Length)
         {
-            _currentSlide = 0;
-            gameObject.SetActive(false);
-            _mainButtons.SetActive(true);
-            DeactiveSlides();
+            EndSlideShow();
             return;
         }
 
         for (int i = 0; i < _slides.Length; i++)
             _slides[i].SetActive(i == _currentSlide);
+    }
 
+    public void SetNextSlide()
+    {
         _currentSlide++;
     }
 
-    private void DeactiveSlides()
+    public void SetPreviousSlide()
     {
+        _currentSlide--;
+    }
+
+    private void EndSlideShow()
+    {
+        _currentSlide = 0;
+        gameObject.SetActive(false);
+
+        if (_mainButtons != null)
+            _mainButtons.SetActive(true);
+
         for (int i = 0; i < _slides.Length; i++)
-        {
             _slides[i].SetActive(false);
-        }
     }
 }

@@ -4,6 +4,7 @@ using YG;
 public class LevelSaver : MonoBehaviour
 {
     private readonly int _levelStep = 1;
+    private readonly int _finalMap = 8;
 
     [SerializeField] private PlayerWallet _wallet;
 
@@ -20,17 +21,27 @@ public class LevelSaver : MonoBehaviour
 
     public void FinishLevel()
     {
+        SaveLevel();
+
+        _wallet.AddMoney(_moneyReward);
+        YandexGame.SaveProgress();
+    }
+
+    private void SaveLevel()
+    {
+        int currentMap = YandexGame.savesData.CurrentMap;
+
+        if (currentMap == _finalMap)        
+            return;        
+
         if (_currentLevelNumber == _levelsCount)
         {
             YandexGame.savesData.CurrentLevel = _levelStep;
-            YandexGame.savesData.CurrentMap = YandexGame.savesData.CurrentMap + _levelStep;
+            YandexGame.savesData.CurrentMap = currentMap + _levelStep;
         }
         else
         {
             YandexGame.savesData.CurrentLevel = YandexGame.savesData.CurrentLevel + _levelStep;
         }
-
-        _wallet.AddMoney(_moneyReward);
-        YandexGame.SaveProgress();
     }
 }

@@ -1,5 +1,5 @@
 {
-    "idSave": 1134,
+    "idSave": 1150,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,14 +10,14 @@
         true,
         false
     ],
-    "PlayerMoney": 0,
-    "Score": 0,
+    "PlayerMoney": 1240,
+    "Score": 1240,
     "OpenedBuildings": [
         "SoldierHouse"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true,
     "Volume": 1.0,
-    "CurrentLevel": 1,
-    "CurrentMap": 3
+    "CurrentLevel": 4,
+    "CurrentMap": 8
 }
