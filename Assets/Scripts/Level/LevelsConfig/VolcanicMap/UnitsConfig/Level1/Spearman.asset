@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitPrefab: {fileID: 9178034038031339716, guid: 9ead6b9ba7ad19144ab301c54da32269, type: 3}
   _positions:
-  - {x: 3.54, y: 1.2, z: -27.25}
-  - {x: 3.54, y: 1.2, z: -29.789999}
+  - {x: 4, y: 1.2, z: -37}
+  - {x: 4, y: 1.2, z: -39}

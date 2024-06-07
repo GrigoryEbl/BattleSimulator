@@ -20,6 +20,14 @@ public class DeveloperAssistant : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
+    [ContextMenu("SetFinalLevel")]
+    public void SetFinalLevel()
+    {
+        YandexGame.savesData.CurrentLevel = 5;
+        YandexGame.savesData.CurrentMap = 7;
+        YandexGame.SaveProgress();
+    }
+
     [ContextMenu("CaptureScreenshot")]
     public void CaptureScreenshot()
     {

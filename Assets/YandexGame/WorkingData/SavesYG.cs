@@ -26,6 +26,7 @@ namespace YG
         public List<string> OpenedBuildings = new List<string>() { "SoldierHouse" };
         public bool IsFirstBarrierActive = true;
         public bool IsSecondBarrierActive = true;
+        public float Volume = 1f;
         public int CurrentLevel = 1;
         public int CurrentMap = 3;
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
