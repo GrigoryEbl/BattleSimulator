@@ -5,6 +5,7 @@ using UnityEngine;
 public class TutorialSlideScroller : MonoBehaviour
 {
     [SerializeField] private GameObject[] _slides;
+    [SerializeField] private GameObject _mainButtons;
 
     private int _currentSlide;
 
@@ -21,11 +22,13 @@ public class TutorialSlideScroller : MonoBehaviour
         {
             _currentSlide = 0;
             gameObject.SetActive(false);
+            _mainButtons.SetActive(true);
             DeactiveSlides();
             return;
         }
 
-        _slides[_currentSlide].SetActive(true);
+        for (int i = 0; i < _slides.Length; i++)
+            _slides[i].SetActive(i == _currentSlide);
 
         _currentSlide++;
     }
