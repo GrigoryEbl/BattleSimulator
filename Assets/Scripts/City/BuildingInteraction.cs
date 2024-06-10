@@ -9,8 +9,10 @@ public class BuildingInteraction : MonoBehaviour
     [SerializeField] private int _price;
     [SerializeField] private Canvas _priceView;
     [SerializeField] private Transform[] _effects;
+    [SerializeField] private AudioEffectPlayer _audioEffectPlayer;
 
     private SphereCollider _triggerCollider;
+    private bool _isPlayingEffects = true;
 
     public event Action BuildingUnlocked;
 
@@ -30,12 +32,14 @@ public class BuildingInteraction : MonoBehaviour
     {
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
         {
-            Unlock();
+           // _isPlayingEffects = false;
 
             for (int i = 0; i < _effects.Length; i++)
             {
                 Destroy(_effects[i].gameObject);
             }
+
+            Unlock();
         }
     }
 
@@ -47,10 +51,11 @@ public class BuildingInteraction : MonoBehaviour
         _priceView.gameObject.SetActive(false);
         BuildingUnlocked?.Invoke();
 
+        if (_audioEffectPlayer != null)
+            _audioEffectPlayer.PlayEffect();
+
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
             SaveData();
-
-        print('*' + transform.gameObject.name + ": UNLOCKED BI*");
     }
 
     public void Buy(Wallet wallet)
