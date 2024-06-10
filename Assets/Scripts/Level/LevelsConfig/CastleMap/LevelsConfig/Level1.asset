@@ -15,7 +15,7 @@ MonoBehaviour:
   _number: 1
   _levelMoney: 2800
   _moneyReward: 560
-  _maxSpawnUnitCount: 10
+  _maxSpawnUnitCount: 12
   _unitsConfig:
   - {fileID: 11400000, guid: 037a3ce83943cef42966aa7439654dbf, type: 2}
   - {fileID: 11400000, guid: 5f7bfd70513aed2458ca09c79e193962, type: 2}
