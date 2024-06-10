@@ -11,6 +11,7 @@ public class BuildingInteraction : MonoBehaviour
     [SerializeField] private Transform[] _effects;
 
     private SphereCollider _triggerCollider;
+    private bool _isPlayingEffects = true;
 
     public event Action BuildingUnlocked;
 
@@ -30,12 +31,12 @@ public class BuildingInteraction : MonoBehaviour
     {
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
         {
-            Unlock();
-
             for (int i = 0; i < _effects.Length; i++)
             {
                 Destroy(_effects[i].gameObject);
             }
+
+            Unlock();
         }
     }
 
@@ -45,12 +46,11 @@ public class BuildingInteraction : MonoBehaviour
         _building.gameObject.SetActive(true);
         _triggerCollider.enabled = false;
         _priceView.gameObject.SetActive(false);
+
         BuildingUnlocked?.Invoke();
 
         if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
             SaveData();
-
-        print('*' + transform.gameObject.name + ": UNLOCKED BI*");
     }
 
     public void Buy(Wallet wallet)
