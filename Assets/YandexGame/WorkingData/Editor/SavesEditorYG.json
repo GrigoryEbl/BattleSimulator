@@ -1,5 +1,5 @@
 {
-    "idSave": 1407,
+    "idSave": 1411,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,7 +10,7 @@
         true,
         false
     ],
-    "PlayerMoney": 1475,
+    "PlayerMoney": 1225,
     "Score": 4950,
     "OpenedBuildings": [
         "SoldierHouse",
@@ -21,7 +21,8 @@
         "CrossbowmanHouse",
         "Mine",
         "Mine1",
-        "BarrierBridge"
+        "BarrierBridge",
+        "Mine2"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true,
