@@ -1529,6 +1529,7 @@ GameObject:
   - component: {fileID: 153546644}
   - component: {fileID: 153546646}
   - component: {fileID: 153546645}
+  - component: {fileID: 153546647}
   m_Layer: 5
   m_Name: Reward
   m_TagString: Untagged
@@ -1596,6 +1597,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153546643}
   m_CullTransparentMesh: 1
+--- !u!114 &153546647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153546643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17fd71e74f79ad74f9a1edc5f5e00e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rewardMoneyCount: {fileID: 1543892840}
 --- !u!1 &241833090
 GameObject:
   m_ObjectHideFlags: 0
@@ -6919,6 +6933,7 @@ MonoBehaviour:
   _enemySpawner: {fileID: 969772530}
   _playerSpawner: {fileID: 855962679}
   _levelSaver: {fileID: 1117838704}
+  _rewardView: {fileID: 153546647}
 --- !u!4 &1117838703
 Transform:
   m_ObjectHideFlags: 0
