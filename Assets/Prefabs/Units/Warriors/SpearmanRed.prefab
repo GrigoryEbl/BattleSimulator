@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 128517715418955171}
   - component: {fileID: 4626804528495135885}
   - component: {fileID: 2904905881633896156}
+  - component: {fileID: 3436667187804716288}
   m_Layer: 0
   m_Name: SpearmanRed
   m_TagString: Untagged
@@ -762,6 +763,18 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &3436667187804716288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948681922892867099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ceae0a9c899024b81eee595b8bb277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036712228549952879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,6 +2829,10 @@ PrefabInstance:
     - target: {fileID: 4915903237799019763, guid: 47db0d7f7043b12418b206655c0ded42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -26.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972248711028924496, guid: 47db0d7f7043b12418b206655c0ded42, type: 3}
+      propertyPath: m_Center.x
+      value: -0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
