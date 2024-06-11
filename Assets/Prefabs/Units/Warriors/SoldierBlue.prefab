@@ -1843,6 +1843,7 @@ GameObject:
   - component: {fileID: 99536812042057728}
   - component: {fileID: 3761974165948059119}
   - component: {fileID: 1971887546741489451}
+  - component: {fileID: 6449714916752439889}
   m_Layer: 0
   m_Name: SoldierBlue
   m_TagString: Untagged
@@ -1984,7 +1985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _price: 50
-  _health: 8
+  _health: 9
   _weapon: {fileID: 1259284523571531530}
 --- !u!114 &3204156593844509924
 MonoBehaviour:
@@ -2104,6 +2105,18 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &6449714916752439889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646954766578221771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ceae0a9c899024b81eee595b8bb277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7744753555858406381
 GameObject:
   m_ObjectHideFlags: 0
