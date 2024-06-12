@@ -14,7 +14,7 @@ public class LevelStarter : MonoBehaviour
     [SerializeField] private LevelSaver _levelSaver;
     [SerializeField] private RewardView _rewardView;
 
-    private void Start()
+    private void Awake()
     {
         if (YandexGame.SDKEnabled)
             PrepareLevel();
