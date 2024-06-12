@@ -1,5 +1,5 @@
 {
-    "idSave": 1526,
+    "idSave": 1561,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,16 +10,18 @@
         true,
         false
     ],
-    "PlayerMoney": 1180,
-    "Score": 2105,
+    "PlayerMoney": 2835,
+    "Score": 5510,
     "OpenedBuildings": [
         "SoldierHouse",
         "Barrier",
-        "SpearmanHouse"
+        "SpearmanHouse",
+        "BarrierBridge",
+        "MusketeerHouse"
     ],
     "IsFirstBarrierActive": true,
     "IsSecondBarrierActive": true,
     "Volume": 1.0,
-    "CurrentLevel": 4,
-    "CurrentMap": 3
+    "CurrentLevel": 5,
+    "CurrentMap": 4
 }
