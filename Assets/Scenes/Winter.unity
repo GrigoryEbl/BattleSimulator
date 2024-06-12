@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wallet: {fileID: 1299378474}
   _videoAd: {fileID: 1760301330}
-  _rewardMoneyCount: 25
+  _rewardMoneyCount: 50
 --- !u!114 &170377941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3187,7 +3187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + 25
+  m_text: + 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2f49fe8c22d94f9a9e6cd06ad490155, type: 2}
   m_sharedMaterial: {fileID: 3074828514974314926, guid: c2f49fe8c22d94f9a9e6cd06ad490155, type: 2}
