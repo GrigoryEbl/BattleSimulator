@@ -2986,7 +2986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + 25
+  m_text: + 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c2f49fe8c22d94f9a9e6cd06ad490155, type: 2}
   m_sharedMaterial: {fileID: 3074828514974314926, guid: c2f49fe8c22d94f9a9e6cd06ad490155, type: 2}
@@ -8832,7 +8832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wallet: {fileID: 1021073772}
   _videoAd: {fileID: 1776480069}
-  _rewardMoneyCount: 25
+  _rewardMoneyCount: 50
 --- !u!114 &1206098869
 MonoBehaviour:
   m_ObjectHideFlags: 0
