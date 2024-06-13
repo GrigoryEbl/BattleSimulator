@@ -8,11 +8,6 @@ public class UnitCountView : MonoBehaviour
 
     private void OnEnable() => _playerSpawner.UnitsCountChanged += ShowValue;
 
-    private void Start()
-    {
-        ShowValue(0);
-    }
-
     private void OnDisable () => _playerSpawner.UnitsCountChanged -= ShowValue;
 
     private void ShowValue(int value)

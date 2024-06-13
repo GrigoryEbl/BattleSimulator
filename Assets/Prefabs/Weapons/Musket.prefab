@@ -9881,7 +9881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startPoint: {fileID: 2720877620756139538}
-  _damage: 10
+  _damage: 7
   _maxDistance: 1000
   _layerMask:
     serializedVersion: 2

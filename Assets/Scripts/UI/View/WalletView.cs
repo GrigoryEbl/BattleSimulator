@@ -7,8 +7,13 @@ public class WalletView : MonoBehaviour
     [SerializeField] private Wallet _wallet;
 
     private void OnEnable()
-    {
+    {        
         _wallet.MoneyChanged += ShowMoney;
+    }
+
+    private void Start()
+    {
+        ShowMoney(_wallet.Money);
     }
 
     private void OnDisable()
