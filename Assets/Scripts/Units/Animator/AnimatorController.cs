@@ -3,13 +3,16 @@ using UnityEngine;
 public enum UnitAnimatorStates
 {
     idle,
-    run
+    run,
+    Attack
 }
 
 [RequireComponent(typeof(Animator))]
 public class AnimatorController : MonoBehaviour
 {
     private Animator _animator;
+
+    public bool IsAttack => _animator.GetCurrentAnimatorStateInfo(0).IsName(UnitAnimatorStates.Attack.ToString());
 
     private void Awake()
     {
