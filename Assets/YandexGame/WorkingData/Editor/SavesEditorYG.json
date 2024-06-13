@@ -1,5 +1,5 @@
 {
-    "idSave": 1687,
+    "idSave": 1688,
     "isFirstSession": false,
     "language": "en",
     "promptDone": false,
@@ -10,8 +10,8 @@
         true,
         false
     ],
-    "PlayerMoney": 2010,
-    "Score": 8985,
+    "PlayerMoney": 2160,
+    "Score": 9135,
     "OpenedBuildings": [
         "SoldierHouse",
         "Barrier",
