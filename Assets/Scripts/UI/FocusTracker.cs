@@ -12,7 +12,7 @@ public class FocusTracker : MonoBehaviour
         WebApplication.InBackgroundChangeEvent += OnInBackgroundChangeWeb;
     }
 
-    private void Start()
+    private void Awake()
     {
         _currentVolume = PlayerPrefs.GetFloat(GameSaver.Volume);
     }

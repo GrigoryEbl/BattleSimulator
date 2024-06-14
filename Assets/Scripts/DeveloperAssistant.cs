@@ -16,6 +16,15 @@ public class DeveloperAssistant : MonoBehaviour
     public void ResetProgress()
     {
         PlayerPrefs.DeleteAll();
+
+        PlayerPrefs.SetInt(GameSaver.CurrentLevel, 1);
+        PlayerPrefs.SetInt(GameSaver.CurrentMap, 3);
+
+        PlayerPrefs.SetFloat(GameSaver.Volume, 1f);
+
+        PlayerPrefs.SetString("SoldierHouse", true.ToString());
+        PlayerPrefs.SetString(gameObject.name, true.ToString());
+
         PlayerPrefs.Save();
     }
 
