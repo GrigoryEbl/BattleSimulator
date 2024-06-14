@@ -1,9 +1,9 @@
-using YG;
+using UnityEngine;
 
 public class BattleSceneLoader : SceneLoader
 {
     protected override int GetSceneNumber()
     {
-        return YandexGame.savesData.CurrentMap;
+        return GameSaver.CurrentMap;
     }
 }

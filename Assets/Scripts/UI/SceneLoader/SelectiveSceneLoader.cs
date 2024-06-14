@@ -1,5 +1,3 @@
-using YG;
-
 public class SelectiveSceneLoader : SceneLoader
 {
     private int _sceneNumber = 3;

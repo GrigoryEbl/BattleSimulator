@@ -1,17 +1,15 @@
 using System;
 using UnityEngine;
-using YG;
 
 public class BuildingInteraction : MonoBehaviour
 {
     [SerializeField] private Transform _building;
     [SerializeField] private Transform _lockedBuilding;
-    [SerializeField] private int _price;
-    [SerializeField] private Canvas _priceView;
     [SerializeField] private Transform[] _effects;
+    [SerializeField] private Canvas _priceView;
+    [SerializeField] private int _price;
 
     private SphereCollider _triggerCollider;
-    private bool _isPlayingEffects = true;
 
     public event Action BuildingUnlocked;
 
@@ -29,12 +27,10 @@ public class BuildingInteraction : MonoBehaviour
 
     private void GetLoad()
     {
-        if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
+        if (GameSaver.HasBuilding(gameObject.name))
         {
             for (int i = 0; i < _effects.Length; i++)
-            {
                 Destroy(_effects[i].gameObject);
-            }
 
             Unlock();
         }
@@ -49,8 +45,8 @@ public class BuildingInteraction : MonoBehaviour
 
         BuildingUnlocked?.Invoke();
 
-        if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
-            SaveData();
+        if (!GameSaver.HasBuilding(gameObject.name))
+            GameSaver.SaveBuilding(gameObject.name);
     }
 
     public void Buy(Wallet wallet)
@@ -60,11 +56,5 @@ public class BuildingInteraction : MonoBehaviour
             wallet.RemoveMoney(_price);
             Unlock();
         }
-    }
-
-    private void SaveData()
-    {
-        YandexGame.savesData.OpenedBuildings.Add(gameObject.name);
-        YandexGame.SaveProgress();
     }
 }
