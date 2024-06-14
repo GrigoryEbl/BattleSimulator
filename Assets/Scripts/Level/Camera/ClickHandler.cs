@@ -37,6 +37,9 @@ public class ClickHandler : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
+        if (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            return;
+
         if (Physics.Raycast(ray, out RaycastHit hitInfo))
         {
             if (hitInfo.collider.TryGetComponent(out PlayerGround ground))
