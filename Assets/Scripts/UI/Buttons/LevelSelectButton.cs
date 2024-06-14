@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 [RequireComponent(typeof(Button))]
 public class LevelSelectButton : MonoBehaviour
@@ -33,8 +32,8 @@ public class LevelSelectButton : MonoBehaviour
 
     private void SelectLevel()
     {
-        YandexGame.savesData.CurrentLevel = _levelNumber;
-        YandexGame.SaveProgress();
+        PlayerPrefs.SetInt(GameSaver.CurrentLevel, _levelNumber);
+        PlayerPrefs.Save();
 
         _sceneLoader.SelectScene(_sceneNumber);
         _sceneLoader.Load();

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using YG;
 
 public class Menu : MonoBehaviour
 {
@@ -33,7 +32,7 @@ public class Menu : MonoBehaviour
 
     public void ContinueMusic()
     {
-        var volume = YandexGame.savesData.Volume;
+        var volume = PlayerPrefs.GetFloat(GameSaver.Volume);
 
         AudioListener.volume = volume;
         _focusTracker.SetCurrentVolume(volume);

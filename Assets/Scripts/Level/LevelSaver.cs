@@ -1,5 +1,4 @@
 using UnityEngine;
-using YG;
 
 public class LevelSaver : MonoBehaviour
 {
@@ -24,24 +23,25 @@ public class LevelSaver : MonoBehaviour
         SaveLevel();
 
         _wallet.AddMoney(_moneyReward);
-        YandexGame.SaveProgress();
+        PlayerPrefs.Save();
     }
 
     private void SaveLevel()
     {
-        int currentMap = YandexGame.savesData.CurrentMap;
+        int currentMap = PlayerPrefs.GetInt(GameSaver.CurrentMap);
 
         if (currentMap == _finalMap)        
             return;        
 
         if (_currentLevelNumber == _levelsCount)
         {
-            YandexGame.savesData.CurrentLevel = _levelStep;
-            YandexGame.savesData.CurrentMap = currentMap + _levelStep;
+            PlayerPrefs.SetInt(GameSaver.CurrentLevel, _levelStep);
+            PlayerPrefs.SetInt(GameSaver.CurrentMap, currentMap + _levelStep);
         }
         else
         {
-            YandexGame.savesData.CurrentLevel = YandexGame.savesData.CurrentLevel + _levelStep;
+            int level = PlayerPrefs.GetInt(GameSaver.CurrentLevel) + _levelStep;
+            PlayerPrefs.SetInt(GameSaver.CurrentLevel, level);
         }
     }
 }

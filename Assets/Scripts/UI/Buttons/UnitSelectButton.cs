@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 [RequireComponent(typeof(Button))]
 public class UnitSelectButton : MonoBehaviour
@@ -28,23 +26,13 @@ public class UnitSelectButton : MonoBehaviour
     private void Start()
     {
         _price.text = _unitPrefab.Price.ToString();
-
-        if (YandexGame.SDKEnabled)
-            Initialize();
+        _button.interactable = PlayerPrefs.HasKey(_buildingName);
     }
 
     private void OnDisable()
     {
         _button.onClick.RemoveListener(SetUnit);
-    }
-
-    private void Initialize()
-    {
-        if (_button == null)
-            _button = GetComponent<Button>();
-
-        _button.interactable = YandexGame.savesData.OpenedBuildings.Contains(_buildingName);
-    }
+    }    
 
     private void SetUnit()
     {

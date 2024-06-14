@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using YG;
 
 [RequireComponent(typeof(YandexLeaderboardScoreSetter))]
 public class PlayerWallet : Wallet
@@ -15,9 +12,7 @@ public class PlayerWallet : Wallet
 
     private void Start()
     {
-        Initialize(YandexGame.savesData.PlayerMoney);
-
-        Debug.Log(YandexGame.savesData.Score);
+        Initialize(PlayerPrefs.GetInt(GameSaver.Money));
     }
 
     private void Update()
@@ -31,11 +26,20 @@ public class PlayerWallet : Wallet
     public override void AddMoney(int value)
     {
         base.AddMoney(value);
-        YandexGame.savesData.Score += value;
+
+        SetScore(value);
         SaveMoney();
+    }
+
+    private void SetScore(int addedValue)
+    {
+        int score = PlayerPrefs.GetInt(GameSaver.Score) + addedValue;
+
+        PlayerPrefs.SetInt(GameSaver.Score, score);
+        PlayerPrefs.Save();
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-        _leaderboardScoreSetter.SetPlayerScore(YandexGame.savesData.Score);
+        _leaderboardScoreSetter.SetPlayerScore(score);
 #endif
     }
 
@@ -47,7 +51,7 @@ public class PlayerWallet : Wallet
 
     private void SaveMoney()
     {
-        YandexGame.savesData.PlayerMoney = Money;
-        YandexGame.SaveProgress();
+        PlayerPrefs.SetInt(GameSaver.Money, Money);
+        PlayerPrefs.Save();
     }
 }

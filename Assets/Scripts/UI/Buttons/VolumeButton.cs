@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 [RequireComponent(typeof(Button))]
 internal class VolumeButton : MonoBehaviour
@@ -55,7 +54,7 @@ internal class VolumeButton : MonoBehaviour
 
     private void SaveVolume(float value)
     {
-        YandexGame.savesData.Volume = value;
-        YandexGame.SaveProgress();
+        PlayerPrefs.SetFloat(GameSaver.Volume, value);
+        PlayerPrefs.Save();
     }
 }

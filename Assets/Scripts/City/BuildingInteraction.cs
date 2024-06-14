@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using YG;
 
 public class BuildingInteraction : MonoBehaviour
 {
@@ -29,7 +28,7 @@ public class BuildingInteraction : MonoBehaviour
 
     private void GetLoad()
     {
-        if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
+        if (PlayerPrefs.HasKey(gameObject.name))
         {
             for (int i = 0; i < _effects.Length; i++)
             {
@@ -49,7 +48,7 @@ public class BuildingInteraction : MonoBehaviour
 
         BuildingUnlocked?.Invoke();
 
-        if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
+        if (!PlayerPrefs.HasKey(gameObject.name))
             SaveData();
     }
 
@@ -64,7 +63,7 @@ public class BuildingInteraction : MonoBehaviour
 
     private void SaveData()
     {
-        YandexGame.savesData.OpenedBuildings.Add(gameObject.name);
-        YandexGame.SaveProgress();
+        PlayerPrefs.SetString(gameObject.name, true.ToString());
+        PlayerPrefs.Save();
     }
 }

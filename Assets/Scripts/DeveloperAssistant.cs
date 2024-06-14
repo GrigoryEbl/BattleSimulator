@@ -1,6 +1,5 @@
 using Lean.Localization;
 using UnityEngine;
-using YG;
 
 public class DeveloperAssistant : MonoBehaviour
 {
@@ -16,16 +15,16 @@ public class DeveloperAssistant : MonoBehaviour
     [ContextMenu("Reset")]
     public void ResetProgress()
     {
-        YandexGame.ResetSaveProgress();
-        YandexGame.SaveProgress();
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
     }
 
     [ContextMenu("SetFinalLevel")]
     public void SetFinalLevel()
     {
-        YandexGame.savesData.CurrentLevel = 5;
-        YandexGame.savesData.CurrentMap = 7;
-        YandexGame.SaveProgress();
+        PlayerPrefs.SetInt(GameSaver.CurrentLevel, 5);
+        PlayerPrefs.SetInt(GameSaver.CurrentMap, 7);
+        PlayerPrefs.Save();
     }
 
     [ContextMenu("CaptureScreenshot")]

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using YG;
 
 public class LevelStarter : MonoBehaviour
 {
@@ -16,8 +15,7 @@ public class LevelStarter : MonoBehaviour
 
     private void Start()
     {
-        if (YandexGame.SDKEnabled)
-            PrepareLevel();
+        PrepareLevel();
     }
 
     private void Initialize(LevelConfig levelConfig)
@@ -31,7 +29,7 @@ public class LevelStarter : MonoBehaviour
 
     private LevelConfig GetCurrentLevel()
     {
-        int levelNumber = Mathf.Min(YandexGame.savesData.CurrentLevel, _levelsConfigs.Count);
+        int levelNumber = Mathf.Min(PlayerPrefs.GetInt(GameSaver.CurrentLevel), _levelsConfigs.Count);
 
         return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
     }
