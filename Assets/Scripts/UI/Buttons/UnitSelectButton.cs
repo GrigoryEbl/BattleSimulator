@@ -26,7 +26,7 @@ public class UnitSelectButton : MonoBehaviour
     private void Start()
     {
         _price.text = _unitPrefab.Price.ToString();
-        _button.interactable = PlayerPrefs.HasKey(_buildingName);
+        _button.interactable = GameSaver.HasBuilding(_buildingName);
     }
 
     private void OnDisable()

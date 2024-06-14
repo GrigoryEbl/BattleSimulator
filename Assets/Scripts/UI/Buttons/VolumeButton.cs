@@ -47,14 +47,8 @@ internal class VolumeButton : MonoBehaviour
             _icon.sprite = _volumeOnImage;
         }
 
-        AudioListener.volume = volume;
         _focusTracker.SetCurrentVolume(volume);
-        SaveVolume(volume);
-    }
-
-    private void SaveVolume(float value)
-    {
-        PlayerPrefs.SetFloat(GameSaver.Volume, value);
-        PlayerPrefs.Save();
+        AudioListener.volume = volume;
+        GameSaver.SetVolume(volume);
     }
 }

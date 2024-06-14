@@ -14,7 +14,7 @@ public class FocusTracker : MonoBehaviour
 
     private void Awake()
     {
-        _currentVolume = PlayerPrefs.GetFloat(GameSaver.Volume);
+        _currentVolume = GameSaver.Volume;
     }
 
     private void OnDisable()

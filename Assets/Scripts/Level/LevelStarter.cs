@@ -23,13 +23,13 @@ public class LevelStarter : MonoBehaviour
         _wallet.Initialize(levelConfig.LevelMoney);
         _enemySpawner.Initialize(levelConfig.UnitsConfig);
         _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
-        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.Number, levelConfig.MoneyReward);
+        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.MoneyReward);
         _rewardView.Display(levelConfig.MoneyReward);
     }
 
     private LevelConfig GetCurrentLevel()
     {
-        int levelNumber = Mathf.Min(PlayerPrefs.GetInt(GameSaver.CurrentLevel), _levelsConfigs.Count);
+        int levelNumber = Mathf.Min(GameSaver.CurrentLevel, _levelsConfigs.Count);
 
         return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
     }

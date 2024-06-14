@@ -12,7 +12,7 @@ public class PlayerWallet : Wallet
 
     private void Start()
     {
-        Initialize(PlayerPrefs.GetInt(GameSaver.Money));
+        Initialize(GameSaver.Money);
     }
 
     private void Update()
@@ -28,30 +28,22 @@ public class PlayerWallet : Wallet
         base.AddMoney(value);
 
         SetScore(value);
-        SaveMoney();
+        GameSaver.SetMoney(Money);
     }
 
     private void SetScore(int addedValue)
     {
-        int score = PlayerPrefs.GetInt(GameSaver.Score) + addedValue;
-
-        PlayerPrefs.SetInt(GameSaver.Score, score);
-        PlayerPrefs.Save();
+        GameSaver.SetScore(addedValue);
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-        _leaderboardScoreSetter.SetPlayerScore(score);
+        _leaderboardScoreSetter.SetPlayerScore(GameSaver.Score);
 #endif
     }
 
     public override void RemoveMoney(int price)
     {
         base.RemoveMoney(price);
-        SaveMoney();
-    }
 
-    private void SaveMoney()
-    {
-        PlayerPrefs.SetInt(GameSaver.Money, Money);
-        PlayerPrefs.Save();
+        GameSaver.SetMoney(Money);
     }
 }

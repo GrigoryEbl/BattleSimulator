@@ -4,6 +4,6 @@ public class BattleSceneLoader : SceneLoader
 {
     protected override int GetSceneNumber()
     {
-        return PlayerPrefs.GetInt(GameSaver.CurrentMap);
+        return GameSaver.CurrentMap;
     }
 }

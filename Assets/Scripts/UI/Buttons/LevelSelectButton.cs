@@ -32,8 +32,7 @@ public class LevelSelectButton : MonoBehaviour
 
     private void SelectLevel()
     {
-        PlayerPrefs.SetInt(GameSaver.CurrentLevel, _levelNumber);
-        PlayerPrefs.Save();
+        GameSaver.SetLevel(_levelNumber);
 
         _sceneLoader.SelectScene(_sceneNumber);
         _sceneLoader.Load();

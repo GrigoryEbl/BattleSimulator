@@ -4,18 +4,12 @@ public class GameTuner : MonoBehaviour
 {
     private void Awake()
     {
-        if (!PlayerPrefs.HasKey(gameObject.name))
-            SetDefaultSettings();
+        if (GameSaver.IsGameConfigured == false)
+            GameSaver.SetDefaultSettings();
     }
 
-    private void SetDefaultSettings()
+    private void Start()
     {
-        PlayerPrefs.SetInt(GameSaver.CurrentLevel, 1);
-        PlayerPrefs.SetInt(GameSaver.CurrentMap, 3);
-
-        PlayerPrefs.SetString("SoldierHouse", true.ToString());
-        PlayerPrefs.SetString(gameObject.name, true.ToString());
-
-        PlayerPrefs.Save();
+        AudioListener.volume = GameSaver.Volume;
     }
 }

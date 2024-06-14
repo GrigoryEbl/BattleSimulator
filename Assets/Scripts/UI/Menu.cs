@@ -32,7 +32,7 @@ public class Menu : MonoBehaviour
 
     public void ContinueMusic()
     {
-        var volume = PlayerPrefs.GetFloat(GameSaver.Volume);
+        var volume = GameSaver.Volume;
 
         AudioListener.volume = volume;
         _focusTracker.SetCurrentVolume(volume);
