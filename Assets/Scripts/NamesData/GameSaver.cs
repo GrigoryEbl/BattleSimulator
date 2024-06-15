@@ -1,8 +1,4 @@
-using UnityEngine;
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-    using PlayerPrefs = Agava.YandexGames.Utility.PlayerPrefs;
-#endif
+using PlayerPrefs = Agava.YandexGames.Utility.PlayerPrefs;
 
 public static class GameSaver
 {
