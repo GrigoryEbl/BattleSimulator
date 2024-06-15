@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Agava.YandexGames;
 using UnityEngine;
@@ -9,15 +10,20 @@ namespace Source.Yandex
     {
         private void Awake()
         {
-            YandexGamesSdk.CallbackLogging = true;
+            YandexGamesSdk.CallbackLogging = true;            
         }
 
         private IEnumerator Start()
         {
-            yield return YandexGamesSdk.Initialize(OnInitialized);
+            yield return YandexGamesSdk.Initialize(LoudCloudSave);
         }
 
-        private void OnInitialized()
+        private void LoudCloudSave()
+        {
+            Agava.YandexGames.Utility.PlayerPrefs.Load(OnLoadCloudSuccessCallback);
+        }
+
+        private void OnLoadCloudSuccessCallback()
         {
             SceneManager.LoadScene((int)SceneNames.Menu);
         }
