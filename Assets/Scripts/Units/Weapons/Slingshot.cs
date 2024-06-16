@@ -13,7 +13,11 @@ public class Slingshot : RangeWeapon
 
     private void Awake()
     {
-        _pool = GetComponent<ProjectilesPool>();
+        _pool = GetComponent<ProjectilesPool>();        
+    }
+
+    private void Update()
+    {
         _pool.Initialize(IsEnemy);
     }
 

@@ -15,6 +15,7 @@ public class LevelEnder : MonoBehaviour
     [SerializeField] private GameObject _drawPanel;
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _congratulationsPanel;
+    [SerializeField] private GameObject _closablePanel;
 
     private void OnEnable()
     {
@@ -50,6 +51,8 @@ public class LevelEnder : MonoBehaviour
             _gameOverPanel.SetActive(true);
         else
             FinishLevel();
+
+        _closablePanel.SetActive(false);
     }
 
     private void FinishLevel()
