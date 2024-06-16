@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(CameraInput))]
+[RequireComponent(typeof(PlayerInput))]
 public class BattleCameraMover : MonoBehaviour
 {
     private readonly float _maxPositionX = 40f;
@@ -13,13 +13,13 @@ public class BattleCameraMover : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Transform _transform;
-    private CameraInput _cameraInput;
+    private PlayerInput _playerInput;
     private Vector3 _currentPosition;
 
     private void Awake()
     {
         _transform = transform;
-        _cameraInput = GetComponent<CameraInput>();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     private void LateUpdate()
@@ -29,7 +29,7 @@ public class BattleCameraMover : MonoBehaviour
 
     private void Move()
     {
-        _transform.Translate(_cameraInput.MoveInput * _speed * Time.deltaTime);
+        _transform.Translate(_playerInput.MoveInput * _speed * Time.deltaTime);
 
         ClampPosition();
 
