@@ -6920,6 +6920,7 @@ MonoBehaviour:
   _drawPanel: {fileID: 2046688118}
   _gameOverPanel: {fileID: 2145120884}
   _congratulationsPanel: {fileID: 1138668731}
+  _closablePanel: {fileID: 1828309960}
 --- !u!114 &1117838701
 MonoBehaviour:
   m_ObjectHideFlags: 0
