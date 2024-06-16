@@ -15,19 +15,18 @@ public class PlayerWallet : Wallet
         Initialize(GameSaver.Money);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))   //Delete
-        {
-            AddMoney(150);
-        }
-    }
-
     public override void AddMoney(int value)
     {
         base.AddMoney(value);
 
         SetScore(value);
+        GameSaver.SetMoney(Money);
+    }
+
+    public override void RemoveMoney(int price)
+    {
+        base.RemoveMoney(price);
+
         GameSaver.SetMoney(Money);
     }
 
@@ -38,12 +37,5 @@ public class PlayerWallet : Wallet
 #if UNITY_WEBGL && !UNITY_EDITOR
         _leaderboardScoreSetter.SetPlayerScore(GameSaver.Score);
 #endif
-    }
-
-    public override void RemoveMoney(int price)
-    {
-        base.RemoveMoney(price);
-
-        GameSaver.SetMoney(Money);
     }
 }
