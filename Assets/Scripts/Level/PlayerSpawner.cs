@@ -24,15 +24,12 @@ public class PlayerSpawner : MonoBehaviour
     {
         _transform = transform;
     }
-
-    private void Start()
-    {
-        UnitsCountChanged?.Invoke(_units.Count);
-    }
-
+    
     public void Initialize(int maxSpawnUnitCount)
     {
         _maxSpawnUnitCount = maxSpawnUnitCount;
+
+        UnitsCountChanged?.Invoke(_units.Count);
     }
 
     public void Spawn(Vector3 position)
@@ -60,8 +57,9 @@ public class PlayerSpawner : MonoBehaviour
 
     public void RemoveOneUnit(Unit unit)
     {
-        _units.Remove(unit);        
         DeleteOneUnit(unit);
+
+        _units.Remove(unit);
         UnitsCountChanged?.Invoke(_units.Count);
     }
 

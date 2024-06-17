@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using YG;
 
 public class Menu : MonoBehaviour
 {
@@ -10,14 +8,15 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private FocusTracker _focusTracker;
 
-    private void Start()
+    public void OpenPanel(GameObject panel)
     {
-        SceneManager.LoadScene((int)SceneNames.Mines, LoadSceneMode.Additive);
+        panel.SetActive(true);
     }
 
-    public void OpenPanel(GameObject panel) => panel.SetActive(true);
-
-    public void ClosePanel(GameObject panel) => panel.SetActive(false);
+    public void ClosePanel(GameObject panel)
+    {
+        panel.SetActive(false);
+    }
 
     public void ContinueTime()
     {
@@ -33,7 +32,7 @@ public class Menu : MonoBehaviour
 
     public void ContinueMusic()
     {
-        var volume = YandexGame.savesData.Volume;
+        var volume = GameSaver.Volume;
 
         AudioListener.volume = volume;
         _focusTracker.SetCurrentVolume(volume);

@@ -1,6 +1,5 @@
 using Agava.WebUtility;
 using UnityEngine;
-using YG;
 
 public class FocusTracker : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class FocusTracker : MonoBehaviour
 
     private void Awake()
     {
-        _currentVolume = YandexGame.savesData.Volume;
+        _currentVolume = GameSaver.Volume;
     }
 
     private void OnEnable()

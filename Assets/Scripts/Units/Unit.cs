@@ -2,6 +2,8 @@ using BehaviorDesigner.Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(BehaviorTree))]
+[RequireComponent(typeof(RagdollHandler))]
 public class Unit : MonoBehaviour, IDamageable
 {
     private readonly float _deathDelay = 2.5f;
@@ -26,39 +28,27 @@ public class Unit : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        _ragdollHandler = GetComponent<RagdollHandler>();
-        _behaviorTree = GetComponent<BehaviorTree>();
         _transform = transform;
         _startYPosition = _transform.position.y;
+        _behaviorTree = GetComponent<BehaviorTree>();
+        _ragdollHandler = GetComponent<RagdollHandler>();
     }
 
     public void Init(bool isEnemy, Transform targetParent, Button startButton)
     {
         _isEnemy = isEnemy;
-        _weapon.SetBattleSide(isEnemy);
-        _targetParent = targetParent;
         _startButton = startButton;
+        _targetParent = targetParent;
+        _weapon.SetBattleSide(isEnemy);
         _startButton.onClick.AddListener(StartBattle);
-    }
-    
-    public void Fell()
-    {        
-        _ragdollHandler.TurnOn(true);
-    }
-
-    public void Die()
-    {
-        Fell();
-        _transform.parent = null;
-        _weapon.enabled = false;
-        _startButton.onClick.RemoveListener(StartBattle);
-        Invoke(nameof(RemoveBody), _deathDelay);
     }
 
     public void ResetCurrentPosition()
     {
-        _transform.rotation = Quaternion.LookRotation(Vector3.ProjectOnPlane(_transform.forward, Vector3.up), Vector3.up);
+        var direction = Vector3.ProjectOnPlane(_transform.forward, Vector3.up);
+        
         _transform.position = new Vector3(_transform.position.x, _startYPosition, _transform.position.z);
+        _transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 
     public void TakeDamage(int damage)
@@ -83,6 +73,15 @@ public class Unit : MonoBehaviour, IDamageable
     protected void ResetWeapon()
     {
         _weapon = null;
+    }
+
+    private void Die()
+    {
+        _weapon.enabled = false;
+        _transform.parent = null;
+        _ragdollHandler.TurnOn(true);
+        _startButton.onClick.RemoveListener(StartBattle);
+        Invoke(nameof(RemoveBody), _deathDelay);
     }
 
     private void RemoveBody()

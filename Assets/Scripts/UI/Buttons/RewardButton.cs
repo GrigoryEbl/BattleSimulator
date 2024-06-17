@@ -29,10 +29,10 @@ internal class RewardButton : MonoBehaviour
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         _videoAd.Show(_button, _wallet.AddMoney, _rewardMoneyCount);
-        gameObject.SetActive(false);
 #else
         _wallet.AddMoney(_rewardMoneyCount);
-        gameObject.SetActive(false);
 #endif
+
+        gameObject.SetActive(false);
     }
 }

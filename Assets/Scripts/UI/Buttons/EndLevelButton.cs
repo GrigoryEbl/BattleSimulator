@@ -22,7 +22,10 @@ internal class EndLevelButton : MonoBehaviour
         _interstitialAd.AdvertisingClosed += OnAdvertisingClosed;
     }
 
-    private void Start() => _interstitialAd.Initialize(_button);
+    private void Start()
+    {
+        _interstitialAd.Initialize(_button);
+    }
 
     private void OnDisable()
     {

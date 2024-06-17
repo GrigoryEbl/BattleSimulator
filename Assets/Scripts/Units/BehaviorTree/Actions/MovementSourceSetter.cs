@@ -9,7 +9,7 @@ public class MovementSourceSetter : Action
 
     public override TaskStatus OnUpdate()
     {
-        _movementSource.Value.MovementInput = _direction.Value;
+        _movementSource.Value.SetDirection(_direction.Value);
 
         return TaskStatus.Success;
     }

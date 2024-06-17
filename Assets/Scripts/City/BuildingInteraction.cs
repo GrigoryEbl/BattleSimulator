@@ -1,17 +1,20 @@
 using System;
 using UnityEngine;
-using YG;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(SphereCollider))]
 public class BuildingInteraction : MonoBehaviour
 {
+    private readonly Color _unitIconDefaultColor = new Color(255, 255, 255, 255);
+
     [SerializeField] private Transform _building;
     [SerializeField] private Transform _lockedBuilding;
-    [SerializeField] private int _price;
-    [SerializeField] private Canvas _priceView;
     [SerializeField] private Transform[] _effects;
+    [SerializeField] private Canvas _priceView;
+    [SerializeField] private Image _unitIcon;
+    [SerializeField] private int _price;
 
     private SphereCollider _triggerCollider;
-    private bool _isPlayingEffects = true;
 
     public event Action BuildingUnlocked;
 
@@ -27,19 +30,6 @@ public class BuildingInteraction : MonoBehaviour
         GetLoad();
     }
 
-    private void GetLoad()
-    {
-        if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name))
-        {
-            for (int i = 0; i < _effects.Length; i++)
-            {
-                Destroy(_effects[i].gameObject);
-            }
-
-            Unlock();
-        }
-    }
-
     public void Unlock()
     {
         _lockedBuilding.gameObject.SetActive(false);
@@ -47,24 +37,21 @@ public class BuildingInteraction : MonoBehaviour
         _triggerCollider.enabled = false;
         _priceView.gameObject.SetActive(false);
 
-        BuildingUnlocked?.Invoke();
+        if (_unitIcon != null)
+            _unitIcon.color = _unitIconDefaultColor;        
 
-        if (YandexGame.savesData.OpenedBuildings.Contains(gameObject.name) == false)
-            SaveData();
+        if (!GameSaver.HasBuilding(gameObject.name))
+            GameSaver.SaveBuilding(gameObject.name);
     }
 
-    public void Buy(Wallet wallet)
+    private void GetLoad()
     {
-        if (wallet.CanBuy(_price))
+        if (GameSaver.HasBuilding(gameObject.name))
         {
-            wallet.RemoveMoney(_price);
+            for (int i = 0; i < _effects.Length; i++)
+                Destroy(_effects[i].gameObject);
+
             Unlock();
         }
-    }
-
-    private void SaveData()
-    {
-        YandexGame.savesData.OpenedBuildings.Add(gameObject.name);
-        YandexGame.SaveProgress();
     }
 }

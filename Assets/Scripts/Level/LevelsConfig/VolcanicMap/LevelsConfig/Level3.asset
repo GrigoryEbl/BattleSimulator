@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   _number: 3
-  _levelMoney: 850
+  _levelMoney: 750
   _moneyReward: 170
-  _maxSpawnUnitCount: 10
+  _maxSpawnUnitCount: 11
   _unitsConfig:
   - {fileID: 11400000, guid: 9b866dfcfbc93d042896fdfaef6baf12, type: 2}
   - {fileID: 11400000, guid: ad23c21ee818dbe4d9ec8fb46ff71a3f, type: 2}

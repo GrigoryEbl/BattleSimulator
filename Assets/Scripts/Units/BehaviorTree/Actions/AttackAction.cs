@@ -13,7 +13,7 @@ public class AttackAction : Action
             return TaskStatus.Failure;
 
 
-        if (_target.Value.TryGetComponent(out Unit unit) && unit.Health > 0)
+        if (_target.Value.TryGetComponent(out IDamageable unit))
         {
             transform.LookAt(_target.Value);
             _animatorController.Value.SetTrigger(AnimatorNames.Attack);

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 [RequireComponent(typeof(Button))]
 internal class VolumeButton : MonoBehaviour
@@ -35,9 +34,9 @@ internal class VolumeButton : MonoBehaviour
 
     public void Change()
     {
-        float volume;
+        float volume = AudioListener.volume;
 
-        if (Mathf.Approximately(AudioListener.volume, _maxVolume))
+        if (Mathf.Approximately(volume, _maxVolume))
         {
             volume = _minVolume;
             _icon.sprite = _volumeOffImage;
@@ -48,14 +47,8 @@ internal class VolumeButton : MonoBehaviour
             _icon.sprite = _volumeOnImage;
         }
 
-        AudioListener.volume = volume;
         _focusTracker.SetCurrentVolume(volume);
-        SaveVolume(volume);
-    }
-
-    private void SaveVolume(float value)
-    {
-        YandexGame.savesData.Volume = value;
-        YandexGame.SaveProgress();
+        AudioListener.volume = volume;
+        GameSaver.SetVolume(volume);
     }
 }

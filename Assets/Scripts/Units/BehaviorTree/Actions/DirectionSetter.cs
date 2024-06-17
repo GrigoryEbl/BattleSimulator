@@ -12,7 +12,8 @@ public class DirectionSetter : Action
         if (_target.Value == null)
             return TaskStatus.Failure;
 
-        _direction.Value = Vector3.ProjectOnPlane((_target.Value.position - transform.position), Vector3.up).normalized;
+        Vector3 direction = Vector3.ProjectOnPlane((_target.Value.position - transform.position), Vector3.up);
+        _direction.Value = direction.normalized;
 
         return TaskStatus.Success;
     }

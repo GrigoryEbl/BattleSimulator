@@ -1502,6 +1502,7 @@ GameObject:
   - component: {fileID: 6091707455663503718}
   - component: {fileID: 5072192627482594422}
   - component: {fileID: 3331729789295034968}
+  - component: {fileID: 4127981833464749915}
   m_Layer: 0
   m_Name: ArcherBlue
   m_TagString: Untagged
@@ -1642,7 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9aa2eed042356346b5b5aa9f887d52c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainBone: {fileID: 2637074881757657345}
+  _mainBone: {fileID: 0}
   _mainRigidbody: {fileID: 2943314277952916136}
   _hitBox: {fileID: 3515456002536974013}
 --- !u!114 &8054206081254118363
@@ -1763,6 +1764,18 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &4127981833464749915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827259471175917521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ceae0a9c899024b81eee595b8bb277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4872345414942487423
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class PoisonBomb : Bomb
     protected override void Explode()
     {
         base.Explode();
+
         Instantiate(_poisonFieldPrefab, transform.position, Quaternion.identity);
         Push();
     }

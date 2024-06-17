@@ -5,11 +5,10 @@ public class PoisonEffect : MonoBehaviour
 {
     private readonly float _lifeTime = 5f;
     private readonly float _delay = 1.5f;
-    private readonly int _damage = 2;
+    private readonly int _damage = 1;
 
     private IDamageable _unit;
     private float _delayCounter;
-
 
     private void Awake()
     {

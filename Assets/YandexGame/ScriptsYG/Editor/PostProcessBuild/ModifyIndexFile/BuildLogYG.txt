@@ -1,2 +1,0 @@
-Build path: C:/Users/Григорий/Documents/GitHub/BattleSimulater/Build
-Build number: 3

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TutorialSlideScroller : MonoBehaviour
@@ -7,11 +5,17 @@ public class TutorialSlideScroller : MonoBehaviour
     [SerializeField] private GameObject[] _slides;
     [SerializeField] private GameObject _mainButtons;
 
-    private int _currentSlide;
+    private int _currentSlide = 0;
+    private int _minSlideNumber = 0;
+    private int _maxSlideNumber;
+
+    private void Awake()
+    {
+        _maxSlideNumber = _slides.Length;
+    }
 
     private void OnEnable()
     {
-        _currentSlide = 0;
         Scroll();
     }
 
@@ -30,11 +34,13 @@ public class TutorialSlideScroller : MonoBehaviour
     public void SetNextSlide()
     {
         _currentSlide++;
+        _currentSlide = Mathf.Min(_currentSlide, _maxSlideNumber);
     }
 
     public void SetPreviousSlide()
     {
         _currentSlide--;
+        _currentSlide = Mathf.Max(_currentSlide, _minSlideNumber);
     }
 
     private void EndSlideShow()
@@ -44,8 +50,5 @@ public class TutorialSlideScroller : MonoBehaviour
 
         if (_mainButtons != null)
             _mainButtons.SetActive(true);
-
-        for (int i = 0; i < _slides.Length; i++)
-            _slides[i].SetActive(false);
     }
 }

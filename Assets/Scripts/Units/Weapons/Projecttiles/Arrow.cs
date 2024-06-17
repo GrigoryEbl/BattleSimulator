@@ -10,7 +10,12 @@ public class Arrow : Projectile
         if (_weapon == null)
             _weapon = GetComponent<MeleeWeapon>();
 
-        _weapon.Hited += OnHited;
+        _weapon.Hited += Push;
+    }
+
+    private void Start()
+    {
+        _weapon.SetBattleSide(IsEnemy);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -21,18 +26,6 @@ public class Arrow : Projectile
 
     private void OnDisable()
     {
-        _weapon.Hited -= OnHited;
-    }
-
-    public override void Initialize(ProjectilesPool pool, bool isEnemy)
-    {
-        base.Initialize(pool, isEnemy);
-        
-        _weapon.SetBattleSide(IsEnemy);
-    }
-
-    private void OnHited()
-    {
-        Push();
+        _weapon.Hited -= Push;
     }
 }

@@ -16,7 +16,7 @@ public abstract class Projectile : MonoBehaviour
         _transform = transform;
     }
 
-    public virtual void Initialize(ProjectilesPool pool, bool isEnemy)
+    public void Initialize(ProjectilesPool pool, bool isEnemy)
     {
         _pool = pool;
         _isEnemy = isEnemy;

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ClickHandler : MonoBehaviour
 {
+    private readonly int _touchIndex = 0;
+
     [SerializeField] private PlayerSpawner _playerSpawner;
     [SerializeField] private Button _startButton;
 
@@ -22,7 +24,7 @@ public class ClickHandler : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))        
-            SpawnUnit();        
+            ProcessGroundTouch();        
     }
 
     private void OnDisable()
@@ -30,11 +32,14 @@ public class ClickHandler : MonoBehaviour
         _startButton.onClick.RemoveListener(OffHandler);
     }
 
-    private void SpawnUnit()
+    private void ProcessGroundTouch()
     {
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(_touchIndex).fingerId))
             return;
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo))

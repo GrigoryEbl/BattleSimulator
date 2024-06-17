@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Dirt : MonoBehaviour
+public class Dirt : Trap
 {
     [SerializeField] private float _decelerationFactor = 2f;
 

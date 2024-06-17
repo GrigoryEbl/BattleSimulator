@@ -16,9 +16,10 @@ public class Musket : RangeWeapon
     {
         base.Shoot(targetPosition);
 
-        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
         _shootEffect.Play();
-        RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance, _layerMask, QueryTriggerInteraction.Collide);
+        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
+        RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance, 
+            _layerMask, QueryTriggerInteraction.Collide);
 
         CalculateHits(hits);
     }
