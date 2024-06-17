@@ -30,17 +30,6 @@ public class BuildingInteraction : MonoBehaviour
         GetLoad();
     }
 
-    private void GetLoad()
-    {
-        if (GameSaver.HasBuilding(gameObject.name))
-        {
-            for (int i = 0; i < _effects.Length; i++)
-                Destroy(_effects[i].gameObject);
-
-            Unlock();
-        }
-    }
-
     public void Unlock()
     {
         _lockedBuilding.gameObject.SetActive(false);
@@ -53,5 +42,16 @@ public class BuildingInteraction : MonoBehaviour
 
         if (!GameSaver.HasBuilding(gameObject.name))
             GameSaver.SaveBuilding(gameObject.name);
+    }
+
+    private void GetLoad()
+    {
+        if (GameSaver.HasBuilding(gameObject.name))
+        {
+            for (int i = 0; i < _effects.Length; i++)
+                Destroy(_effects[i].gameObject);
+
+            Unlock();
+        }
     }
 }
