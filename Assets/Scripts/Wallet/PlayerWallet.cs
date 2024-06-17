@@ -7,7 +7,7 @@ public class PlayerWallet : Wallet
 
     private void Awake()
     {
-        _leaderboardScoreSetter = GetComponent<YandexLeaderboardScoreSetter>();        
+        _leaderboardScoreSetter = GetComponent<YandexLeaderboardScoreSetter>();
     }
 
     private void Start()

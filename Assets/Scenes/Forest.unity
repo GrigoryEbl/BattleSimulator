@@ -14848,11 +14848,11 @@ PrefabInstance:
     - target: {fileID: 2724570179559199321, guid: 38ff82648a1299d429f0521a105bcca7, type: 3}
       propertyPath: _trapsPrefab.Array.data[0]
       value: 
-      objectReference: {fileID: -7243853320908902542, guid: 4b066ea84a9091d4eac24e1f6eda1c65, type: 3}
+      objectReference: {fileID: 5459930682200615625, guid: d8ded39d4b866464da69e3a8a5711f42, type: 3}
     - target: {fileID: 2724570179559199321, guid: 38ff82648a1299d429f0521a105bcca7, type: 3}
       propertyPath: _trapsPrefab.Array.data[1]
       value: 
-      objectReference: {fileID: 5917461157197577710, guid: d8ded39d4b866464da69e3a8a5711f42, type: 3}
+      objectReference: {fileID: 1115856171729539527, guid: 4b066ea84a9091d4eac24e1f6eda1c65, type: 3}
     - target: {fileID: 2789295796906925925, guid: 38ff82648a1299d429f0521a105bcca7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20.313913

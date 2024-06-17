@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TimerView : MonoBehaviour
 {
+    private readonly float _timeFactor = 60f;
+    private readonly string _zeroTimer = "00:00";
+    private readonly string _timeSample = "00";
+
     [SerializeField] private TMP_Text _text;
-    [SerializeField] private Mine _mine;
-
-    private Timer _timer;
-
-    private void Awake()
-    {
-        _timer = _mine.GetComponent<Timer>();
-    }
+    [SerializeField] private Timer _timer;
 
     private void Update()
     {
-        int minutes = Mathf.FloorToInt(_timer.Time / 60f);
-        int seconds = Mathf.FloorToInt(_timer.Time % 60f);
+        int minutes = Mathf.FloorToInt(_timer.CurrentTime / _timeFactor);
+        int seconds = Mathf.FloorToInt(_timer.CurrentTime % _timeFactor);
 
-        if (_timer.Time > 0)
-            _text.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        if (_timer.CurrentTime > 0)
+            _text.text = $"{StylizeString(minutes)}:{StylizeString(seconds)}";
         else
-            _text.text = "00:00";
+            _text.text = _zeroTimer;
+    }
+
+    private string StylizeString(int time)
+    {
+        return time.ToString(_timeSample);
     }
 }

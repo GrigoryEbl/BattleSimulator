@@ -20,18 +20,12 @@ public class Grenade : Bomb
         {
             if (nearbyObject.TryGetComponent(out IDamageable target) && !targets.Contains(target))
             {
-                target.TakeDamage(_damage);
                 targets.Add(target);
+                target.TakeDamage(_damage);
                 target.Hit(Vector3.up * _force, transform.position);
             }
         }
 
         Push();
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }

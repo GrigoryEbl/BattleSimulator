@@ -7,7 +7,7 @@ public class RangeUnit : Unit
 
     private void Start()
     {
-        _rangeWeapon = (RangeWeapon)UnitWeapon;
+        _rangeWeapon = UnitWeapon as RangeWeapon;
     }
 
     private void OnValidate()
@@ -22,7 +22,7 @@ public class RangeUnit : Unit
     }
 
     private void Shoot()
-    {        
+    {
         _rangeWeapon.Shoot(_target.position);
     }
 }

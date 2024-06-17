@@ -18,8 +18,8 @@ public class MeleeWeapon : Weapon
     protected virtual void Attack(IDamageable target)
     {
         target.TakeDamage(_damage);
-        Hited?.Invoke();
         _strikeEffect.Play();
         AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
+        Hited?.Invoke();
     }
 }

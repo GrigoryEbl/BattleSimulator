@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Thrower
 {
+    private readonly float _formulaVariable = 2f;
+
     public Vector3 CalculateVelocityByHeight(Vector3 start, Vector3 end, float height)
     {
         float timeToRise = CalculateTimeByHeight(height);
@@ -18,7 +20,8 @@ public class Thrower
 
     private float CalculateTimeByHeight(float height)
     {
-        var g = Mathf.Abs(Physics.gravity.y);
-        return Mathf.Sqrt(2f * height / g);
+        var gravityFactor = Mathf.Abs(Physics.gravity.y);
+
+        return Mathf.Sqrt(_formulaVariable * height / gravityFactor);
     }
 }

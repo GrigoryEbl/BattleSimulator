@@ -3,18 +3,18 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerInput))]
 public class BattleCameraMover : MonoBehaviour
 {
-    private readonly float _maxPositionX = 40f;
-    private readonly float _minPositionX = -40;
-    private readonly float _maxPositionZ = -25f;
-    private readonly float _minPositionZ = -60f;
-    private readonly float _maxPositionY = 9f;
-    private readonly float _minPositionY = 3.5f;
-
     [SerializeField] private float _speed;
+
+    [Header("Positions")]
+    [SerializeField] private float _maxPositionX = 40f;
+    [SerializeField] private float _minPositionX = -40;
+    [SerializeField] private float _maxPositionZ = -25f;
+    [SerializeField] private float _minPositionZ = -60f;
+    [SerializeField] private float _maxPositionY = 9f;
+    [SerializeField] private float _minPositionY = 3.5f;
 
     private Transform _transform;
     private PlayerInput _playerInput;
-    private Vector3 _currentPosition;
 
     private void Awake()
     {
@@ -32,15 +32,16 @@ public class BattleCameraMover : MonoBehaviour
         _transform.Translate(_playerInput.MoveInput * _speed * Time.deltaTime);
 
         ClampPosition();
-
-        _transform.position = _currentPosition;
     }
 
     private void ClampPosition()
     {
-        _currentPosition = _transform.position;
-        _currentPosition.x = Mathf.Clamp(_currentPosition.x, _minPositionX, _maxPositionX);
-        _currentPosition.y = Mathf.Clamp(_currentPosition.y, _minPositionY, _maxPositionY);
-        _currentPosition.z = Mathf.Clamp(_currentPosition.z, _minPositionZ, _maxPositionZ);
+        Vector3 clampedPosition = _transform.position;
+
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, _minPositionX, _maxPositionX);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, _minPositionY, _maxPositionY);
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, _minPositionZ, _maxPositionZ);
+        
+        _transform.position = clampedPosition;
     }
 }

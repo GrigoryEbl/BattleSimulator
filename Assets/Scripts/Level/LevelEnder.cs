@@ -22,14 +22,6 @@ public class LevelEnder : MonoBehaviour
         _startButton.onClick.AddListener(StartTryEndLevel);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))   //Delete
-        {
-            FinishLevel();
-        }
-    }
-
     private void OnDisable()
     {
         _startButton.onClick.RemoveListener(StartTryEndLevel);

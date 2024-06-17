@@ -1477,6 +1477,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 20
+  _maxPositionX: 40
+  _minPositionX: -40
+  _maxPositionZ: -25
+  _minPositionZ: -60
+  _maxPositionY: 9
+  _minPositionY: 3.5
 --- !u!114 &396855763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5327,6 +5333,7 @@ MonoBehaviour:
   _enemySpawner: {fileID: 864817125}
   _playerSpawner: {fileID: 649234828}
   _levelSaver: {fileID: 0}
+  _rewardView: {fileID: 0}
 --- !u!114 &1308158276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5373,6 +5380,7 @@ MonoBehaviour:
   _drawPanel: {fileID: 687542566}
   _gameOverPanel: {fileID: 1131164087}
   _congratulationsPanel: {fileID: 1095965922}
+  _closablePanel: {fileID: 0}
 --- !u!1 &1335702020
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,6 +6427,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+--- !u!1001 &1640706908
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013592713282025542, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827259471175917521, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: m_Name
+      value: ArcherBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054206081254118363, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 190331027}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af8b0e8c4af954a4586b3c8029632a41, type: 3}
 --- !u!1 &1650224027
 GameObject:
   m_ObjectHideFlags: 0
@@ -7425,3 +7494,4 @@ SceneRoots:
   - {fileID: 2081618238}
   - {fileID: 550390586}
   - {fileID: 190331027}
+  - {fileID: 1640706908}
