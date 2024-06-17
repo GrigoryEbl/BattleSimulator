@@ -12,7 +12,7 @@ public class PoisonField : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.TryGetComponent(out Unit unit) && !unit.TryGetComponent(out PoisonEffect poisonEffect))
+        if (other.TryGetComponent(out IDamageable unit) && !other.TryGetComponent(out PoisonEffect poisonEffect))
             other.AddComponent<PoisonEffect>();
     }
 }

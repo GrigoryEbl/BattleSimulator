@@ -1318,6 +1318,7 @@ GameObject:
   - component: {fileID: 8103328580772956512}
   - component: {fileID: 492157225571836806}
   - component: {fileID: 7301473604352286106}
+  - component: {fileID: 2065552067120443815}
   m_Layer: 0
   m_Name: PoisonBomberBlue
   m_TagString: Untagged
@@ -1579,6 +1580,18 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &2065552067120443815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263567264383593299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ceae0a9c899024b81eee595b8bb277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5569732526421218303
 GameObject:
   m_ObjectHideFlags: 0

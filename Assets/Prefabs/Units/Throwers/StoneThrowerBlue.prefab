@@ -1330,6 +1330,7 @@ GameObject:
   - component: {fileID: 542366945281983293}
   - component: {fileID: 5429220319321722703}
   - component: {fileID: 4280284350789845873}
+  - component: {fileID: 1594033311554372563}
   m_Layer: 0
   m_Name: StoneThrowerBlue
   m_TagString: Untagged
@@ -1591,6 +1592,18 @@ MonoBehaviour:
       Version: 1.7.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &1594033311554372563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587394679092720664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ceae0a9c899024b81eee595b8bb277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3640916737097621371
 GameObject:
   m_ObjectHideFlags: 0

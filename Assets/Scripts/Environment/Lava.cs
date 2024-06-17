@@ -1,19 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lava : MonoBehaviour
+public class Lava : Trap
 {
     [SerializeField] private int _damage = 3;
     [SerializeField] private float _delay = 0.5f;
 
-    private float _delayCounter;
     private List<IDamageable> _units = new List<IDamageable>();
+    private float _delayCounter;
 
     private void Update()
     {
-        if (_delayCounter > 0)        
-            _delayCounter -= Time.deltaTime;        
-
+        if (_delayCounter > 0)
+            _delayCounter -= Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookController : MonoBehaviour
@@ -8,7 +6,7 @@ public class LookController : MonoBehaviour
 
     private void Awake()
     {
-        _rectTransform = GetComponent<RectTransform>();
+        _rectTransform = transform as RectTransform;
     }
 
     private void Update()

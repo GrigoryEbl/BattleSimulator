@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StonesMound : MonoBehaviour
+public class StonesMound : Trap
 {
     private void OnTriggerStay(Collider other)
     {

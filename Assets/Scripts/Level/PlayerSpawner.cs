@@ -57,8 +57,9 @@ public class PlayerSpawner : MonoBehaviour
 
     public void RemoveOneUnit(Unit unit)
     {
-        _units.Remove(unit);        
         DeleteOneUnit(unit);
+
+        _units.Remove(unit);
         UnitsCountChanged?.Invoke(_units.Count);
     }
 

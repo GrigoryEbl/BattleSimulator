@@ -27,13 +27,6 @@ public class LevelStarter : MonoBehaviour
         _rewardView.Display(levelConfig.MoneyReward);
     }
 
-    private LevelConfig GetCurrentLevel()
-    {
-        int levelNumber = Mathf.Min(GameSaver.CurrentLevel, _levelsConfigs.Count);
-
-        return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
-    }
-
     private void PrepareLevel()
     {
         var levelConfig = GetCurrentLevel();
@@ -43,5 +36,12 @@ public class LevelStarter : MonoBehaviour
 
         Initialize(levelConfig);
         _enemySpawner.Spawn();
+    }
+
+    private LevelConfig GetCurrentLevel()
+    {
+        int levelNumber = Mathf.Min(GameSaver.CurrentLevel, _levelsConfigs.Count);
+
+        return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
     }
 }

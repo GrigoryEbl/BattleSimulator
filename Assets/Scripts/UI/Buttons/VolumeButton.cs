@@ -34,9 +34,9 @@ internal class VolumeButton : MonoBehaviour
 
     public void Change()
     {
-        float volume;
+        float volume = AudioListener.volume;
 
-        if (Mathf.Approximately(AudioListener.volume, _maxVolume))
+        if (Mathf.Approximately(volume, _maxVolume))
         {
             volume = _minVolume;
             _icon.sprite = _volumeOffImage;

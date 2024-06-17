@@ -1,12 +1,17 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(SphereCollider))]
 public class BuildingInteraction : MonoBehaviour
 {
+    private readonly Color _unitIconDefaultColor = new Color(255, 255, 255, 255);
+
     [SerializeField] private Transform _building;
     [SerializeField] private Transform _lockedBuilding;
     [SerializeField] private Transform[] _effects;
     [SerializeField] private Canvas _priceView;
+    [SerializeField] private Image _unitIcon;
     [SerializeField] private int _price;
 
     private SphereCollider _triggerCollider;
@@ -43,18 +48,10 @@ public class BuildingInteraction : MonoBehaviour
         _triggerCollider.enabled = false;
         _priceView.gameObject.SetActive(false);
 
-        BuildingUnlocked?.Invoke();
+        if (_unitIcon != null)
+            _unitIcon.color = _unitIconDefaultColor;        
 
         if (!GameSaver.HasBuilding(gameObject.name))
             GameSaver.SaveBuilding(gameObject.name);
-    }
-
-    public void Buy(Wallet wallet)
-    {
-        if (wallet.CanBuy(_price))
-        {
-            wallet.RemoveMoney(_price);
-            Unlock();
-        }
     }
 }

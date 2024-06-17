@@ -6,7 +6,7 @@ public class ProjectilesPool : MonoBehaviour
     [SerializeField] private Projectile _projectilePrefab;
 
     private Queue<Projectile> _spawnQueue = new Queue<Projectile>();
-    private bool _isEnemy;    
+    private bool _isEnemy;
 
     public void Initialize(bool isEnemy)
     {

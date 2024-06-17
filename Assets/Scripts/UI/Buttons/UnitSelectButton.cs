@@ -11,7 +11,7 @@ public class UnitSelectButton : MonoBehaviour
     [SerializeField] private TMP_Text _price;
     [SerializeField] private PlayerSpawner _playerSpawner;
 
-    private Button _button;    
+    private Button _button;
 
     private void Awake()
     {

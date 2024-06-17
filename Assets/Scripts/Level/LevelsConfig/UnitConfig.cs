@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New UnitConfig", menuName = "Levels/Create new UnitConfig", order = 51)]
+[CreateAssetMenu(fileName = "New UnitConfig", menuName = "Levels/Create new UnitConfig", order = 52)]
 public class UnitConfig : ScriptableObject
 {
     [SerializeField] private Unit _unitPrefab;

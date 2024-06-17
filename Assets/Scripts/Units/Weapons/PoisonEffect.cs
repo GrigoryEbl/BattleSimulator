@@ -10,7 +10,6 @@ public class PoisonEffect : MonoBehaviour
     private IDamageable _unit;
     private float _delayCounter;
 
-
     private void Awake()
     {
         _unit = GetComponent<IDamageable>();

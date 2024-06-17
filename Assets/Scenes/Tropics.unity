@@ -14531,8 +14531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trapsPrefab:
-  - {fileID: -7243853320908902542, guid: 4b066ea84a9091d4eac24e1f6eda1c65, type: 3}
-  - {fileID: 5917461157197577710, guid: d8ded39d4b866464da69e3a8a5711f42, type: 3}
+  - {fileID: 1115856171729539527, guid: 4b066ea84a9091d4eac24e1f6eda1c65, type: 3}
+  - {fileID: 5459930682200615625, guid: d8ded39d4b866464da69e3a8a5711f42, type: 3}
   _trapsSpawnedCount: 4
 --- !u!4 &2789295797762160646
 Transform:

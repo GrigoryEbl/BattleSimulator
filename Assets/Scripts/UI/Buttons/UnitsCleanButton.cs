@@ -15,11 +15,16 @@ public class UnitsCleanButton : MonoBehaviour
 
     private void OnEnable()
     {
-        _button.onClick.AddListener(_playerSpawner.Clean);
+        _button.onClick.AddListener(Clean);
     }
 
     private void OnDisable()
     {
-        _button.onClick.RemoveListener(_playerSpawner.Clean);
+        _button.onClick.RemoveListener(Clean);
+    }
+
+    private void Clean()
+    {
+        _playerSpawner.Clean();
     }
 }

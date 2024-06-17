@@ -6,15 +6,15 @@ public class FocusTracker : MonoBehaviour
     private float _currentTimeScale = 1f;
     private float _currentVolume;
 
+    private void Awake()
+    {
+        _currentVolume = GameSaver.Volume;
+    }
+
     private void OnEnable()
     {
         Application.focusChanged += OnInBackgroundChangeApp;
         WebApplication.InBackgroundChangeEvent += OnInBackgroundChangeWeb;
-    }
-
-    private void Awake()
-    {
-        _currentVolume = GameSaver.Volume;
     }
 
     private void OnDisable()
