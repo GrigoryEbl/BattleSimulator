@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public static class AnimatorNames
+public static class StaticAnimatorData
 {
     public static readonly int State = Animator.StringToHash("State");
     public static readonly int Attack = Animator.StringToHash("Attack");

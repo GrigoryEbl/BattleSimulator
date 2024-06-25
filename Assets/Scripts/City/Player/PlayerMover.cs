@@ -36,7 +36,7 @@ internal class PlayerMover : MonoBehaviour
 
     private void SetAnimatorState(Vector3 direction)
     {
-        var state = direction != Vector3.zero ? UnitAnimatorStates.run : UnitAnimatorStates.idle;
+        var state = direction != Vector3.zero ? AnimatorStates.run : AnimatorStates.idle;
 
         _animatorController.SetState(state);
     }

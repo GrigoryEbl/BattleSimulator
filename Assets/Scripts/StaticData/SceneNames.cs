@@ -9,5 +9,5 @@ public enum SceneNames
     Winter,
     Castle,
     LevelChoiceScene,
-    Mines
-};
+    Mines,
+}

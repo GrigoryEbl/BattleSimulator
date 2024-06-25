@@ -31,7 +31,7 @@ public class BotMover : MonoBehaviour
         var horizontalVelocity = _rigidbody.velocity.y * Vector3.up;
         _rigidbody.velocity = direction * _movementSource.Speed + horizontalVelocity;
 
-        var state = direction == Vector3.zero ? UnitAnimatorStates.idle : UnitAnimatorStates.run;
+        var state = direction == Vector3.zero ? AnimatorStates.idle : AnimatorStates.run;
         _animatorController.SetState(state);
     }
 
