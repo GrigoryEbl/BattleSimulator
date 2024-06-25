@@ -19,8 +19,6 @@ namespace BS.City
 
         private SphereCollider _triggerCollider;
 
-        public event Action BuildingUnlocked;
-
         public int Price => _price;
 
         private void Awake()
