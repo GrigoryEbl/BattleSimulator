@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BS.Level.LevelsConfig;
 using UnityEngine;
 using UnityEngine.UI;
 
