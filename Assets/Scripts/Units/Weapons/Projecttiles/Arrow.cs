@@ -1,33 +1,35 @@
 using BS.Environment;
-using BS.Units.Weapons;
 using UnityEngine;
 
-[RequireComponent(typeof(MeleeWeapon))]
-public class Arrow : Projectile
+namespace BS.Units.Weapons.Projectiles
 {
-    private MeleeWeapon _weapon;
-
-    private void OnEnable()
+    [RequireComponent(typeof(MeleeWeapon))]
+    public class Arrow : Projectile
     {
-        if (_weapon == null)
-            _weapon = GetComponent<MeleeWeapon>();
+        private MeleeWeapon _weapon;
 
-        _weapon.Hited += Push;
-    }
+        private void OnEnable()
+        {
+            if (_weapon == null)
+                _weapon = GetComponent<MeleeWeapon>();
 
-    private void Start()
-    {
-        _weapon.SetBattleSide(IsEnemy);
-    }
+            _weapon.Hited += Push;
+        }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.TryGetComponent(out Ground ground))
-            Push();
-    }
+        private void Start()
+        {
+            _weapon.SetBattleSide(IsEnemy);
+        }
 
-    private void OnDisable()
-    {
-        _weapon.Hited -= Push;
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.TryGetComponent(out Ground ground))
+                Push();
+        }
+
+        private void OnDisable()
+        {
+            _weapon.Hited -= Push;
+        }
     }
 }
