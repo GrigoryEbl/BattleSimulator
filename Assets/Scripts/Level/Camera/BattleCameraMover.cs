@@ -1,3 +1,4 @@
+using BS.City.PlayerControl;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInput))]
