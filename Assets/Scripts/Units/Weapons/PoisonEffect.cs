@@ -1,3 +1,4 @@
+using BS.Units;
 using UnityEngine;
 
 [RequireComponent(typeof(IDamageable))]

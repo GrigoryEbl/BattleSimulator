@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class RangeUnit : Unit
+namespace BS.Units
 {
-    private RangeWeapon _rangeWeapon;
-    private Transform _target;
-
-    private void Start()
+    public class RangeUnit : Unit
     {
-        _rangeWeapon = UnitWeapon as RangeWeapon;
-    }
+        private RangeWeapon _rangeWeapon;
+        private Transform _target;
 
-    private void OnValidate()
-    {
-        if (UnitWeapon is RangeWeapon == false)
-            ResetWeapon();
-    }
+        private void Start()
+        {
+            _rangeWeapon = UnitWeapon as RangeWeapon;
+        }
 
-    public void SetTarget(Transform target)
-    {
-        _target = target;
-    }
+        private void OnValidate()
+        {
+            if (UnitWeapon is RangeWeapon == false)
+                ResetWeapon();
+        }
 
-    private void Shoot()
-    {
-        _rangeWeapon.Shoot(_target.position);
+        public void SetTarget(Transform target)
+        {
+            _target = target;
+        }
+
+        private void Shoot()
+        {
+            _rangeWeapon.Shoot(_target.position);
+        }
     }
 }

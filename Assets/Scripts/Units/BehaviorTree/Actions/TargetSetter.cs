@@ -1,5 +1,6 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using BS.Units;
 using UnityEngine;
 
 public class TargetSetter : Action

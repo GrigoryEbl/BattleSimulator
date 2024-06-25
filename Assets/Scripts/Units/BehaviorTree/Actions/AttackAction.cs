@@ -1,6 +1,7 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using BS.StaticData;
+using BS.Units;
 using UnityEngine;
 
 public class AttackAction : Action

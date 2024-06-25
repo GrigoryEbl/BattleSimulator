@@ -1,4 +1,5 @@
 using System;
+using BS.Units;
 
 public class RangeUnitTargetSetter : TargetSetter
 {

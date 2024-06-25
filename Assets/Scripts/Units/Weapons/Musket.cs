@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using BS.Units;
 using UnityEngine;
 
 public class Musket : RangeWeapon

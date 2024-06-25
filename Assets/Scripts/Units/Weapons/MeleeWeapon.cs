@@ -1,4 +1,5 @@
 using System;
+using BS.Units;
 using UnityEngine;
 
 public class MeleeWeapon : Weapon

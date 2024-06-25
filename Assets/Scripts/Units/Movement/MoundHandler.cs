@@ -1,4 +1,5 @@
 using BehaviorDesigner.Runtime;
+using BS.Units;
 using UnityEngine;
 
 [RequireComponent(typeof(RagdollHandler))]

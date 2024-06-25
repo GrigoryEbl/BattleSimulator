@@ -1,5 +1,6 @@
 using System;
 using BehaviorDesigner.Runtime;
+using BS.Units;
 
 [Serializable]
 public class SharedAnimatorController : SharedVariable<AnimatorController>
