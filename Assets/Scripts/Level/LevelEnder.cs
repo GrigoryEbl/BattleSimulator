@@ -2,54 +2,57 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelEnder : MonoBehaviour
+namespace BS.Level
 {
-    private readonly WaitForSeconds _delay = new WaitForSeconds(5f);
-
-    [SerializeField] private Button _startButton;
-    [SerializeField] private Transform _enemySpawner;
-    [SerializeField] private Transform _playerSpawner;
-    [SerializeField] private LevelSaver _levelSaver;
-
-    [Header("Result Panels")]
-    [SerializeField] private GameObject _drawPanel;
-    [SerializeField] private GameObject _gameOverPanel;
-    [SerializeField] private GameObject _congratulationsPanel;
-    [SerializeField] private GameObject _closablePanel;
-
-    private void OnEnable()
+    public class LevelEnder : MonoBehaviour
     {
-        _startButton.onClick.AddListener(StartTryEndLevel);
-    }
+        private readonly WaitForSeconds _delay = new WaitForSeconds(5f);
 
-    private void OnDisable()
-    {
-        _startButton.onClick.RemoveListener(StartTryEndLevel);
-    }
+        [SerializeField] private Button _startButton;
+        [SerializeField] private Transform _enemySpawner;
+        [SerializeField] private Transform _playerSpawner;
+        [SerializeField] private LevelSaver _levelSaver;
 
-    private void StartTryEndLevel()
-    {
-        StartCoroutine(TryEndLevel());
-    }
+        [Header("Result Panels")]
+        [SerializeField] private GameObject _drawPanel;
+        [SerializeField] private GameObject _gameOverPanel;
+        [SerializeField] private GameObject _congratulationsPanel;
+        [SerializeField] private GameObject _closablePanel;
 
-    private IEnumerator TryEndLevel()
-    {
-        while (_enemySpawner.childCount != 0 && _playerSpawner.childCount != 0)
-            yield return _delay;
+        private void OnEnable()
+        {
+            _startButton.onClick.AddListener(StartTryEndLevel);
+        }
 
-        if (_enemySpawner.childCount == 0 && _playerSpawner.childCount == 0)
-            _drawPanel.SetActive(true);
-        else if (_playerSpawner.childCount == 0)
-            _gameOverPanel.SetActive(true);
-        else
-            FinishLevel();
+        private void OnDisable()
+        {
+            _startButton.onClick.RemoveListener(StartTryEndLevel);
+        }
 
-        _closablePanel.SetActive(false);
-    }
+        private void StartTryEndLevel()
+        {
+            StartCoroutine(TryEndLevel());
+        }
 
-    private void FinishLevel()
-    {
-        _levelSaver.FinishLevel();
-        _congratulationsPanel.SetActive(true);
+        private IEnumerator TryEndLevel()
+        {
+            while (_enemySpawner.childCount != 0 && _playerSpawner.childCount != 0)
+                yield return _delay;
+
+            if (_enemySpawner.childCount == 0 && _playerSpawner.childCount == 0)
+                _drawPanel.SetActive(true);
+            else if (_playerSpawner.childCount == 0)
+                _gameOverPanel.SetActive(true);
+            else
+                FinishLevel();
+
+            _closablePanel.SetActive(false);
+        }
+
+        private void FinishLevel()
+        {
+            _levelSaver.FinishLevel();
+            _congratulationsPanel.SetActive(true);
+        }
     }
 }
