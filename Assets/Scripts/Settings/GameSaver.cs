@@ -1,4 +1,5 @@
 using Agava.YandexGames.Utility;
+using BS.StaticData;
 
 namespace BS.Settings
 {

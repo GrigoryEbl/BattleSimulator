@@ -1,3 +1,4 @@
+using BS.StaticData;
 using UnityEngine;
 
 namespace BS.City.PlayerControl

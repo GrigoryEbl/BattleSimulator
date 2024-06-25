@@ -1,13 +1,16 @@
-public enum SceneNames
+namespace BS.StaticData
 {
-    StartScene = 0,
-    Menu,
-    City,
-    Forest,
-    Volcanic,
-    Tropics,
-    Winter,
-    Castle,
-    LevelChoiceScene,
-    Mines,
+    public enum SceneNames
+    {
+        StartScene = 0,
+        Menu,
+        City,
+        Forest,
+        Volcanic,
+        Tropics,
+        Winter,
+        Castle,
+        LevelChoiceScene,
+        Mines,
+    }
 }

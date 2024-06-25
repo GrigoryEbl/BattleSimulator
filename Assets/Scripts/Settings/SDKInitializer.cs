@@ -1,5 +1,6 @@
 using System.Collections;
 using Agava.YandexGames;
+using BS.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
