@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class Thrower
+namespace BS.Units.Weapons.Projectiles
 {
-    private readonly float _formulaVariable = 2f;
-
-    public Vector3 CalculateVelocityByHeight(Vector3 start, Vector3 end, float height)
+    public class Thrower
     {
-        float timeToRise = CalculateTimeByHeight(height);
-        float timeToFall = CalculateTimeByHeight(height + (start - end).y);
+        private readonly float _formulaVariable = 2f;
 
-        Vector3 horizontalVelocity = end - start;
-        horizontalVelocity.y = 0;
-        horizontalVelocity /= timeToRise + timeToFall;
+        public Vector3 CalculateVelocityByHeight(Vector3 start, Vector3 end, float height)
+        {
+            float timeToRise = CalculateTimeByHeight(height);
+            float timeToFall = CalculateTimeByHeight(height + (start - end).y);
 
-        Vector3 verticalVelocity = -Physics.gravity * timeToRise;
+            Vector3 horizontalVelocity = end - start;
+            horizontalVelocity.y = 0;
+            horizontalVelocity /= timeToRise + timeToFall;
 
-        return horizontalVelocity + verticalVelocity;
-    }
+            Vector3 verticalVelocity = -Physics.gravity * timeToRise;
 
-    private float CalculateTimeByHeight(float height)
-    {
-        var gravityFactor = Mathf.Abs(Physics.gravity.y);
+            return horizontalVelocity + verticalVelocity;
+        }
 
-        return Mathf.Sqrt(_formulaVariable * height / gravityFactor);
+        private float CalculateTimeByHeight(float height)
+        {
+            var gravityFactor = Mathf.Abs(Physics.gravity.y);
+
+            return Mathf.Sqrt(_formulaVariable * height / gravityFactor);
+        }
     }
 }

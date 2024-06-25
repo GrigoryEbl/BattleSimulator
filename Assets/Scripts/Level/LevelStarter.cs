@@ -1,47 +1,54 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BS.Level.LevelsConfig;
+using BS.Settings;
+using BS.UI.View;
+using BS.Wallets;
 using UnityEngine;
 
-public class LevelStarter : MonoBehaviour
+namespace BS.Level
 {
-    [SerializeField] private List<LevelConfig> _levelsConfigs;
-
-    [SerializeField] private Wallet _wallet;
-    [SerializeField] private EnemySpawner _enemySpawner;
-    [SerializeField] private PlayerSpawner _playerSpawner;
-    [SerializeField] private LevelSaver _levelSaver;
-    [SerializeField] private RewardView _rewardView;
-
-    private void Start()
+    public class LevelStarter : MonoBehaviour
     {
-        PrepareLevel();
-    }
+        [SerializeField] private List<LevelConfig> _levelsConfigs;
 
-    private void Initialize(LevelConfig levelConfig)
-    {
-        _wallet.Initialize(levelConfig.LevelMoney);
-        _enemySpawner.Initialize(levelConfig.UnitsConfig);
-        _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
-        _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.MoneyReward);
-        _rewardView.Display(levelConfig.MoneyReward);
-    }
+        [SerializeField] private Wallet _wallet;
+        [SerializeField] private EnemySpawner _enemySpawner;
+        [SerializeField] private PlayerSpawner _playerSpawner;
+        [SerializeField] private LevelSaver _levelSaver;
+        [SerializeField] private RewardView _rewardView;
 
-    private void PrepareLevel()
-    {
-        var levelConfig = GetCurrentLevel();
+        private void Start()
+        {
+            PrepareLevel();
+        }
 
-        if (levelConfig == null)
-            throw new ArgumentNullException(nameof(LevelConfig));
+        private void Initialize(LevelConfig levelConfig)
+        {
+            _wallet.Initialize(levelConfig.LevelMoney);
+            _enemySpawner.Initialize(levelConfig.UnitsConfig);
+            _playerSpawner.Initialize(levelConfig.MaxSpawnUnitCount);
+            _levelSaver.Initialize(_levelsConfigs.Count, levelConfig.MoneyReward);
+            _rewardView.Display(levelConfig.MoneyReward);
+        }
 
-        Initialize(levelConfig);
-        _enemySpawner.Spawn();
-    }
+        private void PrepareLevel()
+        {
+            var levelConfig = GetCurrentLevel();
 
-    private LevelConfig GetCurrentLevel()
-    {
-        int levelNumber = Mathf.Min(GameSaver.CurrentLevel, _levelsConfigs.Count);
+            if (levelConfig == null)
+                throw new ArgumentNullException(nameof(LevelConfig));
 
-        return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
+            Initialize(levelConfig);
+            _enemySpawner.Spawn();
+        }
+
+        private LevelConfig GetCurrentLevel()
+        {
+            int levelNumber = Mathf.Min(GameSaver.CurrentLevel, _levelsConfigs.Count);
+
+            return _levelsConfigs.FirstOrDefault(levelConfig => levelConfig.Number == levelNumber);
+        }
     }
 }

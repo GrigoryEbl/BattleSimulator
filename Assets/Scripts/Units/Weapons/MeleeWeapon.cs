@@ -1,25 +1,28 @@
 using System;
 using UnityEngine;
 
-public class MeleeWeapon : Weapon
+namespace BS.Units.Weapons
 {
-    [SerializeField] private int _damage;
-    [SerializeField] private ParticleSystem _strikeEffect;
-    [SerializeField] private AudioSource _audioEffect;
-
-    public event Action Hited;
-
-    private void OnTriggerEnter(Collider other)
+    public class MeleeWeapon : Weapon
     {
-        if (other.TryGetComponent(out IDamageable target) && target.IsEnemy != IsEnemy)
-            Attack(target);
-    }
+        [SerializeField] private int _damage;
+        [SerializeField] private ParticleSystem _strikeEffect;
+        [SerializeField] private AudioSource _audioEffect;
 
-    protected virtual void Attack(IDamageable target)
-    {
-        target.TakeDamage(_damage);
-        _strikeEffect.Play();
-        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
-        Hited?.Invoke();
+        public event Action Hited;
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out IDamageable target) && target.IsEnemy != IsEnemy)
+                Attack(target);
+        }
+
+        protected virtual void Attack(IDamageable target)
+        {
+            target.TakeDamage(_damage);
+            _strikeEffect.Play();
+            AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
+            Hited?.Invoke();
+        }
     }
 }

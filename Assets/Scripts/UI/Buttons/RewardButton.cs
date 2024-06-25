@@ -1,38 +1,43 @@
+using BS.Advertising;
+using BS.Wallets;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-internal class RewardButton : MonoBehaviour
+namespace BS.UI.Buttons
 {
-    [SerializeField] private Wallet _wallet;
-    [SerializeField] private VideoAd _videoAd;
-    [SerializeField] private int _rewardMoneyCount = 25;
-
-    private Button _button;
-
-    private void Awake()
+    [RequireComponent(typeof(Button))]
+    internal class RewardButton : MonoBehaviour
     {
-        _button = GetComponent<Button>();
-    }
+        [SerializeField] private Wallet _wallet;
+        [SerializeField] private VideoAd _videoAd;
+        [SerializeField] private int _rewardMoneyCount = 25;
 
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(AddReward);
-    }
+        private Button _button;
 
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(AddReward);
-    }
+        private void Awake()
+        {
+            _button = GetComponent<Button>();
+        }
 
-    private void AddReward()
-    {
+        private void OnEnable()
+        {
+            _button.onClick.AddListener(AddReward);
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(AddReward);
+        }
+
+        private void AddReward()
+        {
 #if UNITY_WEBGL && !UNITY_EDITOR
         _videoAd.Show(_button, _wallet.AddMoney, _rewardMoneyCount);
 #else
-        _wallet.AddMoney(_rewardMoneyCount);
+            _wallet.AddMoney(_rewardMoneyCount);
 #endif
 
-        gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 }

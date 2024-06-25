@@ -1,10 +1,14 @@
+using BS.Units.Movement;
 using UnityEngine;
 
-public class StonesMound : Trap
+namespace BS.Environment
 {
-    private void OnTriggerStay(Collider other)
+    public class StonesMound : Trap
     {
-        if (other.TryGetComponent(out MoundHandler unit))
-            unit.Fell();
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.TryGetComponent(out MoundHandler unit))
+                unit.Fell();
+        }
     }
 }

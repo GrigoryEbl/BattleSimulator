@@ -1,57 +1,61 @@
 using System;
+using BS.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(SphereCollider))]
-public class BuildingInteraction : MonoBehaviour
+namespace BS.City
 {
-    private readonly Color _unitIconDefaultColor = new Color(255, 255, 255, 255);
-
-    [SerializeField] private Transform _building;
-    [SerializeField] private Transform _lockedBuilding;
-    [SerializeField] private Transform[] _effects;
-    [SerializeField] private Canvas _priceView;
-    [SerializeField] private Image _unitIcon;
-    [SerializeField] private int _price;
-
-    private SphereCollider _triggerCollider;
-
-    public event Action BuildingUnlocked;
-
-    public int Price => _price;
-
-    private void Awake()
+    [RequireComponent(typeof(SphereCollider))]
+    public class BuildingInteraction : MonoBehaviour
     {
-        _triggerCollider = GetComponent<SphereCollider>();
-    }
+        private readonly Color _unitIconDefaultColor = new Color(255, 255, 255, 255);
 
-    private void Start()
-    {
-        GetLoad();
-    }
+        [SerializeField] private Transform _building;
+        [SerializeField] private Transform _lockedBuilding;
+        [SerializeField] private Transform[] _effects;
+        [SerializeField] private Canvas _priceView;
+        [SerializeField] private Image _unitIcon;
+        [SerializeField] private int _price;
 
-    public void Unlock()
-    {
-        _lockedBuilding.gameObject.SetActive(false);
-        _building.gameObject.SetActive(true);
-        _triggerCollider.enabled = false;
-        _priceView.gameObject.SetActive(false);
+        private SphereCollider _triggerCollider;
 
-        if (_unitIcon != null)
-            _unitIcon.color = _unitIconDefaultColor;        
+        public event Action BuildingUnlocked;
 
-        if (!GameSaver.HasBuilding(gameObject.name))
-            GameSaver.SaveBuilding(gameObject.name);
-    }
+        public int Price => _price;
 
-    private void GetLoad()
-    {
-        if (GameSaver.HasBuilding(gameObject.name))
+        private void Awake()
         {
-            for (int i = 0; i < _effects.Length; i++)
-                Destroy(_effects[i].gameObject);
+            _triggerCollider = GetComponent<SphereCollider>();
+        }
 
-            Unlock();
+        private void Start()
+        {
+            GetLoad();
+        }
+
+        public void Unlock()
+        {
+            _lockedBuilding.gameObject.SetActive(false);
+            _building.gameObject.SetActive(true);
+            _triggerCollider.enabled = false;
+            _priceView.gameObject.SetActive(false);
+
+            if (_unitIcon != null)
+                _unitIcon.color = _unitIconDefaultColor;
+
+            if (!GameSaver.HasBuilding(gameObject.name))
+                GameSaver.SaveBuilding(gameObject.name);
+        }
+
+        private void GetLoad()
+        {
+            if (GameSaver.HasBuilding(gameObject.name))
+            {
+                for (int i = 0; i < _effects.Length; i++)
+                    Destroy(_effects[i].gameObject);
+
+                Unlock();
+            }
         }
     }
 }

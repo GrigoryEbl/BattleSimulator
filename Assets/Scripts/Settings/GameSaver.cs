@@ -1,102 +1,94 @@
-using PlayerPrefs = Agava.YandexGames.Utility.PlayerPrefs;
+using Agava.YandexGames.Utility;
+using BS.StaticData;
 
-public static class GameSaver
+namespace BS.Settings
 {
-    private static readonly int _levelStep = 1;
-    private static readonly float _maxVolume = 1f;
-    private static readonly string _startBuilding = "SoldierHouse";
-
-    public static int Money => PlayerPrefs.GetInt(Names.Money);
-    public static int Score => PlayerPrefs.GetInt(Names.Score);
-    public static int CurrentMap => PlayerPrefs.GetInt(Names.Map);
-    public static int CurrentLevel => PlayerPrefs.GetInt(Names.Level);
-    public static float Volume => PlayerPrefs.GetFloat(Names.Volume);
-    public static bool IsGameConfigured => PlayerPrefs.HasKey(Names.Settings);
-
-    public static bool HasBuilding(string name)
+    public static class GameSaver
     {
-        return PlayerPrefs.HasKey(name);
-    }
+        private static readonly int _levelStep = 1;
+        private static readonly float _maxVolume = 1f;
+        private static readonly string _startBuilding = "SoldierHouse";
 
-    public static void SaveBuilding(string name)
-    {
-        PlayerPrefs.SetString(name, true.ToString());
-        PlayerPrefs.Save();
-    }
+        public static int Money => PlayerPrefs.GetInt(StaticGameData.Money);
+        public static int Score => PlayerPrefs.GetInt(StaticGameData.Score);
+        public static int CurrentMap => PlayerPrefs.GetInt(StaticGameData.Map);
+        public static int CurrentLevel => PlayerPrefs.GetInt(StaticGameData.Level);
+        public static float Volume => PlayerPrefs.GetFloat(StaticGameData.Volume);
+        public static bool IsGameConfigured => PlayerPrefs.HasKey(StaticGameData.Settings);
 
-    public static void SetMoney(int value)
-    {
-        PlayerPrefs.SetInt(Names.Money, value);
-        PlayerPrefs.Save();
-    }
+        public static bool HasBuilding(string name)
+        {
+            return PlayerPrefs.HasKey(name);
+        }
 
-    public static void SetScore(int addedValue)
-    {
-        int score = PlayerPrefs.GetInt(Names.Score) + addedValue;
+        public static void SaveBuilding(string name)
+        {
+            PlayerPrefs.SetString(name, true.ToString());
+            PlayerPrefs.Save();
+        }
 
-        PlayerPrefs.SetInt(Names.Score, score);
-        PlayerPrefs.Save();
-    }
+        public static void SetMoney(int value)
+        {
+            PlayerPrefs.SetInt(StaticGameData.Money, value);
+            PlayerPrefs.Save();
+        }
 
-    public static void SetVolume(float value)
-    {
-        PlayerPrefs.SetFloat(Names.Volume, value);
-        PlayerPrefs.Save();
-    }
+        public static void SetScore(int addedValue)
+        {
+            int score = PlayerPrefs.GetInt(StaticGameData.Score) + addedValue;
 
-    public static void SetMap(int mapNumber)
-    {
-        PlayerPrefs.SetInt(Names.Map, mapNumber);
-        PlayerPrefs.Save();
-    }
+            PlayerPrefs.SetInt(StaticGameData.Score, score);
+            PlayerPrefs.Save();
+        }
 
-    public static void SetLevel(int levelNumber)
-    {
-        PlayerPrefs.SetInt(Names.Level, levelNumber);
-        PlayerPrefs.Save();
-    }
+        public static void SetVolume(float value)
+        {
+            PlayerPrefs.SetFloat(StaticGameData.Volume, value);
+            PlayerPrefs.Save();
+        }
 
-    public static void SetNextLevel(int levelsCount)
-    {
-        if (CurrentMap == (int)SceneNames.LevelChoiceScene)
-            return;
+        public static void SetMap(int mapNumber)
+        {
+            PlayerPrefs.SetInt(StaticGameData.Map, mapNumber);
+            PlayerPrefs.Save();
+        }
 
-        if (CurrentLevel == levelsCount)
-            ChangeMap();
-        else
-            PlayerPrefs.SetInt(Names.Level, CurrentLevel + _levelStep);
+        public static void SetLevel(int levelNumber)
+        {
+            PlayerPrefs.SetInt(StaticGameData.Level, levelNumber);
+            PlayerPrefs.Save();
+        }
 
-        PlayerPrefs.Save();
-    }
+        public static void SetNextLevel(int levelsCount)
+        {
+            if (CurrentMap == (int)SceneNames.LevelChoiceScene)
+                return;
 
-    public static void SetDefaultSettings()
-    {
-        PlayerPrefs.DeleteAll();
+            if (CurrentLevel == levelsCount)
+                ChangeMap();
+            else
+                PlayerPrefs.SetInt(StaticGameData.Level, CurrentLevel + _levelStep);
 
-        PlayerPrefs.SetInt(Names.Level, _levelStep);
-        PlayerPrefs.SetInt(Names.Map, (int)SceneNames.Forest);
-        PlayerPrefs.SetFloat(Names.Volume, _maxVolume);
-        PlayerPrefs.SetString(_startBuilding, true.ToString());
-        PlayerPrefs.SetString(Names.Settings, true.ToString());
+            PlayerPrefs.Save();
+        }
 
-        PlayerPrefs.Save();
-    }
+        public static void SetDefaultSettings()
+        {
+            PlayerPrefs.DeleteAll();
 
-    private static void ChangeMap()
-    {
-        PlayerPrefs.SetInt(Names.Level, _levelStep);
-        PlayerPrefs.SetInt(Names.Map, CurrentMap + _levelStep);
-    }
+            PlayerPrefs.SetInt(StaticGameData.Level, _levelStep);
+            PlayerPrefs.SetInt(StaticGameData.Map, (int)SceneNames.Forest);
+            PlayerPrefs.SetFloat(StaticGameData.Volume, _maxVolume);
+            PlayerPrefs.SetString(_startBuilding, true.ToString());
+            PlayerPrefs.SetString(StaticGameData.Settings, true.ToString());
 
-    private static class Names
-    {
-        public static readonly string Level = "Level";
-        public static readonly string Map = "Map";
+            PlayerPrefs.Save();
+        }
 
-        public static readonly string Settings = "Settings";
-        public static readonly string Volume = "Volume";
-
-        public static readonly string Money = "Money";
-        public static readonly string Score = "Score";
+        private static void ChangeMap()
+        {
+            PlayerPrefs.SetInt(StaticGameData.Level, _levelStep);
+            PlayerPrefs.SetInt(StaticGameData.Map, CurrentMap + _levelStep);
+        }
     }
 }

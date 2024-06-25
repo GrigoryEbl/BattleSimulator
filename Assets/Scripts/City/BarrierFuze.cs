@@ -1,17 +1,20 @@
 using UnityEngine;
 
-internal class BarrierFuze : MonoBehaviour
+namespace BS.City
 {
-    [SerializeField] private GameObject _explosionEffect;
-    [SerializeField] private GameObject _destructible;
-    [SerializeField] private GameObject _dynamite;
-    [SerializeField] private AudioSource _audioEffect;
-
-    public void Explode()
+    internal class BarrierFuze : MonoBehaviour
     {
-        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
-        _explosionEffect.SetActive(true);
-        _destructible.SetActive(false);
-        _dynamite.SetActive(false);
+        [SerializeField] private GameObject _explosionEffect;
+        [SerializeField] private GameObject _destructible;
+        [SerializeField] private GameObject _dynamite;
+        [SerializeField] private AudioSource _audioEffect;
+
+        public void Explode()
+        {
+            AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
+            _explosionEffect.SetActive(true);
+            _destructible.SetActive(false);
+            _dynamite.SetActive(false);
+        }
     }
 }

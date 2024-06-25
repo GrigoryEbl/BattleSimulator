@@ -1,3 +1,6 @@
 using UnityEngine;
 
-public class Trap : MonoBehaviour { }
+namespace BS.Environment
+{
+    public class Trap : MonoBehaviour { }
+}

@@ -1,10 +1,14 @@
+using BS.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MineSceneLoader : MonoBehaviour
+namespace BS.City.Mines
 {
-    private void Start()
+    public class MineSceneLoader : MonoBehaviour
     {
-        SceneManager.LoadScene((int)SceneNames.Mines, LoadSceneMode.Additive);
+        private void Start()
+        {
+            SceneManager.LoadScene((int)SceneNames.Mines, LoadSceneMode.Additive);
+        }
     }
 }

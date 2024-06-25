@@ -1,21 +1,26 @@
+using BS.Settings;
+using BS.Wallets;
 using UnityEngine;
 
-public class LevelSaver : MonoBehaviour
+namespace BS.Level
 {
-    [SerializeField] private PlayerWallet _wallet;
-
-    private int _levelsCount;
-    private int _moneyReward;
-    
-    public void Initialize(int levelsCount, int moneyReward)
+    public class LevelSaver : MonoBehaviour
     {
-        _levelsCount = levelsCount;
-        _moneyReward = moneyReward;
-    }
+        [SerializeField] private PlayerWallet _wallet;
 
-    public void FinishLevel()
-    {
-        GameSaver.SetNextLevel(_levelsCount);
-        _wallet.AddMoney(_moneyReward);
+        private int _levelsCount;
+        private int _moneyReward;
+
+        public void Initialize(int levelsCount, int moneyReward)
+        {
+            _levelsCount = levelsCount;
+            _moneyReward = moneyReward;
+        }
+
+        public void FinishLevel()
+        {
+            GameSaver.SetNextLevel(_levelsCount);
+            _wallet.AddMoney(_moneyReward);
+        }
     }
 }

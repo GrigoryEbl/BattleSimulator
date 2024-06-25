@@ -1,13 +1,16 @@
 using UnityEngine;
 
-public abstract class RangeWeapon : Weapon
+namespace BS.Units.Weapons
 {
-    [SerializeField] private Transform _startPoint;
-
-    protected Transform StartPoint => _startPoint;
-
-    public virtual void Shoot(Vector3 targetPosition)
+    public abstract class RangeWeapon : Weapon
     {
-        _startPoint.LookAt(new Vector3(targetPosition.x, _startPoint.position.y, targetPosition.z));
+        [SerializeField] private Transform _startPoint;
+
+        protected Transform StartPoint => _startPoint;
+
+        public virtual void Shoot(Vector3 targetPosition)
+        {
+            _startPoint.LookAt(new Vector3(targetPosition.x, _startPoint.position.y, targetPosition.z));
+        }
     }
 }

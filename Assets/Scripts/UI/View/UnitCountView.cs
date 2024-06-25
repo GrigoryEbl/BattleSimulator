@@ -1,23 +1,27 @@
+using BS.Level;
 using TMPro;
 using UnityEngine;
 
-public class UnitCountView : MonoBehaviour
+namespace BS.UI.View
 {
-    [SerializeField] private TMP_Text _text;
-    [SerializeField] private PlayerSpawner _playerSpawner;
-
-    private void OnEnable()
+    public class UnitCountView : MonoBehaviour
     {
-        _playerSpawner.UnitsCountChanged += ShowValue;
-    }
+        [SerializeField] private TMP_Text _text;
+        [SerializeField] private PlayerSpawner _playerSpawner;
 
-    private void OnDisable()
-    {
-        _playerSpawner.UnitsCountChanged -= ShowValue;
-    }
+        private void OnEnable()
+        {
+            _playerSpawner.UnitsCountChanged += ShowValue;
+        }
 
-    private void ShowValue(int value)
-    {
-        _text.text = $"{value} / {_playerSpawner.MaxSpawnCount}";
+        private void OnDisable()
+        {
+            _playerSpawner.UnitsCountChanged -= ShowValue;
+        }
+
+        private void ShowValue(int value)
+        {
+            _text.text = $"{value} / {_playerSpawner.MaxSpawnCount}";
+        }
     }
 }

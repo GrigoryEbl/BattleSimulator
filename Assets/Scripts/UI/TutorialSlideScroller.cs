@@ -1,54 +1,57 @@
 using UnityEngine;
 
-public class TutorialSlideScroller : MonoBehaviour
+namespace BS.UI
 {
-    [SerializeField] private GameObject[] _slides;
-    [SerializeField] private GameObject _mainButtons;
-
-    private int _currentSlide = 0;
-    private int _minSlideNumber = 0;
-    private int _maxSlideNumber;
-
-    private void Awake()
+    public class TutorialSlideScroller : MonoBehaviour
     {
-        _maxSlideNumber = _slides.Length;
-    }
+        [SerializeField] private GameObject[] _slides;
+        [SerializeField] private GameObject _mainButtons;
 
-    private void OnEnable()
-    {
-        Scroll();
-    }
+        private int _currentSlide = 0;
+        private int _minSlideNumber = 0;
+        private int _maxSlideNumber;
 
-    public void Scroll()
-    {
-        if (_currentSlide >= _slides.Length)
+        private void Awake()
         {
-            EndSlideShow();
-            return;
+            _maxSlideNumber = _slides.Length;
         }
 
-        for (int i = 0; i < _slides.Length; i++)
-            _slides[i].SetActive(i == _currentSlide);
-    }
+        private void OnEnable()
+        {
+            Scroll();
+        }
 
-    public void SetNextSlide()
-    {
-        _currentSlide++;
-        _currentSlide = Mathf.Min(_currentSlide, _maxSlideNumber);
-    }
+        public void Scroll()
+        {
+            if (_currentSlide >= _slides.Length)
+            {
+                EndSlideShow();
+                return;
+            }
 
-    public void SetPreviousSlide()
-    {
-        _currentSlide--;
-        _currentSlide = Mathf.Max(_currentSlide, _minSlideNumber);
-    }
+            for (int i = 0; i < _slides.Length; i++)
+                _slides[i].SetActive(i == _currentSlide);
+        }
 
-    private void EndSlideShow()
-    {
-        _currentSlide = 0;
-        gameObject.SetActive(false);
+        public void SetNextSlide()
+        {
+            _currentSlide++;
+            _currentSlide = Mathf.Min(_currentSlide, _maxSlideNumber);
+        }
 
-        if (_mainButtons != null)
-            _mainButtons.SetActive(true);
+        public void SetPreviousSlide()
+        {
+            _currentSlide--;
+            _currentSlide = Mathf.Max(_currentSlide, _minSlideNumber);
+        }
+
+        private void EndSlideShow()
+        {
+            _currentSlide = 0;
+            gameObject.SetActive(false);
+
+            if (_mainButtons != null)
+                _mainButtons.SetActive(true);
+        }
     }
 }

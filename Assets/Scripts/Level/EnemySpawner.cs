@@ -1,35 +1,39 @@
 using System.Collections.Generic;
+using BS.Level.LevelsConfig;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemySpawner : MonoBehaviour
+namespace BS.Level
 {
-    private readonly Quaternion _unitAngle = Quaternion.Euler(0, 270, 0);
-
-    [SerializeField] private Transform _targetParent;
-    [SerializeField] private Button _startButton;
-
-    private IReadOnlyList<UnitConfig> _unitsConfig;
-    private Transform _transform;
-
-    private void Awake()
+    public class EnemySpawner : MonoBehaviour
     {
-        _transform = transform;
-    }
+        private readonly Quaternion _unitAngle = Quaternion.Euler(0, 270, 0);
 
-    public void Initialize(IReadOnlyList<UnitConfig> unitsConfig)
-    {
-        _unitsConfig = unitsConfig;
-    }
+        [SerializeField] private Transform _targetParent;
+        [SerializeField] private Button _startButton;
 
-    public void Spawn()
-    {
-        foreach (var unitConfig in _unitsConfig)
+        private IReadOnlyList<UnitConfig> _unitsConfig;
+        private Transform _transform;
+
+        private void Awake()
         {
-            foreach (var position in unitConfig.Positions)
+            _transform = transform;
+        }
+
+        public void Initialize(IReadOnlyList<UnitConfig> unitsConfig)
+        {
+            _unitsConfig = unitsConfig;
+        }
+
+        public void Spawn()
+        {
+            foreach (var unitConfig in _unitsConfig)
             {
-                var unit = Instantiate(unitConfig.UnitPrefab, position, _unitAngle, _transform);
-                unit.Init(true, _targetParent, _startButton);
+                foreach (var position in unitConfig.Positions)
+                {
+                    var unit = Instantiate(unitConfig.UnitPrefab, position, _unitAngle, _transform);
+                    unit.Init(true, _targetParent, _startButton);
+                }
             }
         }
     }

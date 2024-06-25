@@ -1,7 +1,10 @@
 using UnityEngine;
 
-public interface IMovementSource
+namespace BS.Units.Movement
 {
-    public Vector3 Direction { get; }
-    public float Speed { get; }
+    public interface IMovementSource
+    {
+        public Vector3 Direction { get; }
+        public float Speed { get; }
+    }
 }

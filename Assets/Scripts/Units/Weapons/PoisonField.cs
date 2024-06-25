@@ -1,18 +1,21 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PoisonField : MonoBehaviour
+namespace BS.Units.Weapons
 {
-    private readonly float _lifeTime = 7f;
-
-    private void Start()
+    public class PoisonField : MonoBehaviour
     {
-        Destroy(gameObject, _lifeTime);
-    }
+        private readonly float _lifeTime = 7f;
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.TryGetComponent(out IDamageable unit) && !other.TryGetComponent(out PoisonEffect poisonEffect))
-            other.AddComponent<PoisonEffect>();
+        private void Start()
+        {
+            Destroy(gameObject, _lifeTime);
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.TryGetComponent(out IDamageable unit) && !other.TryGetComponent(out PoisonEffect poisonEffect))
+                other.AddComponent<PoisonEffect>();
+        }
     }
 }
