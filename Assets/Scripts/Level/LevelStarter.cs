@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BS.Level.LevelsConfig;
 using BS.Settings;
+using BS.UI.View;
 using BS.Wallets;
 using UnityEngine;
 
