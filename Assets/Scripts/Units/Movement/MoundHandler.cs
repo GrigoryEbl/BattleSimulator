@@ -1,5 +1,4 @@
 using BehaviorDesigner.Runtime;
-using BS.Units;
 using UnityEngine;
 
 namespace BS.Units.Movement
