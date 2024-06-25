@@ -1,4 +1,5 @@
 using Agava.WebUtility;
+using BS.Settings;
 using UnityEngine;
 
 public class FocusTracker : MonoBehaviour

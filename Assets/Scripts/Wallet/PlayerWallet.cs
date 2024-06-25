@@ -1,3 +1,4 @@
+using BS.Settings;
 using BS.YandexLeaderboard;
 using UnityEngine;
 

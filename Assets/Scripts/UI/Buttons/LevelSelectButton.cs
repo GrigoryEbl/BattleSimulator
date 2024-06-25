@@ -1,4 +1,5 @@
 using System;
+using BS.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 

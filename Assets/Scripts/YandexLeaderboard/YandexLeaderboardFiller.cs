@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Agava.YandexGames;
+using BS.Settings;
 using UnityEngine;
 
 namespace BS.YandexLeaderboard

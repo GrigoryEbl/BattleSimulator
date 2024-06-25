@@ -1,3 +1,4 @@
+using BS.Settings;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

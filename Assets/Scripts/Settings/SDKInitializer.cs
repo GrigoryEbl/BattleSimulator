@@ -3,25 +3,28 @@ using Agava.YandexGames;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-internal sealed class SDKInitializer : MonoBehaviour
+namespace BS.Settings
 {
-    private void Awake()
+    internal sealed class SDKInitializer : MonoBehaviour
     {
-        YandexGamesSdk.CallbackLogging = true;
-    }
+        private void Awake()
+        {
+            YandexGamesSdk.CallbackLogging = true;
+        }
 
-    private IEnumerator Start()
-    {
-        yield return YandexGamesSdk.Initialize(LoudCloudSave);
-    }
+        private IEnumerator Start()
+        {
+            yield return YandexGamesSdk.Initialize(LoudCloudSave);
+        }
 
-    private void LoudCloudSave()
-    {
-        Agava.YandexGames.Utility.PlayerPrefs.Load(OnLoadCloudSuccessCallback);
-    }
+        private void LoudCloudSave()
+        {
+            Agava.YandexGames.Utility.PlayerPrefs.Load(OnLoadCloudSuccessCallback);
+        }
 
-    private void OnLoadCloudSuccessCallback()
-    {
-        SceneManager.LoadScene((int)SceneNames.Menu);
+        private void OnLoadCloudSuccessCallback()
+        {
+            SceneManager.LoadScene((int)SceneNames.Menu);
+        }
     }
 }

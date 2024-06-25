@@ -1,3 +1,4 @@
+using BS.Settings;
 using UnityEngine;
 
 public class Menu : MonoBehaviour

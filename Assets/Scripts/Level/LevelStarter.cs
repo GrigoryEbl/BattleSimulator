@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BS.Settings;
 using UnityEngine;
 
 public class LevelStarter : MonoBehaviour
