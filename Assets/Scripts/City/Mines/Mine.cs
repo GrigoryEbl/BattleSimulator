@@ -7,6 +7,8 @@ namespace BS.City.Mines
     [RequireComponent(typeof(Timer))]
     public class Mine : MonoBehaviour
     {
+        private readonly int _zeroMoneyCount = 0;
+
         [SerializeField] private int _chargedMoney;
         [SerializeField] private float _miningTime;
         [SerializeField] private TMP_Text _moneyView;
@@ -39,7 +41,7 @@ namespace BS.City.Mines
         {
             if (other.TryGetComponent(out PlayerWallet wallet))
             {
-                if (_currentMoney > 0)
+                if (_currentMoney > _zeroMoneyCount)
                 {
                     wallet.AddMoney(_currentMoney);
                     StartMine();
@@ -55,7 +57,7 @@ namespace BS.City.Mines
 
         private void StartMine()
         {
-            ChangeMoney(0);
+            ChangeMoney(_zeroMoneyCount);
             _timer.StartWork(_miningTime);
         }
 

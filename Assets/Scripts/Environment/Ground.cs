@@ -2,5 +2,7 @@ using UnityEngine;
 
 namespace BS.Environment
 {
-    public class Ground : MonoBehaviour { }
+    public class Ground : MonoBehaviour
+    {
+    }
 }
