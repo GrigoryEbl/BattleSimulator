@@ -34,7 +34,7 @@ namespace BS.Units.Movement
             var horizontalVelocity = _rigidbody.velocity.y * Vector3.up;
             _rigidbody.velocity = direction * _movementSource.Speed + horizontalVelocity;
 
-            var state = direction == Vector3.zero ? AnimatorStates.idle : AnimatorStates.run;
+            var state = direction == Vector3.zero ? AnimatorStates.Idle : AnimatorStates.Run;
             _animatorController.SetState(state);
         }
 
