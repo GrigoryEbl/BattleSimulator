@@ -40,7 +40,7 @@ namespace BS.City.PlayerControl
 
         private void SetAnimatorState(Vector3 direction)
         {
-            var state = direction != Vector3.zero ? AnimatorStates.run : AnimatorStates.idle;
+            var state = direction != Vector3.zero ? AnimatorStates.Run : AnimatorStates.Idle;
 
             _animatorController.SetState(state);
         }

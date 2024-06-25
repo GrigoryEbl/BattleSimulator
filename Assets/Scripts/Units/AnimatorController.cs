@@ -8,11 +8,16 @@ namespace BS.Units
     {
         private Animator _animator;
 
-        public bool IsAttack => _animator.GetCurrentAnimatorStateInfo(0).IsName(AnimatorStates.Attack.ToString());
-
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+        }
+
+        public bool CanMove()
+        {
+            var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+
+            return stateInfo.IsName(AnimatorStates.Attack.ToString());
         }
 
         public void SetState(AnimatorStates state)

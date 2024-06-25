@@ -20,8 +20,12 @@ namespace BS.Units.Weapons
 
             _shootEffect.Play();
             AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
-            RaycastHit[] hits = Physics.RaycastAll(StartPoint.position, StartPoint.forward, _maxDistance,
-                _layerMask, QueryTriggerInteraction.Collide);
+            RaycastHit[] hits = Physics.RaycastAll(
+                StartPoint.position,
+                StartPoint.forward,
+                _maxDistance,
+                _layerMask,
+                QueryTriggerInteraction.Collide);
 
             CalculateHits(hits);
         }
@@ -34,7 +38,11 @@ namespace BS.Units.Weapons
 
             foreach (var hit in sortedHits)
             {
-                if (hit.collider.TryGetComponent(out IDamageable target) && !targets.Contains(target) && target.IsEnemy != IsEnemy)
+                bool canAttack = hit.collider.TryGetComponent(out IDamageable target) &&
+                    targets.Contains(target) == false &&
+                    target.IsEnemy != IsEnemy;
+
+                if (canAttack)
                 {
                     targets.Add(target);
                     target.TakeDamage(_damage);

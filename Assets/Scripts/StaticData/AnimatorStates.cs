@@ -2,8 +2,8 @@ namespace BS.StaticData
 {
     public enum AnimatorStates
     {
-        idle,
-        run,
+        Idle,
+        Run,
         Attack,
     };
 }
