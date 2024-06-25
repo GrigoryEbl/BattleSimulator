@@ -38,7 +38,11 @@ namespace BS.Units.Weapons
 
             foreach (var hit in sortedHits)
             {
-                if (hit.collider.TryGetComponent(out IDamageable target) && !targets.Contains(target) && target.IsEnemy != IsEnemy)
+                bool canAttack = hit.collider.TryGetComponent(out IDamageable target) &&
+                    targets.Contains(target) == false &&
+                    target.IsEnemy != IsEnemy;
+
+                if (canAttack)
                 {
                     targets.Add(target);
                     target.TakeDamage(_damage);

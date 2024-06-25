@@ -29,7 +29,7 @@ namespace BS.Units.Movement
 
         private void Move()
         {
-            Vector3 direction = _animatorController.IsAttack ? Vector3.zero : _movementSource.Direction;
+            Vector3 direction = _animatorController.CanMove() ? _movementSource.Direction : Vector3.zero;
 
             var horizontalVelocity = _rigidbody.velocity.y * Vector3.up;
             _rigidbody.velocity = direction * _movementSource.Speed + horizontalVelocity;
