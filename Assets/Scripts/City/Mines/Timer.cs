@@ -2,33 +2,36 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+namespace BS.City.Mines
 {
-    private float _currentTime;
-    private Coroutine _working;
-
-    public event Action TimeOver;
-
-    public float CurrentTime => _currentTime;
-
-    public void StartWork(float startTime)
+    public class Timer : MonoBehaviour
     {
-        if (_working != null)
-            StopCoroutine(_working);
+        private float _currentTime;
+        private Coroutine _working;
 
-        _working = StartCoroutine(Work(startTime));
-    }
+        public event Action TimeOver;
 
-    private IEnumerator Work(float startTime)
-    {
-        _currentTime = startTime;
+        public float CurrentTime => _currentTime;
 
-        while (_currentTime > 0)
+        public void StartWork(float startTime)
         {
-            _currentTime -= Time.deltaTime;
-            yield return null;
+            if (_working != null)
+                StopCoroutine(_working);
+
+            _working = StartCoroutine(Work(startTime));
         }
 
-        TimeOver?.Invoke();
+        private IEnumerator Work(float startTime)
+        {
+            _currentTime = startTime;
+
+            while (_currentTime > 0)
+            {
+                _currentTime -= Time.deltaTime;
+                yield return null;
+            }
+
+            TimeOver?.Invoke();
+        }
     }
 }

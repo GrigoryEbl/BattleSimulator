@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class MineSaver : MonoBehaviour
+namespace BS.City.Mines
 {
-    private void Start()
+    public class MineSaver : MonoBehaviour
     {
-        DontDestroyOnLoad(gameObject);
+        private void Start()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
