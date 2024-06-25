@@ -1,4 +1,5 @@
 using BS.Settings;
+using BS.Wallets;
 using UnityEngine;
 
 public class LevelSaver : MonoBehaviour

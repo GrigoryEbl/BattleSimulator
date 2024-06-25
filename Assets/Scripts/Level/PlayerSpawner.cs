@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using BS.Wallets;
 using UnityEngine;
 using UnityEngine.UI;
 

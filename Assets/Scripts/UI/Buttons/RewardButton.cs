@@ -1,4 +1,5 @@
 using BS.Advertising;
+using BS.Wallets;
 using UnityEngine;
 using UnityEngine.UI;
 

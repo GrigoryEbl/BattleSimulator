@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BS.Settings;
+using BS.Wallets;
 using UnityEngine;
 
 public class LevelStarter : MonoBehaviour

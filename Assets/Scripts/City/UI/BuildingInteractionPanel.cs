@@ -1,4 +1,5 @@
 using BS.City.PlayerControl;
+using BS.Wallets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

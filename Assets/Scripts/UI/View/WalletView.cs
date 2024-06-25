@@ -1,3 +1,4 @@
+using BS.Wallets;
 using TMPro;
 using UnityEngine;
 
