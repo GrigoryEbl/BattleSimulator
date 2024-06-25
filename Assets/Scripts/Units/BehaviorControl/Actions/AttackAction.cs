@@ -16,7 +16,6 @@ namespace BS.Units.BehaviorControl.Actions
             if (_target.Value == null)
                 return TaskStatus.Failure;
 
-
             if (_target.Value.TryGetComponent(out IDamageable unit))
             {
                 transform.LookAt(_target.Value);
