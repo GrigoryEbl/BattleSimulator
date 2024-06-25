@@ -2,30 +2,33 @@ using BS.Level;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-public class UnitsCleanButton : MonoBehaviour
+namespace BS.UI.Buttons
 {
-    [SerializeField] private PlayerSpawner _playerSpawner;
-
-    private Button _button;
-
-    private void Awake()
+    [RequireComponent(typeof(Button))]
+    public class UnitsCleanButton : MonoBehaviour
     {
-        _button = GetComponent<Button>();
-    }
+        [SerializeField] private PlayerSpawner _playerSpawner;
 
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(Clean);
-    }
+        private Button _button;
 
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(Clean);
-    }
+        private void Awake()
+        {
+            _button = GetComponent<Button>();
+        }
 
-    private void Clean()
-    {
-        _playerSpawner.Clean();
+        private void OnEnable()
+        {
+            _button.onClick.AddListener(Clean);
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(Clean);
+        }
+
+        private void Clean()
+        {
+            _playerSpawner.Clean();
+        }
     }
 }

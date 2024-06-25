@@ -3,42 +3,45 @@ using BS.Level;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-public class AdvertisingEndLevelButton : MonoBehaviour
+namespace BS.UI.Buttons
 {
-    [SerializeField] private VideoAd _videoAd;
-    [SerializeField] private BattleSceneLoader _sceneLoader;
-    [SerializeField] private LevelSaver _levelSaver;
-
-    private Button _button;
-
-    private void Awake()
+    [RequireComponent(typeof(Button))]
+    public class AdvertisingEndLevelButton : MonoBehaviour
     {
-        _button = GetComponent<Button>();
-    }
+        [SerializeField] private VideoAd _videoAd;
+        [SerializeField] private BattleSceneLoader _sceneLoader;
+        [SerializeField] private LevelSaver _levelSaver;
 
-    private void OnEnable()
-    {
-        _button.onClick.AddListener(OnButtonClick);
-    }
+        private Button _button;
 
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(OnButtonClick);
-    }
+        private void Awake()
+        {
+            _button = GetComponent<Button>();
+        }
 
-    private void OnButtonClick()
-    {
+        private void OnEnable()
+        {
+            _button.onClick.AddListener(OnButtonClick);
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(OnButtonClick);
+        }
+
+        private void OnButtonClick()
+        {
 #if UNITY_WEBGL && !UNITY_EDITOR
         _videoAd.Show(_button, FinishLevel);
 #else
-        FinishLevel();
+            FinishLevel();
 #endif
-    }
+        }
 
-    private void FinishLevel()
-    {
-        _levelSaver.FinishLevel();
-        _sceneLoader.Load();
+        private void FinishLevel()
+        {
+            _levelSaver.FinishLevel();
+            _sceneLoader.Load();
+        }
     }
 }
