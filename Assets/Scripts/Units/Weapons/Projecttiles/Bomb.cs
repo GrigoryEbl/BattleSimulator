@@ -1,17 +1,21 @@
+using BS.Environment;
 using UnityEngine;
 
-public abstract class Bomb : Projectile
+namespace BS.Units.Weapons.Projectiles
 {
-    [SerializeField] private AudioSource _audioEffect;
-
-    private void OnCollisionEnter(Collision collision)
+    public abstract class Bomb : Projectile
     {
-        if (collision.collider.TryGetComponent(out Ground ground))
-            Explode();
-    }
+        [SerializeField] private AudioSource _audioEffect;
 
-    protected virtual void Explode()
-    {
-        AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.collider.TryGetComponent(out Ground ground))
+                Explode();
+        }
+
+        protected virtual void Explode()
+        {
+            AudioSource.PlayClipAtPoint(_audioEffect.clip, transform.position);
+        }
     }
 }

@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class PoisonBomb : Bomb
-{   
-    [SerializeField] private PoisonField _poisonFieldPrefab;
-
-    protected override void Explode()
+namespace BS.Units.Weapons.Projectiles
+{
+    public class PoisonBomb : Bomb
     {
-        base.Explode();
+        [SerializeField] private PoisonField _poisonFieldPrefab;
 
-        Instantiate(_poisonFieldPrefab, transform.position, Quaternion.identity);
-        Push();
+        protected override void Explode()
+        {
+            base.Explode();
+
+            Instantiate(_poisonFieldPrefab, transform.position, Quaternion.identity);
+            Push();
+        }
     }
 }

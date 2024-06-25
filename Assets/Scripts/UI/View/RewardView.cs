@@ -1,12 +1,15 @@
 using TMPro;
 using UnityEngine;
 
-public class RewardView : MonoBehaviour
+namespace BS.UI.View
 {
-    [SerializeField] private TMP_Text _rewardMoneyCount;
-
-    public void Display(int money)
+    public class RewardView : MonoBehaviour
     {
-        _rewardMoneyCount.text = $"+ {money}";
+        [SerializeField] private TMP_Text _rewardMoneyCount;
+
+        public void Display(int money)
+        {
+            _rewardMoneyCount.text = $"+ {money}";
+        }
     }
 }

@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class LookController : MonoBehaviour
+namespace BS.UI
 {
-    private RectTransform _rectTransform;
-
-    private void Awake()
+    public class LookController : MonoBehaviour
     {
-        _rectTransform = transform as RectTransform;
-    }
+        private RectTransform _rectTransform;
 
-    private void Update()
-    {
-        _rectTransform.LookAt(Camera.main.transform);
+        private void Awake()
+        {
+            _rectTransform = transform as RectTransform;
+        }
+
+        private void Update()
+        {
+            _rectTransform.LookAt(Camera.main.transform);
+        }
     }
 }

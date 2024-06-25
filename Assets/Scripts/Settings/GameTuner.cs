@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class GameTuner : MonoBehaviour
+namespace BS.Settings
 {
-    private void Awake()
+    public class GameTuner : MonoBehaviour
     {
-        if (GameSaver.IsGameConfigured == false)
-            GameSaver.SetDefaultSettings();
-    }
+        private void Awake()
+        {
+            if (GameSaver.IsGameConfigured == false)
+                GameSaver.SetDefaultSettings();
+        }
 
-    private void Start()
-    {
-        AudioListener.volume = GameSaver.Volume;
+        private void Start()
+        {
+            AudioListener.volume = GameSaver.Volume;
+        }
     }
 }

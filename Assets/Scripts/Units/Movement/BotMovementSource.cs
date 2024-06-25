@@ -1,32 +1,35 @@
 using UnityEngine;
 
-public class BotMovementSource : MonoBehaviour, IMovementSource
+namespace BS.Units.Movement
 {
-    [SerializeField] private float _speed = 3f;
-
-    private Vector3 _direction;
-    private float _currentSpeed;
-
-    public Vector3 Direction => _direction;
-    public float Speed => _currentSpeed;
-
-    private void Awake()
+    public class BotMovementSource : MonoBehaviour, IMovementSource
     {
-        ResetSpeed();
-    }
+        [SerializeField] private float _speed = 3f;
 
-    public void SetDirection(Vector3 direction)
-    {
-        _direction = direction;
-    }
+        private Vector3 _direction;
+        private float _currentSpeed;
 
-    public void ResetSpeed()
-    {
-        _currentSpeed = _speed;
-    }
+        public Vector3 Direction => _direction;
+        public float Speed => _currentSpeed;
 
-    public void DivideSpeed(float value)
-    {
-        _currentSpeed = _speed / value;
+        private void Awake()
+        {
+            ResetSpeed();
+        }
+
+        public void SetDirection(Vector3 direction)
+        {
+            _direction = direction;
+        }
+
+        public void ResetSpeed()
+        {
+            _currentSpeed = _speed;
+        }
+
+        public void DivideSpeed(float value)
+        {
+            _currentSpeed = _speed / value;
+        }
     }
 }

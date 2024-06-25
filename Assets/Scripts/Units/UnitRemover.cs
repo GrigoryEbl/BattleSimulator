@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class UnitRemover : MonoBehaviour
+namespace BS.Units
 {
-    private readonly float _speed = 0.3f;
-    private readonly float _removeTime = 5f;
-    
-    private float _timeCounter = 0f;
-
-    private void Update()
+    public class UnitRemover : MonoBehaviour
     {
-        if (_timeCounter <= 0)
-            return;
+        private readonly float _speed = 0.3f;
+        private readonly float _removeTime = 5f;
 
-        _timeCounter -= Time.deltaTime;
-        Move();
-    }
+        private float _timeCounter = 0f;
 
-    public void StartRemove()
-    {
-        _timeCounter = _removeTime;
-    }
+        private void Update()
+        {
+            if (_timeCounter <= 0)
+                return;
 
-    private void Move()
-    {
-        transform.Translate(Vector3.down * _speed * Time.deltaTime);
+            _timeCounter -= Time.deltaTime;
+            Move();
+        }
+
+        public void StartRemove()
+        {
+            _timeCounter = _removeTime;
+        }
+
+        private void Move()
+        {
+            transform.Translate(Vector3.down * _speed * Time.deltaTime);
+        }
     }
 }

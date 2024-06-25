@@ -1,28 +1,32 @@
+using BS.Units.Weapons.Projectiles;
 using UnityEngine;
 
-[RequireComponent(typeof(ProjectilesPool))]
-public class Bow : RangeWeapon
+namespace BS.Units.Weapons
 {
-    [SerializeField] private float _force;
-
-    private ProjectilesPool _pool;
-
-    private void Awake()
+    [RequireComponent(typeof(ProjectilesPool))]
+    public class Bow : RangeWeapon
     {
-        _pool = GetComponent<ProjectilesPool>();        
-    }
+        [SerializeField] private float _force;
 
-    private void Start()
-    {
-        _pool.Initialize(IsEnemy);
-    }
+        private ProjectilesPool _pool;
 
-    public override void Shoot(Vector3 targetPosition)
-    {
-        base.Shoot(targetPosition);
+        private void Awake()
+        {
+            _pool = GetComponent<ProjectilesPool>();
+        }
 
-        var arrow = _pool.Pull();
-        arrow.gameObject.SetActive(true);
-        arrow.Hurl(StartPoint, StartPoint.forward * _force);
+        private void Start()
+        {
+            _pool.Initialize(IsEnemy);
+        }
+
+        public override void Shoot(Vector3 targetPosition)
+        {
+            base.Shoot(targetPosition);
+
+            var arrow = _pool.Pull();
+            arrow.gameObject.SetActive(true);
+            arrow.Hurl(StartPoint, StartPoint.forward * _force);
+        }
     }
 }

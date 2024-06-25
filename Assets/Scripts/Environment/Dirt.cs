@@ -1,18 +1,22 @@
+using BS.Units.Movement;
 using UnityEngine;
 
-public class Dirt : Trap
+namespace BS.Environment
 {
-    [SerializeField] private float _decelerationFactor = 2f;
-
-    private void OnTriggerEnter(Collider other)
+    public class Dirt : Trap
     {
-        if (other.TryGetComponent(out BotMovementSource movementSource))
-            movementSource.DivideSpeed(_decelerationFactor);
-    }
+        [SerializeField] private float _decelerationFactor = 2f;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out BotMovementSource movementSource))
-            movementSource.ResetSpeed();
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out BotMovementSource movementSource))
+                movementSource.DivideSpeed(_decelerationFactor);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.TryGetComponent(out BotMovementSource movementSource))
+                movementSource.ResetSpeed();
+        }
     }
 }
