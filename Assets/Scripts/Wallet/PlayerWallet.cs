@@ -1,3 +1,4 @@
+using BS.YandexLeaderboard;
 using UnityEngine;
 
 [RequireComponent(typeof(YandexLeaderboardScoreSetter))]
