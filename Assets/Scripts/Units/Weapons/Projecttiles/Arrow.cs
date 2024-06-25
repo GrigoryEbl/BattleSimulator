@@ -1,3 +1,4 @@
+using BS.Environment;
 using UnityEngine;
 
 [RequireComponent(typeof(MeleeWeapon))]

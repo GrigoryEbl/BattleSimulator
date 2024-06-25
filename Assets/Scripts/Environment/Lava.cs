@@ -1,40 +1,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lava : Trap
+namespace BS.Environment
 {
-    [SerializeField] private int _damage = 3;
-    [SerializeField] private float _delay = 0.5f;
-
-    private List<IDamageable> _units = new List<IDamageable>();
-    private float _delayCounter;
-
-    private void Update()
+    public class Lava : Trap
     {
-        if (_delayCounter > 0)
-            _delayCounter -= Time.deltaTime;
-    }
+        [SerializeField] private int _damage = 3;
+        [SerializeField] private float _delay = 0.5f;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out IDamageable unit) && !_units.Contains(unit))
-            _units.Add(unit);
-    }
+        private List<IDamageable> _units = new List<IDamageable>();
+        private float _delayCounter;
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (_delayCounter > 0)
-            return;
+        private void Update()
+        {
+            if (_delayCounter > 0)
+                _delayCounter -= Time.deltaTime;
+        }
 
-        foreach (var unit in _units)
-            unit.TakeDamage(_damage);
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out IDamageable unit) && !_units.Contains(unit))
+                _units.Add(unit);
+        }
 
-        _delayCounter = _delay;
-    }
+        private void OnTriggerStay(Collider other)
+        {
+            if (_delayCounter > 0)
+                return;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out IDamageable unit))
-            _units.Remove(unit);
+            foreach (var unit in _units)
+                unit.TakeDamage(_damage);
+
+            _delayCounter = _delay;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.TryGetComponent(out IDamageable unit))
+                _units.Remove(unit);
+        }
     }
 }

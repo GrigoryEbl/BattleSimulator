@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BS.Environment;
 using UnityEngine;
 
 public class TrapsSpawner : MonoBehaviour

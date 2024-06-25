@@ -1,1 +1,4 @@
-public class PlayerGround : Ground { }
+namespace BS.Environment
+{
+    public class PlayerGround : Ground { }
+}

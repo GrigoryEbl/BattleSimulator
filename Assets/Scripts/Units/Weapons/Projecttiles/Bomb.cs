@@ -1,3 +1,4 @@
+using BS.Environment;
 using UnityEngine;
 
 public abstract class Bomb : Projectile
