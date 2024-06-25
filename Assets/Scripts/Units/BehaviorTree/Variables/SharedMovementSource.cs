@@ -1,5 +1,6 @@
 using System;
 using BehaviorDesigner.Runtime;
+using BS.Units.Movement;
 
 [Serializable]
 public class SharedMovementSource : SharedVariable<BotMovementSource>

@@ -1,3 +1,4 @@
+using BS.Units.Movement;
 using UnityEngine;
 
 namespace BS.Environment

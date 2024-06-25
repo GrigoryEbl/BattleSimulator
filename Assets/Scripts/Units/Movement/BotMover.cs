@@ -2,44 +2,47 @@ using BS.StaticData;
 using BS.Units;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(BotMovementSource))]
-[RequireComponent(typeof(AnimatorController))]
-public class BotMover : MonoBehaviour
+namespace BS.Units.Movement
 {
-    private Transform _transform;
-    private Rigidbody _rigidbody;
-    private AnimatorController _animatorController;
-    private IMovementSource _movementSource;
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BotMovementSource))]
+    [RequireComponent(typeof(AnimatorController))]
+    public class BotMover : MonoBehaviour
     {
-        _transform = transform;
-        _rigidbody = GetComponent<Rigidbody>();
-        _movementSource = GetComponent<BotMovementSource>();
-        _animatorController = GetComponent<AnimatorController>();
-    }
+        private Transform _transform;
+        private Rigidbody _rigidbody;
+        private AnimatorController _animatorController;
+        private IMovementSource _movementSource;
 
-    private void Update()
-    {
-        Move();
-        Rotate();
-    }
+        private void Awake()
+        {
+            _transform = transform;
+            _rigidbody = GetComponent<Rigidbody>();
+            _movementSource = GetComponent<BotMovementSource>();
+            _animatorController = GetComponent<AnimatorController>();
+        }
 
-    private void Move()
-    {
-        Vector3 direction = _animatorController.IsAttack ? Vector3.zero : _movementSource.Direction;
+        private void Update()
+        {
+            Move();
+            Rotate();
+        }
 
-        var horizontalVelocity = _rigidbody.velocity.y * Vector3.up;
-        _rigidbody.velocity = direction * _movementSource.Speed + horizontalVelocity;
+        private void Move()
+        {
+            Vector3 direction = _animatorController.IsAttack ? Vector3.zero : _movementSource.Direction;
 
-        var state = direction == Vector3.zero ? AnimatorStates.idle : AnimatorStates.run;
-        _animatorController.SetState(state);
-    }
+            var horizontalVelocity = _rigidbody.velocity.y * Vector3.up;
+            _rigidbody.velocity = direction * _movementSource.Speed + horizontalVelocity;
 
-    private void Rotate()
-    {
-        if (_movementSource.Direction != Vector3.zero)
-            _transform.rotation = Quaternion.LookRotation(_movementSource.Direction, Vector3.up);
+            var state = direction == Vector3.zero ? AnimatorStates.idle : AnimatorStates.run;
+            _animatorController.SetState(state);
+        }
+
+        private void Rotate()
+        {
+            if (_movementSource.Direction != Vector3.zero)
+                _transform.rotation = Quaternion.LookRotation(_movementSource.Direction, Vector3.up);
+        }
     }
 }

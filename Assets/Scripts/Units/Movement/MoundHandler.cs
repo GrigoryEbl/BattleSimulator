@@ -2,33 +2,36 @@ using BehaviorDesigner.Runtime;
 using BS.Units;
 using UnityEngine;
 
-[RequireComponent(typeof(RagdollHandler))]
-public class MoundHandler : MonoBehaviour
+namespace BS.Units.Movement
 {
-    private readonly float _delay = 10f;
-
-    private float _delayCounter;
-    private RagdollHandler _unitRagdoll;
-    private BehaviorTree _behaviorTree;
-
-    private void Awake()
+    [RequireComponent(typeof(RagdollHandler))]
+    public class MoundHandler : MonoBehaviour
     {
-        _unitRagdoll = GetComponent<RagdollHandler>();
-        _behaviorTree = GetComponent<BehaviorTree>();
-    }
+        private readonly float _delay = 10f;
 
-    private void Update()
-    {
-        if (_delayCounter > 0)
-            _delayCounter -= Time.deltaTime;
-    }
+        private float _delayCounter;
+        private RagdollHandler _unitRagdoll;
+        private BehaviorTree _behaviorTree;
 
-    public void Fell()
-    {
-        if (_delayCounter > 0 || _behaviorTree.enabled == false)
-            return;
+        private void Awake()
+        {
+            _unitRagdoll = GetComponent<RagdollHandler>();
+            _behaviorTree = GetComponent<BehaviorTree>();
+        }
 
-        _unitRagdoll.TurnOn(true);
-        _delayCounter = _delay;
+        private void Update()
+        {
+            if (_delayCounter > 0)
+                _delayCounter -= Time.deltaTime;
+        }
+
+        public void Fell()
+        {
+            if (_delayCounter > 0 || _behaviorTree.enabled == false)
+                return;
+
+            _unitRagdoll.TurnOn(true);
+            _delayCounter = _delay;
+        }
     }
 }
