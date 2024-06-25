@@ -2,37 +2,40 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VideoAd : MonoBehaviour
+namespace BS.Advertising
 {
-    [SerializeField] private Menu _menu;
-
-    private Button _lockableButton;
-
-    public void Show(Button lockableButton, Action<int> moneyAction, int money)
+    public class VideoAd : MonoBehaviour
     {
-        _lockableButton = lockableButton;
-        Agava.YandexGames.VideoAd.Show(OnOpenCallback, () => moneyAction?.Invoke(money), OnCloseCallback);
-    }
+        [SerializeField] private Menu _menu;
 
-    public void Show(Button lockableButton, Action action)
-    {
-        _lockableButton = lockableButton;
-        Agava.YandexGames.VideoAd.Show(OnOpenCallback, () => action?.Invoke(), OnCloseCallback);
-    }
+        private Button _lockableButton;
 
-    private void OnOpenCallback()
-    {
-        _menu.StopTime();
-        _menu.StopMusic();
+        public void Show(Button lockableButton, Action<int> moneyAction, int money)
+        {
+            _lockableButton = lockableButton;
+            Agava.YandexGames.VideoAd.Show(OnOpenCallback, () => moneyAction?.Invoke(money), OnCloseCallback);
+        }
 
-        _lockableButton.interactable = false;
-    }
+        public void Show(Button lockableButton, Action action)
+        {
+            _lockableButton = lockableButton;
+            Agava.YandexGames.VideoAd.Show(OnOpenCallback, () => action?.Invoke(), OnCloseCallback);
+        }
 
-    private void OnCloseCallback()
-    {
-        _menu.ContinueTime();
-        _menu.ContinueMusic();
+        private void OnOpenCallback()
+        {
+            _menu.StopTime();
+            _menu.StopMusic();
 
-        _lockableButton.interactable = true;
+            _lockableButton.interactable = false;
+        }
+
+        private void OnCloseCallback()
+        {
+            _menu.ContinueTime();
+            _menu.ContinueMusic();
+
+            _lockableButton.interactable = true;
+        }
     }
 }
