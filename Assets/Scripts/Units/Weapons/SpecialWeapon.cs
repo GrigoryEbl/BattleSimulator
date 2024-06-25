@@ -1,34 +1,36 @@
-using BS.Units;
 using UnityEngine;
 
-public class SpecialWeapon : MeleeWeapon
+namespace BS.Units.Weapons
 {
-    private readonly float _attackTime = 1f;
-
-    [SerializeField] private float _delay = 10f;
-    [SerializeField] private float _force;
-
-    private float _delayCounter;
-
-    private void Update()
+    public class SpecialWeapon : MeleeWeapon
     {
-        if (_delayCounter > 0)
-            _delayCounter -= Time.deltaTime;
-    }
+        private readonly float _attackTime = 1f;
 
-    protected override void Attack(IDamageable target)
-    {
-        base.Attack(target);
+        [SerializeField] private float _delay = 10f;
+        [SerializeField] private float _force;
 
-        if (_delayCounter > 0)
-            return;
+        private float _delayCounter;
 
-        target.Hit(transform.forward * _force, transform.position);
-        Invoke(nameof(SetDelay), _attackTime);
-    }
+        private void Update()
+        {
+            if (_delayCounter > 0)
+                _delayCounter -= Time.deltaTime;
+        }
 
-    private void SetDelay()
-    {
-        _delayCounter = _delay;
+        protected override void Attack(IDamageable target)
+        {
+            base.Attack(target);
+
+            if (_delayCounter > 0)
+                return;
+
+            target.Hit(transform.forward * _force, transform.position);
+            Invoke(nameof(SetDelay), _attackTime);
+        }
+
+        private void SetDelay()
+        {
+            _delayCounter = _delay;
+        }
     }
 }

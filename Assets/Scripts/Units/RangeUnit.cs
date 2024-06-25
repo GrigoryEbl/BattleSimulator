@@ -1,3 +1,4 @@
+using BS.Units.Weapons;
 using UnityEngine;
 
 namespace BS.Units

@@ -1,13 +1,16 @@
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+namespace BS.Units.Weapons
 {
-    private bool _isEnemy;
-
-    protected bool IsEnemy => _isEnemy;
-
-    public void SetBattleSide(bool isEnemy)
+    public abstract class Weapon : MonoBehaviour
     {
-        _isEnemy = isEnemy;
+        private bool _isEnemy;
+
+        protected bool IsEnemy => _isEnemy;
+
+        public void SetBattleSide(bool isEnemy)
+        {
+            _isEnemy = isEnemy;
+        }
     }
 }

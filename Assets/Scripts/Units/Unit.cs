@@ -1,4 +1,5 @@
 using BehaviorDesigner.Runtime;
+using BS.Units.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
 
