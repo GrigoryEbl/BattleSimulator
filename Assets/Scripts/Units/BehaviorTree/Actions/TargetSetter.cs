@@ -1,43 +1,45 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using BS.Units;
 using UnityEngine;
 
-public class TargetSetter : Action
+namespace BS.Units.BehaviorControl.Actions
 {
-    [SerializeField] private SharedUnit _unit;
-    [SerializeField] private SharedTransform _target;
-
-    private Transform _targetParent;
-
-    protected Unit Soldier => _unit.Value;
-    protected Transform Target => _target.Value;
-
-    public override void OnAwake()
+    public class TargetSetter : Action
     {
-        _targetParent = _unit.Value.TargetParent;
-    }
+        [SerializeField] private SharedUnit _unit;
+        [SerializeField] private SharedTransform _target;
 
-    public override TaskStatus OnUpdate()
-    {
-        FindTarget();
+        private Transform _targetParent;
 
-        return _target.Value == null ? TaskStatus.Failure : TaskStatus.Success;
-    }
+        protected Unit Soldier => _unit.Value;
+        protected Transform Target => _target.Value;
 
-    protected virtual void FindTarget()
-    {
-        float distance;
-        float minDistance = float.MaxValue;
-
-        for (int i = 0; i < _targetParent.childCount; i++)
+        public override void OnAwake()
         {
-            distance = Vector3.Distance(_targetParent.GetChild(i).position, transform.position);
+            _targetParent = _unit.Value.TargetParent;
+        }
 
-            if (distance < minDistance)
+        public override TaskStatus OnUpdate()
+        {
+            FindTarget();
+
+            return _target.Value == null ? TaskStatus.Failure : TaskStatus.Success;
+        }
+
+        protected virtual void FindTarget()
+        {
+            float distance;
+            float minDistance = float.MaxValue;
+
+            for (int i = 0; i < _targetParent.childCount; i++)
             {
-                minDistance = distance;
-                _target.Value = _targetParent.GetChild(i);
+                distance = Vector3.Distance(_targetParent.GetChild(i).position, transform.position);
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    _target.Value = _targetParent.GetChild(i);
+                }
             }
         }
     }

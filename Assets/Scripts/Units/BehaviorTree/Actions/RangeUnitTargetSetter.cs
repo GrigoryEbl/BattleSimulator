@@ -1,21 +1,23 @@
 using System;
-using BS.Units;
 
-public class RangeUnitTargetSetter : TargetSetter
+namespace BS.Units.BehaviorControl.Actions
 {
-    private RangeUnit _rangeUnit;
-
-    public override void OnStart()
+    public class RangeUnitTargetSetter : TargetSetter
     {
-        _rangeUnit = Soldier as RangeUnit;
+        private RangeUnit _rangeUnit;
 
-        if (_rangeUnit == null)
-            throw new ArgumentNullException(nameof(RangeUnit));
-    }
+        public override void OnStart()
+        {
+            _rangeUnit = Soldier as RangeUnit;
 
-    protected override void FindTarget()
-    {
-        base.FindTarget();
-        _rangeUnit.SetTarget(Target);
+            if (_rangeUnit == null)
+                throw new ArgumentNullException(nameof(RangeUnit));
+        }
+
+        protected override void FindTarget()
+        {
+            base.FindTarget();
+            _rangeUnit.SetTarget(Target);
+        }
     }
 }

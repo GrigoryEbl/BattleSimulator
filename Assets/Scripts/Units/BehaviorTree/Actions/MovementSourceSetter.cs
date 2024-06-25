@@ -2,15 +2,18 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class MovementSourceSetter : Action
+namespace BS.Units.BehaviorControl.Actions
 {
-    [SerializeField] private SharedMovementSource _movementSource;
-    [SerializeField] private SharedVector3 _direction;
-
-    public override TaskStatus OnUpdate()
+    public class MovementSourceSetter : Action
     {
-        _movementSource.Value.SetDirection(_direction.Value);
+        [SerializeField] private SharedMovementSource _movementSource;
+        [SerializeField] private SharedVector3 _direction;
 
-        return TaskStatus.Success;
+        public override TaskStatus OnUpdate()
+        {
+            _movementSource.Value.SetDirection(_direction.Value);
+
+            return TaskStatus.Success;
+        }
     }
 }

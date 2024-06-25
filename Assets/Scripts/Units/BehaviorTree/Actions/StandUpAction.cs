@@ -2,20 +2,23 @@ using BehaviorDesigner.Runtime.Tasks;
 using BS.StaticData;
 using UnityEngine;
 
-public class StandUpAction : Action
+namespace BS.Units.BehaviorControl.Actions
 {
-    [SerializeField] private SharedUnit _unit;
-    [SerializeField] private SharedRagdollHandler _ragdollHandler;
-    [SerializeField] private SharedAnimatorController _animatorController;
-    [SerializeField] private Rigidbody _rigidbody;
-
-    public override TaskStatus OnUpdate()
+    public class StandUpAction : Action
     {
-        _unit.Value.ResetCurrentPosition();
-        _ragdollHandler.Value.TurnOn(false);
-        _animatorController.Value.SetTrigger(StaticAnimatorData.GettingUp);
-        _rigidbody.isKinematic = true;
+        [SerializeField] private SharedUnit _unit;
+        [SerializeField] private SharedRagdollHandler _ragdollHandler;
+        [SerializeField] private SharedAnimatorController _animatorController;
+        [SerializeField] private Rigidbody _rigidbody;
 
-        return TaskStatus.Success;
+        public override TaskStatus OnUpdate()
+        {
+            _unit.Value.ResetCurrentPosition();
+            _ragdollHandler.Value.TurnOn(false);
+            _animatorController.Value.SetTrigger(StaticAnimatorData.GettingUp);
+            _rigidbody.isKinematic = true;
+
+            return TaskStatus.Success;
+        }
     }
 }

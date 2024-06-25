@@ -1,27 +1,29 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using BS.StaticData;
-using BS.Units;
 using UnityEngine;
 
-public class AttackAction : Action
+namespace BS.Units.BehaviorControl.Actions
 {
-    [SerializeField] private SharedAnimatorController _animatorController;
-    [SerializeField] private SharedTransform _target;
-
-    public override TaskStatus OnUpdate()
+    public class AttackAction : Action
     {
-        if (_target.Value == null)
-            return TaskStatus.Failure;
+        [SerializeField] private SharedAnimatorController _animatorController;
+        [SerializeField] private SharedTransform _target;
 
-
-        if (_target.Value.TryGetComponent(out IDamageable unit))
+        public override TaskStatus OnUpdate()
         {
-            transform.LookAt(_target.Value);
-            _animatorController.Value.SetTrigger(StaticAnimatorData.Attack);
-            return TaskStatus.Success;
-        }
+            if (_target.Value == null)
+                return TaskStatus.Failure;
 
-        return TaskStatus.Failure;
+
+            if (_target.Value.TryGetComponent(out IDamageable unit))
+            {
+                transform.LookAt(_target.Value);
+                _animatorController.Value.SetTrigger(StaticAnimatorData.Attack);
+                return TaskStatus.Success;
+            }
+
+            return TaskStatus.Failure;
+        }
     }
 }
