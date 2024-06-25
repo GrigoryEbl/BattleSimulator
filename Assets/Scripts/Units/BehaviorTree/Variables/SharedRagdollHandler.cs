@@ -1,12 +1,14 @@
 using System;
 using BehaviorDesigner.Runtime;
-using BS.Units;
 
-[Serializable]
-public class SharedRagdollHandler : SharedVariable<RagdollHandler>
+namespace BS.Units.BehaviorControl.Variables
 {
-    public static implicit operator SharedRagdollHandler(RagdollHandler value)
+    [Serializable]
+    public class SharedRagdollHandler : SharedVariable<RagdollHandler>
     {
-        return new SharedRagdollHandler { Value = value };
+        public static implicit operator SharedRagdollHandler(RagdollHandler value)
+        {
+            return new SharedRagdollHandler { Value = value };
+        }
     }
 }

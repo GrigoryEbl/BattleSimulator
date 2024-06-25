@@ -1,5 +1,6 @@
 using BehaviorDesigner.Runtime.Tasks;
 using BS.StaticData;
+using BS.Units.BehaviorControl.Variables;
 using UnityEngine;
 
 namespace BS.Units.BehaviorControl.Actions

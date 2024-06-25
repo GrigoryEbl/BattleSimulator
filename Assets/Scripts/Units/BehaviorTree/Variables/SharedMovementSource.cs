@@ -2,11 +2,14 @@ using System;
 using BehaviorDesigner.Runtime;
 using BS.Units.Movement;
 
-[Serializable]
-public class SharedMovementSource : SharedVariable<BotMovementSource>
+namespace BS.Units.BehaviorControl.Variables
 {
-    public static implicit operator SharedMovementSource(BotMovementSource value)
+    [Serializable]
+    public class SharedMovementSource : SharedVariable<BotMovementSource>
     {
-        return new SharedMovementSource { Value = value };
+        public static implicit operator SharedMovementSource(BotMovementSource value)
+        {
+            return new SharedMovementSource { Value = value };
+        }
     }
 }
