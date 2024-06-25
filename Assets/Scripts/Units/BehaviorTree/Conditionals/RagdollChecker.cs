@@ -1,12 +1,15 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class RagdollChecker : Conditional
+namespace BS.Units.BehaviorControl.Conditionals
 {
-    [SerializeField] private SharedRagdollHandler _ragdoll;
-
-    public override TaskStatus OnUpdate()
+    public class RagdollChecker : Conditional
     {
-        return _ragdoll.Value.IsEnable ? TaskStatus.Success : TaskStatus.Failure;
+        [SerializeField] private SharedRagdollHandler _ragdoll;
+
+        public override TaskStatus OnUpdate()
+        {
+            return _ragdoll.Value.IsEnable ? TaskStatus.Success : TaskStatus.Failure;
+        }
     }
 }
