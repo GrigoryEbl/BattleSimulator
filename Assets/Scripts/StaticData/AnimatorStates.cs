@@ -5,5 +5,5 @@ namespace BS.StaticData
         Idle,
         Run,
         Attack,
-    };
+    }
 }
